@@ -1,0 +1,53 @@
+@import '../config';
+
+.steps {
+  .step {
+    &:first-child {
+      .step-no-wrapper {
+        &::before {
+          display: none;
+        }
+      }
+    }
+    &:last-child {
+      .step-no-wrapper {
+        &::after {
+          display: none;
+        }
+      }
+    }
+    .step-no-wrapper {
+      position: relative;
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        border-top: 2px dashed $color-primary;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 49%;
+      }
+      &:before {
+        left: 0;
+      }
+      &:after {
+        left: 50%;
+      }
+      .step-no {
+        display: inline-block;
+        position: relative;
+        z-index: 2;
+        color: $color-white;
+        background: $color-primary;
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+  }
+}

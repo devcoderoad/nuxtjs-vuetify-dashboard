@@ -1,0 +1,173 @@
+/* BASE COLOR */
+$color-transparent: transparent;
+$color-black: #000000;
+$color-white: #ffffff;
+$color-light-white: #f0f0f0;
+$color-red: #f05147;
+$color-red-light: #ffd2d2;
+$color-red-semi-light: #fff6f6;
+$color-red-lighter: #fef6f6;
+$color-red-dark: #d9001b;
+$color-grey: #d6d6d6;
+$color-grey-light: #eeeeee;
+$color-grey-semi-light: #828b95;
+$color-grey-full-light: #f2f2f2;
+$color-grey-lighter: #f8f8f8;
+$color-grey-darker: #333333;
+$color-grey-dark: #8e8e8e;
+$color-grey-semi-dark: #7b7b7b;
+$color-grey-semi-darker: #717274;
+$color-green: #64da6e;
+$color-green-light: #00d400;
+$color-green-lighter: #ebffeb;
+$color-green-dark: #008c14;
+$color-blue: #009cf9;
+$color-blue-light: #8bbbff;
+$color-blue-lighter: #cde9ff;
+$color-blue-semi-light: #8dc7f5;
+$color-blue-full-light: #f7fbff;
+$color-blue-lighter: #f7fbff;
+$color-blue-dark: #0000af;
+$color-yellow: #ffd501;
+$color-yellow-light: #f5de8d;
+$color-yellow-lighter: #fffdf9;
+$color-orange: #ff854a;
+$color-lime: #00ff00;
+$color-cyan: #00ffff;
+$color-magenta: #ff00ff;
+$color-silver: #c0c0c0;
+$color-maroon: #800000;
+$color-olive: #808000;
+$color-purple: #800080;
+$color-teal: #008080;
+$color-navy: #000080;
+$color-turquoise: #12b9d2;
+$color-gold: #cbbc29;
+$color-brown: #523809;
+$color-alice-blue: #f6f9ff;
+$color-navy-blue: #0081e8;
+$color-ice-blue: #e5f5fe;
+$color-white-smoke: #fff2f1;
+$color-very-light-pink: #fdeae9;
+$color-very-light-pink-three: #fdedec;
+$color-very-light-pink-four: #dddddd;
+$color-alabaster: #fafafa;
+$color-silver-chalice: #a7a7a7;
+$color-gallery: #ececec;
+$color-alice-blue-dark: #e5f5fe;
+$color-fringy-flower: #bfe2c4;
+$color-ghost: #ced4da;
+$color-porcelain: #f5f7f8;
+$color-space: #f6fbff;
+$color-emerald: #47d764;
+
+/* CUSTOM COLOR */
+$color-primary: #f05147;
+$color-button-primary: $color-primary;
+$color-badge-primary: $color-primary;
+$color-tab-active: $color-primary;
+$color-pagination-active: $color-primary;
+$color-checkbox-active: $color-primary;
+$color-radio-active: $color-primary;
+$color-disabled: #f5f5f5;
+$color-bg-disabled: #bebebe;
+$color-switch-off: #828b95;
+$color-switch-on: $color-primary;
+$color-error: $color-red;
+$color-text: #454545;
+$color-link: $color-blue;
+$color-dark: #454545;
+$color-bg-footer: $color-dark;
+$color-bg-footer-light: rgba($color-bg-footer, 0.5);
+$color-footer: #bebebe;
+$color-facebook: #4267b2;
+$color-bg-maintenance: #fdedec;
+$color-backdrop: rgba($color-black, 0.4);
+$color-form-field: $color-grey;
+$color-bg-body: $color-grey-light;
+
+/* OVERLAY COLOR */
+$color-overlay-light-black: #080808;
+$color-overlay-light-grey: #464545;
+
+/* BOOTSTRAP OVERWRITE */
+$primary: $color-primary;
+$success: $color-green-dark;
+$info: $color-blue;
+$warning: $color-orange;
+$danger: $color-red-dark;
+
+/* PATH */
+$path-fonts: '/fonts';
+$path-images: '/images';
+$path-icons: '/icons';
+
+/* ICONS */
+
+/* IMAGES */
+
+/* CUSTOM VARIABLES */
+$body-font: 'Poppins', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  'Helvetica Neue';
+$desktop-min-width: 768px;
+$desktop-max-width: 1366px;
+$desktop-spaces: 100px;
+$mobile-width-limit: 720px;
+$shadow: 0 3px 6px rgba($color-black, 0.15);
+$shadow2: 0 3px 3px rgba($color-black, 0.2);
+$shadow3: 0 -2px 16px 0 #dddddd;
+$border-collapse-grey-light: #eeeff0;
+$vertical-line: rgba(151, 151, 151, 0.2);
+$border-width: 1px !default;
+
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+// Variables you want to modify
+// $btn-border-radius: 0px;
+
+// If you need to extend Vuetify SASS lists
+// $material-light: ( cards: blue );
+
+// Globals
+$body-font-family: $body-font;
+$heading-font-family: 'Montserrat', sans-serif;
+$border-radius-root: 6px;
+$font-size-root: 14px;
+
+// Variables must come before the import
+$btn-letter-spacing: 0;
+$btn-font-weight: 400;
+$list-item-title-font-size: 0.929rem;
+$list-item-dense-title-font-size: 0.929rem;
+$list-item-dense-title-font-weight: initial;
+
+// $list-item-icon-margin: 0px !default;
+$list-item-action-icon-margin: 16px !default;
+// $list-item-action-margin: 12px 0px !default;
+// $footer-padding	: 6px 16px !default;
+
+$fab-icon-sizes: (
+  'small': 20
+);
+$btn-sizes: (
+  'default': 41,
+  'large': 54
+);
+$headings: (
+  'h1': (
+    'size': 3.3125rem,
+    'line-height': 1.15em
+  ),
+  'h2': (
+    'size': 2.25rem,
+    'line-height': 1.5em
+  )
+);
+
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;

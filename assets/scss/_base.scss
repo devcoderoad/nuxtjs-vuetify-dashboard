@@ -1,0 +1,106 @@
+::selection {
+  color: $color-white;
+  background: $color-primary;
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $color-white;
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 300px;
+  min-height: 100%;
+  -webkit-font-smoothing: auto;
+  letter-spacing: normal;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: $color-text;
+  font-family: $body-font;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: initial;
+  &:hover {
+    color: $color-primary;
+  }
+  &.secondary-link {
+    color: $color-link;
+    &:hover {
+      color: $color-link;
+    }
+  }
+}
+
+table {
+  border-collapse: collapse;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $color-grey;
+
+  &.dotted {
+    border: none;
+    background-image: linear-gradient(
+      to right,
+      $color-grey 33%,
+      rgba(255, 255, 255, 0) 0%
+    );
+    background-position: bottom;
+    background-size: 7px 1px;
+    background-repeat: repeat-x;
+    height: 1px;
+  }
+
+  &.light {
+    border-color: $color-grey-light;
+    &.dotted {
+      background-image: linear-gradient(
+        to right,
+        $color-grey-light 33%,
+        rgba(255, 255, 255, 0) 0%
+      );
+    }
+  }
+}
+
+strong {
+  font-family: 'Nunito';
+  font-weight: 700;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 100%;
+  vertical-align: middle;
+}

@@ -1,0 +1,139 @@
+:root {
+  --vh: 100vh;
+}
+
+.min-h-100vh {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh));
+}
+
+.position-relative {
+  position: relative !important;
+}
+
+.v-align-middle {
+  vertical-align: middle !important;
+}
+
+.text-strike {
+  text-decoration: line-through !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+.lh-1 {
+  line-height: 1 !important;
+}
+
+.lh-1--2 {
+  line-height: 1.2 !important;
+}
+
+.lh-2 {
+  line-height: 2 !important;
+}
+
+.color-primary {
+  color: $color-primary !important;
+}
+
+.color-text {
+  color: $color-text !important;
+}
+
+.color-black {
+  color: $color-black !important;
+}
+
+.color-white {
+  color: $color-white !important;
+}
+
+.color-red {
+  color: $color-red !important;
+}
+
+.color-blue {
+  color: $color-blue !important;
+}
+
+.color-grey {
+  color: $color-grey !important;
+}
+
+.color-grey-dark {
+  color: $color-grey-dark !important;
+}
+
+.color-green-dark {
+  color: $color-green-dark !important;
+}
+
+.color-orange {
+  color: $color-orange !important;
+}
+
+.color-disabled {
+  color: $color-disabled !important;
+}
+
+.text-clamp-1 {
+  @include text-clamp(1);
+}
+
+.text-clamp-2 {
+  @include text-clamp(2);
+}
+
+.text-clamp-3 {
+  @include text-clamp(3);
+}
+
+.disable-select {
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.disable-link {
+  pointer-events: none;
+  cursor: default;
+}
+
+$cursors: pointer, default, not-allowed;
+@each $i in $cursors {
+  .cursor-#{$i} {
+    cursor: #{$i} !important;
+  }
+}
+
+$overflows: auto, visible, hidden, scroll;
+@each $i in $overflows {
+  .overflow-#{$i} {
+    overflow: #{$i} !important;
+  }
+}
+
+$radius: 0, 5, 10, 15, 20, 25, 30;
+@each $i in $radius {
+  .br-#{$i} {
+    border-radius: #{$i}px !important;
+  }
+}
+
+$z-indexs: 0, 1, 2, 3, 9, 99, 999;
+@each $i in $z-indexs {
+  .z-index-#{$i} {
+    z-index: #{$i} !important;
+  }
+}
+
+@for $i from 8 through 32 {
+  .font-#{$i} {
+    font-size: #{$i}px !important;
+  }
+}

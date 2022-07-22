@@ -1,0 +1,196 @@
+@function opposite-direction($directions) {
+  $opposite-directions: ();
+  $direction-map: (
+    'top': 'bottom',
+    'right': 'left',
+    'bottom': 'top',
+    'left': 'right',
+    'center': 'center',
+    'ltr': 'rtl',
+    'rtl': 'ltr'
+  );
+  @each $direction in $directions {
+    $direction: to-lower-case($direction);
+    @if map-has-key($direction-map, $direction) {
+      $opposite-directions: append(
+        $opposite-directions,
+        unquote(map-get($direction-map, $direction))
+      );
+    } @else {
+      @warn "No opposite direction can be found for `#{$direction}`. Direction omitted.";
+    }
+  }
+  @return $opposite-directions;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+@mixin translate($x, $y) {
+  transform: translate($x, $y);
+}
+
+@mixin translateX($x) {
+  transform: translateX($x);
+}
+
+@mixin translateY($y) {
+  transform: translateY($y);
+}
+
+@mixin gray-scale($value: 100%) {
+  filter: grayscale($value);
+}
+
+@mixin rotate($x) {
+  transform: rotate($x);
+}
+
+@mixin scale($ratio...) {
+  transform: scale($ratio);
+}
+
+@mixin scaleX($ratio) {
+  transform: scaleX($ratio);
+}
+
+@mixin scaleY($ratio) {
+  transform: scaleY($ratio);
+}
+
+@mixin align-center($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    @include translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    @include translate(0, -50%);
+  }
+}
+
+@mixin wrap-text() {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+@mixin placeholder($color: $color-grey) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    font-size: 12px;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  // Internet Explorer 10+
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  // Safari and Chrome
+}
+
+@mixin triangle($direction, $color: #000, $size: 1em) {
+  @if not index(top right bottom left, $direction) {
+    @error "Direction must be either `top`, `right`, `bottom` or `left`.";
+  }
+  width: 0;
+  height: 0;
+  content: '';
+  border-#{opposite-direction($direction)}: $size solid $color;
+  $perpendicular-borders: $size solid transparent;
+  @if $direction==top or $direction==bottom {
+    border-left: $perpendicular-borders;
+    border-right: $perpendicular-borders;
+  } @else if $direction==right or $direction==left {
+    border-bottom: $perpendicular-borders;
+    border-top: $perpendicular-borders;
+  }
+}
+
+@mixin alert-styles-plain($color) {
+  background: $color;
+  border-top: 1px solid darken($color, 15%);
+  border-bottom: 1px solid darken($color, 15%);
+  color: darken($color, 55%);
+}
+
+@mixin cover-background(
+  $img-url,
+  $background-top: 'center',
+  $background-left: 'center',
+  $background-attachment: 'fixed'
+) {
+  background: url($img-url) no-repeat unquote($background-top)
+    unquote($background-left) unquote($background-attachment);
+  background-size: cover;
+}
+
+@mixin text-clamp($lines: 2, $line-height: false) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+
+  @if $line-height {
+    max-height: $line-height * $lines * 1px;
+  }
+}
+
+@mixin alert-styles($color) {
+  @include gradient-vertical(
+    $start-color: $color,
+    $end-color: darken($color, 7.5%)
+  );
+  border-color: darken($color, 15%);
+}
+
+@mixin linear-gradient($top, $bottom...) {
+  background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    $top 0%,
+    $bottom 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    $top 0%,
+    $bottom 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@mixin liner-gradien-left($left, $right...) {
+  background: -moz-linear-gradient(left, $left 0%, $right 100%);
+  background: -webkit-linear-gradient(left, $left 0%, $right 100%);
+  background: linear-gradient(to right, $left 0%, $right 100%);
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  // IE8 filter
+  $opacity-ie: ($opacity * 100);
+  filter: alpha(opacity=$opacity-ie);
+}

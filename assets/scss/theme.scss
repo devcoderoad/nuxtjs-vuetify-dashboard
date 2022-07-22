@@ -1,0 +1,48 @@
+@import './variables';
+
+.v-application {
+  font-family: $body-font-family, sans-serif !important;
+  .title {
+    // To pin point specific classes of some components
+    font-family: $heading-font-family, sans-serif !important;
+  }
+}
+
+.v-application--is-ltr {
+  .v-list-item__icon {
+    &:first-child {
+      margin-right: 0px;
+    }
+  }
+
+  .v-list-item__action {
+    &:first-child {
+      margin-right: 8px !important;
+    }
+  }
+
+  .v-list-group--no-action > .v-list-group__items > .v-list-item {
+    padding-left: 50px;
+  }
+
+  .v-list-group__items > .v-list-item {
+    padding-left: 36px;
+  }
+
+  /* 
+	.v-navigation-drawer--is-mouseover:hover {
+		width: 256px !important;
+	} 
+	*/
+}
+
+.background-image-dark {
+  background-image: url('https://images.unsplash.com/photo-1598313183973-4effcded8d5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1152&h=940&q=80');
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.transparent-8 {
+  background: rgba(255, 255, 255, 65%);
+}
