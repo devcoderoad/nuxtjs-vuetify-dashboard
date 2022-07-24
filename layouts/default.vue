@@ -7,21 +7,51 @@
       fixed
       app
     >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
+      <v-list dark>
+        <slot v-for="(item, i) in items">
+          <v-list-group
+            v-if="item.items && item.items.length"
+            :key="`${item.title}-key-${i + 1}`"
+            v-model="item.active"
+            :prepend-icon="item.icon"
+            color="amber accent-1"
+            :value="false"
+          >
+            <template v-if="item.items" v-slot:activator>
+              <v-list-item-content>
+                <v-list-item-title v-text="item.title"></v-list-item-title>
+              </v-list-item-content>
+            </template>
+            <v-list-item
+              v-for="child in item.items"
+              :key="child.title"
+              :to="child.to"
+              dark
+            >
+              <v-list-item-action>
+                <v-icon center>
+                  {{ item.icon }}
+                </v-icon>
+              </v-list-item-action>
+              <v-list-item-content>
+                <v-list-item-title v-text="child.title"></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-group>
+          <v-list-item
+            v-else
+            :key="item.title"
+            :to="item.to"
+            color="amber accent-1"
+          >
+            <v-list-item-action>
+              <v-icon center>{{ item.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title v-text="item.title"></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </slot>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar :clipped-left="clipped" fixed app>
@@ -42,8 +72,8 @@
       </v-btn>
     </v-app-bar>
     <v-main>
-      <v-container>
-        <Nuxt />
+      <v-container fluid>
+        <nuxt />
       </v-container>
     </v-main>
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
@@ -91,7 +121,7 @@ export default {
           to: '/tables'
         },
         {
-          icon: 'mdi-receipt',
+          icon: 'mdi-message-bulleted',
           title: 'Forms',
           to: '/forms'
         },
@@ -106,9 +136,26 @@ export default {
           to: '/icons'
         },
         {
+          icon: 'mdi-flag',
+          title: 'Filters',
+          to: '/filters'
+        },
+        {
           icon: 'mdi-pencil-box',
           title: 'Typography',
-          to: '/typography'
+          // to: '/typography',
+          items: [
+            {
+              icon: 'mdi-pencil-box',
+              title: 'Generated File',
+              to: '/reporting'
+            },
+            {
+              icon: 'mdi-pencil-box',
+              title: 'Report Viewer',
+              to: '/viewer'
+            }
+          ]
         }
       ],
       miniVariant: false,

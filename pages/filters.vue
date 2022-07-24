@@ -1,11 +1,11 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <h1>Cards</h1>
+      <h1>Filters</h1>
       <v-row class="text-left">
         <v-col md="12" light>
           <v-card light>
-            <v-card-title tag="h2">Pie Chart</v-card-title>
+            <v-card-title tag="h2">Filter Full</v-card-title>
             <v-card-subtitle>Data examples</v-card-subtitle>
             <v-card-text>
               <div>
@@ -23,7 +23,7 @@
         </v-col>
         <v-col md="6" light>
           <v-card light>
-            <v-card-title tag="h2">Bar Chart</v-card-title>
+            <v-card-title tag="h2">Filter Half</v-card-title>
             <v-card-subtitle>Data examples</v-card-subtitle>
             <v-card-text>
               <div>
@@ -41,7 +41,7 @@
         </v-col>
         <v-col md="6" light>
           <v-card light>
-            <v-card-title tag="h2">Donut Chart</v-card-title>
+            <v-card-title tag="h2">Filter Half</v-card-title>
             <v-card-subtitle>Data examples</v-card-subtitle>
             <v-card-text>
               <div>
@@ -59,7 +59,7 @@
         </v-col>
         <v-col md="12" light>
           <v-card light>
-            <v-card-title tag="h2">Graph Chart</v-card-title>
+            <v-card-title tag="h2">Filter Full</v-card-title>
             <v-card-subtitle>Data examples</v-card-subtitle>
             <v-card-text>
               <div>
