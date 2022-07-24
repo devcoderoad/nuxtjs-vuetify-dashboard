@@ -2,7 +2,7 @@
   <v-row>
     <v-col class="text-center">
       <img src="/v.png" alt="Vuetify.js" class="mb-5" />
-      <h1>Cards</h1>
+      <h1>Typography</h1>
       <blockquote class="blockquote">
         &#8220;First, solve the problem. Then, write the code.&#8221;
         <footer>

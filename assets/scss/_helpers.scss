@@ -79,17 +79,17 @@
   color: $color-disabled !important;
 }
 
-.text-clamp-1 {
-  @include text-clamp(1);
-}
+// .text-clamp-1 {
+//   @include text-clamp(1);
+// }
 
-.text-clamp-2 {
-  @include text-clamp(2);
-}
+// .text-clamp-2 {
+//   @include text-clamp(2);
+// }
 
-.text-clamp-3 {
-  @include text-clamp(3);
-}
+// .text-clamp-3 {
+//   @include text-clamp(3);
+// }
 
 .disable-select {
   user-select: none; /* supported by Chrome and Opera */

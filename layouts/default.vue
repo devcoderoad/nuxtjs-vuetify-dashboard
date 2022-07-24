@@ -70,7 +70,6 @@ export default {
   data() {
     // console.log(this.$store.state.core.theme)
     // console.log(this.theme === 'dark')
-
     return {
       clipped: false,
       drawer: false,
@@ -78,13 +77,38 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'Dashboard',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: 'mdi-chart-bar',
+          title: 'Charts',
+          to: '/charts'
+        },
+        {
+          icon: 'mdi-table-large',
+          title: 'Tables',
+          to: '/tables'
+        },
+        {
+          icon: 'mdi-receipt',
+          title: 'Forms',
+          to: '/forms'
+        },
+        {
+          icon: 'mdi-cards',
+          title: 'Cards',
+          to: '/cards'
+        },
+        {
+          icon: 'mdi-material-ui',
+          title: 'Icons',
+          to: '/icons'
+        },
+        {
+          icon: 'mdi-pencil-box',
+          title: 'Typography',
+          to: '/typography'
         }
       ],
       miniVariant: false,
@@ -103,6 +127,5 @@ export default {
 
 <!-- Styles -->
 <style lang="scss" scoped>
-@import '~/assets/scss/variables';
 @import '~/assets/scss/theme';
 </style>

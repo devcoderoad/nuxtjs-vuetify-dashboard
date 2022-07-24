@@ -29,8 +29,8 @@ const DASHBOARD = {
   },
   TYPOGRAPHY: {
     href: '/typography.vue',
-    route: '/typograpies',
-    url: '/typograpies'
+    route: '/typography',
+    url: '/typography'
   },
   TABLE: {
     href: '/tables.vue',
@@ -42,7 +42,8 @@ const DASHBOARD = {
     route: '/charts',
     url: '/charts'
   },
-  CARD: { href: '/cards.vue', route: '/cards', url: '/cards' }
+  CARD: { href: '/cards.vue', route: '/cards', url: '/cards' },
+  ICON: { href: '/icons.vue', route: '/icons', url: '/icons' }
 }
 
 module.exports = { ...AUTH, ...DASHBOARD }
