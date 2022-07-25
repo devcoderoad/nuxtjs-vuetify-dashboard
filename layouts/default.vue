@@ -29,8 +29,8 @@
               dark
             >
               <v-list-item-action>
-                <v-icon center>
-                  {{ item.icon }}
+                <v-icon center dense>
+                  {{ child.icon }}
                 </v-icon>
               </v-list-item-action>
               <v-list-item-content>
@@ -130,10 +130,28 @@ export default {
           title: 'Cards',
           to: '/cards'
         },
+
         {
-          icon: 'mdi-material-ui',
-          title: 'Icons',
-          to: '/icons'
+          icon: 'mdi-account-card',
+          title: 'Authentication',
+          // to: '/typography',
+          items: [
+            {
+              icon: 'mdi-login-variant',
+              title: 'Sign In',
+              to: '/sign-in'
+            },
+            {
+              icon: 'mdi-account-plus',
+              title: 'Sign Up',
+              to: '/sign-up'
+            },
+            {
+              icon: 'mdi-account-key',
+              title: 'Forgot Password',
+              to: '/forgot-password'
+            }
+          ]
         },
         {
           icon: 'mdi-flag',
@@ -141,17 +159,22 @@ export default {
           to: '/filters'
         },
         {
+          icon: 'mdi-material-ui',
+          title: 'Icons',
+          to: '/icons'
+        },
+        {
           icon: 'mdi-pencil-box',
           title: 'Typography',
           // to: '/typography',
           items: [
             {
-              icon: 'mdi-pencil-box',
+              icon: 'mdi-pencil-lock',
               title: 'Generated File',
               to: '/reporting'
             },
             {
-              icon: 'mdi-pencil-box',
+              icon: 'mdi-pencil',
               title: 'Report Viewer',
               to: '/viewer'
             }

@@ -6,6 +6,11 @@
     // To pin point specific classes of some components
     font-family: $heading-font-family, sans-serif !important;
   }
+  .v-list-group {
+    // border-top: 1px solid gray;
+    // border-bottom: 1px solid gray;
+    background-color: rgba(255, 255, 255, 5%);
+  }
 }
 
 // .v-list-item__icon {

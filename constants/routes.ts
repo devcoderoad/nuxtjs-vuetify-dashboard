@@ -37,6 +37,11 @@ const DASHBOARD = {
     route: '/tables',
     url: '/tables'
   },
+  FILTERS: {
+    href: '/filters.vue',
+    route: '/filters',
+    url: '/filters'
+  },
   CHART: {
     href: '/charts.vue',
     route: '/charts',
