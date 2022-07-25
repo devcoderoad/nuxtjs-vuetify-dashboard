@@ -130,7 +130,6 @@ export default {
           title: 'Cards',
           to: '/cards'
         },
-
         {
           icon: 'mdi-account-card',
           title: 'Authentication',

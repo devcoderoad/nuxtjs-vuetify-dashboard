@@ -3,6 +3,7 @@
     <v-col class="text-center">
       <h1>Tables</h1>
       <v-col class="text-left">
+        <h2>Data Table</h2>
         <v-data-table
           :headers="headers"
           :items="desserts"
@@ -10,6 +11,70 @@
           class="elevation-1"
           light
         ></v-data-table>
+      </v-col>
+      <v-container fluid>
+        <v-row>
+          <v-col cols="12" md="6" align="left">
+            <h2>Simple Table Dark</h2>
+            <v-simple-table>
+              <template v-slot:default>
+                <thead>
+                  <tr>
+                    <th class="text-left">Name</th>
+                    <th class="text-left">Calories</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in desserts" :key="item.name">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.calories }}</td>
+                  </tr>
+                </tbody>
+              </template>
+            </v-simple-table>
+          </v-col>
+          <v-col cols="12" md="6" align="left">
+            <h2>Simple Table Light</h2>
+            <v-simple-table light>
+              <template v-slot:default>
+                <thead>
+                  <tr>
+                    <th class="text-left">Name</th>
+                    <th class="text-left">Calories</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in desserts" :key="item.name">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.calories }}</td>
+                  </tr>
+                </tbody>
+              </template>
+            </v-simple-table>
+          </v-col>
+        </v-row>
+      </v-container>
+      <v-col class="text-left">
+        <h2>Data Table Search</h2>
+        <v-card light>
+          <v-card-title>
+            Nutrition Search
+            <v-spacer></v-spacer>
+            <v-text-field
+              v-model="search"
+              append-icon="mdi-magnify"
+              label="Search"
+              single-line
+              hide-details
+            ></v-text-field>
+          </v-card-title>
+          <v-data-table
+            :headers="headers"
+            :items="desserts"
+            :search="search"
+            light
+          ></v-data-table>
+        </v-card>
       </v-col>
       <blockquote class="blockquote">
         &#8220;First, solve the problem. Then, write the code.&#8221;
@@ -28,6 +93,7 @@ export default {
   name: 'TablesPage',
   data() {
     return {
+      search: '',
       headers: [
         {
           text: 'Dessert (100g serving)',
