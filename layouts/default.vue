@@ -166,13 +166,13 @@ export default {
           items: [
             {
               icon: 'mdi-pencil-lock',
-              title: 'Generated File',
+              title: 'Paragraph',
               to: '/paragraph'
             },
             {
               icon: 'mdi-pencil',
-              title: 'Report Viewer',
-              to: '/heading'
+              title: 'Headings',
+              to: '/headings'
             }
           ]
         },
