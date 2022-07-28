@@ -27,6 +27,6 @@ export default {
 </script>
 
 <!-- Styles -->
-<style lang="scss" scoped>
+<!-- <style lang="scss" scoped>
 @import '~/assets/scss/theme';
-</style>
+</style> -->

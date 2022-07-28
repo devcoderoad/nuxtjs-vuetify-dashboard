@@ -20,7 +20,7 @@
               <v-col cols="12" md="6" align="right">
                 <nuxt-link to="/sign-up">Sign Up</nuxt-link>
                 or
-                <nuxt-link to="/sing-in">Sign In</nuxt-link>
+                <nuxt-link to="/sign-in">Sign In</nuxt-link>
               </v-col>
             </v-row>
           </v-container>

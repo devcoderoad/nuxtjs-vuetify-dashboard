@@ -2,7 +2,7 @@
   <v-row>
     <v-col class="text-center">
       <img src="/v.png" alt="Vuetify.js" class="mb-5" />
-      <h1>Icons</h1>
+      <h1 class="title-page">Icons</h1>
       <v-container>
         <!-- <v-row>
           <v-col cols="12"> -->

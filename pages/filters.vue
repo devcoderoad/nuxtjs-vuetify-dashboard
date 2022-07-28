@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <h1>Filters</h1>
+      <h1 class="title-page">Filters</h1>
       <v-row class="text-left">
         <v-col md="12" light>
           <v-card light>
@@ -215,3 +215,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@import '~/assets/scss/theme';
+</style>

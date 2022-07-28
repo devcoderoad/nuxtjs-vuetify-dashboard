@@ -1,20 +1,21 @@
 <template>
-  <v-app :dark="theme === 'dark' ? true : false">
+  <v-app :dark="isDark">
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
       fixed
       app
+      :dark="isDark"
     >
-      <v-list dark>
+      <v-list :dark="isDark">
         <slot v-for="(item, i) in items">
           <v-list-group
             v-if="item.items && item.items.length"
             :key="`${item.title}-key-${i + 1}`"
             v-model="item.active"
             :prepend-icon="item.icon"
-            color="amber accent-1"
+            :color="isDark ? 'warning' : 'accent-1'"
             :value="false"
           >
             <template v-if="item.items" v-slot:activator>
@@ -26,7 +27,6 @@
               v-for="child in item.items"
               :key="child.title"
               :to="child.to"
-              dark
             >
               <v-list-item-action>
                 <v-icon center dense>
@@ -38,12 +38,7 @@
               </v-list-item-content>
             </v-list-item>
           </v-list-group>
-          <v-list-item
-            v-else
-            :key="item.title"
-            :to="item.to"
-            color="amber accent-1"
-          >
+          <v-list-item v-else :key="item.title" :to="item.to" exact>
             <v-list-item-action>
               <v-icon center>{{ item.icon }}</v-icon>
             </v-list-item-action>
@@ -67,6 +62,9 @@
       </v-btn>
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      <v-btn icon @click.stop="setTheme">
+        <v-icon>mdi-invert-colors</v-icon>
+      </v-btn>
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
@@ -87,7 +85,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }} {{ theme }}</span>
+      <span>&copy; {{ new Date().getFullYear() }} {{ isDark }}</span>
     </v-footer>
   </v-app>
 </template>
@@ -98,8 +96,6 @@ import { mapState } from 'vuex'
 export default {
   name: 'LayoutDefault',
   data() {
-    // console.log(this.$store.state.core.theme)
-    // console.log(this.theme === 'dark')
     return {
       clipped: false,
       drawer: false,
@@ -166,18 +162,24 @@ export default {
           icon: 'mdi-pencil-box',
           title: 'Typography',
           // to: '/typography',
+          to: null,
           items: [
             {
               icon: 'mdi-pencil-lock',
               title: 'Generated File',
-              to: '/reporting'
+              to: '/paragraph'
             },
             {
               icon: 'mdi-pencil',
               title: 'Report Viewer',
-              to: '/viewer'
+              to: '/heading'
             }
           ]
+        },
+        {
+          icon: 'mdi-book-multiple',
+          title: 'Landing',
+          to: '/landing'
         }
       ],
       miniVariant: false,
@@ -188,13 +190,23 @@ export default {
   },
   computed: {
     ...mapState({
-      theme: (state: any) => state.core.theme
+      isDark: (state: any) => state.core.isDark
     })
+  },
+  methods: {
+    setTheme() {
+      const {
+        $vuetify,
+        $store: { dispatch }
+      }: any = this
+      $vuetify.theme.isDark = !$vuetify.theme.isDark
+      dispatch('core/load', { isDark: $vuetify.theme.isDark })
+    }
   }
 }
 </script>
 
 <!-- Styles -->
-<style lang="scss" scoped>
+<!-- <style lang="scss">
 @import '~/assets/scss/theme';
-</style>
+</style> -->

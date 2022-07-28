@@ -1,9 +1,9 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <h1>Tables</h1>
+      <h1 class="title-page">Tables</h1>
       <v-col class="text-left">
-        <h2>Data Table</h2>
+        <h2 class="title-page-sub">Data Table</h2>
         <v-data-table
           :headers="headers"
           :items="desserts"
@@ -15,7 +15,7 @@
       <v-container fluid>
         <v-row>
           <v-col cols="12" md="6" align="left">
-            <h2>Simple Table Dark</h2>
+            <h2 class="title-page-sub">Simple Table Dark</h2>
             <v-simple-table>
               <template v-slot:default>
                 <thead>
@@ -34,7 +34,7 @@
             </v-simple-table>
           </v-col>
           <v-col cols="12" md="6" align="left">
-            <h2>Simple Table Light</h2>
+            <h2 class="title-page-sub">Simple Table Light</h2>
             <v-simple-table light>
               <template v-slot:default>
                 <thead>
@@ -55,7 +55,7 @@
         </v-row>
       </v-container>
       <v-col class="text-left">
-        <h2>Data Table Search</h2>
+        <h2 class="title-page-sub">Data Table Search</h2>
         <v-card light>
           <v-card-title>
             Nutrition Search

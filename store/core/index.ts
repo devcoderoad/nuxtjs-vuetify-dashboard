@@ -1,4 +1,5 @@
 // import STATUS_TYPES from '~/constants/statusTypes'
+// import { * as $cookies } from 'cookie-universal-nuxt';
 
 // const { INIT, LOADING, SUCCESS } = STATUS_TYPES
 
@@ -23,30 +24,62 @@
 // const GET_MEDIUM = 'GET_MEDIUM'
 // const GET_MEDIUM_LOAD = 'GET_MEDIUM_LOAD'
 
-const THEME_LOAD = 'THEME_LOAD'
+const DARK_LOAD = 'DARK_LOAD'
+const ASIDE_LOAD = 'ASIDE_LOAD'
+const ASIDEMIN_LOAD = 'ASIDEMIN_LOAD'
+const MINASIDE_LOAD = 'MINASIDE_LOAD'
+const TOPNAVFULL_LOAD = 'TOPNAVFULL_LOAD'
+const BOTNAVFIX_LOAD = 'BOTNAVFIX_LOAD'
 // const THEME_RESULT = 'THEME_RESULT'
 
 const state = () => {
   return {
-    theme: null
+    isDark: false,
+    isAsideHide: false,
+    isAsideMin: false,
+    isMinAside: false,
+    isTopNavFull: false,
+    isBotNavFix: false
   }
 }
 
 const getters = {
-  getTheme(state: any) {
-    return state.theme
+  getIsDarkMode(state: any) {
+    return state.isDark
   }
 }
 
 const mutations = {
-  [THEME_LOAD](state: any, payload: any) {
-    state.theme = payload.theme
+  [DARK_LOAD](state: any, payload: any) {
+    state.isDark = payload.isDark || false
+  },
+  [ASIDE_LOAD](state: any, payload: any) {
+    state.isAsideHide = payload.isAsideHide || false
+  },
+  [ASIDEMIN_LOAD](state: any, payload: any) {
+    state.isAsideMin = payload.isAsideMin || false
+  },
+  [MINASIDE_LOAD](state: any, payload: any) {
+    state.isMinAside = payload.isMinAside || false
+  },
+  [TOPNAVFULL_LOAD](state: any, payload: any) {
+    state.isTopNavFull = payload.isTopNavFull || false
+  },
+  [BOTNAVFIX_LOAD](state: any, payload: any) {
+    state.isBotNavFix = payload.isBotNavFix || false
   }
 }
 
 const actions = {
   load({ commit }: any, payload: any /* callback: any */) {
-    commit('THEME_LOAD', payload)
+    commit('DARK_LOAD', payload)
+    commit('ASIDE_LOAD', payload)
+    commit('ASIDEMIN_LOAD', payload)
+    commit('MINASIDE_LOAD', payload)
+    commit('TOPNAVFULL_LOAD', payload)
+    commit('BOTNAVFIX_LOAD', payload)
+    // console.log($cookies)
+    // $cookies.get('theme')
   }
 }
 

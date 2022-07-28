@@ -53,3 +53,12 @@
 .transparent-8 {
   background: rgba(255, 255, 255, 65%);
 }
+
+.title {
+  &-page {
+    margin-bottom: 12px;
+    &-sub {
+      margin-bottom: 10px;
+    }
+  }
+}

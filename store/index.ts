@@ -7,12 +7,12 @@ const mutations = {}
 const actions = {
   // nuxtServerInit({ commit }: any, { req }: any) {
   async nuxtServerInit(
-    { dispatch }: any /*,
-    { $vuetify }: any, */ /* { req }: any */
+    { dispatch }: any, // { vuetify }: any /* { req }: any */
+    { $cookies }: any
   ) {
-    // console.log(document.localStorage.getItem('theme'))
-    // $vuetify.theme.dark = true
-    await dispatch('core/load', { theme: '' })
+    // console.log(this)
+    // vuetify.theme.dark = $cookies.get('theme')
+    await dispatch('core/load', { isDark: $cookies.get('theme') })
   }
 }
 

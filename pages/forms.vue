@@ -1,11 +1,11 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <h1>Forms</h1>
+      <h1 class="title-page">Forms</h1>
       <v-container>
         <v-row>
           <v-col cols="12" md="6">
-            <h2>Register</h2>
+            <h2 class="title-page-sub">Register</h2>
             <form name="form-register">
               <v-text-field
                 v-model="name"
@@ -47,7 +47,7 @@
             </form>
           </v-col>
           <v-col cols="12" md="6">
-            <h2>Register</h2>
+            <h2 class="title-page-sub">Register</h2>
             <form>
               <v-text-field
                 v-model="name"

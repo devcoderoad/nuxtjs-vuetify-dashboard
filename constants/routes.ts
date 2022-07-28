@@ -48,7 +48,8 @@ const DASHBOARD = {
     url: '/charts'
   },
   CARD: { href: '/cards.vue', route: '/cards', url: '/cards' },
-  ICON: { href: '/icons.vue', route: '/icons', url: '/icons' }
+  ICON: { href: '/icons.vue', route: '/icons', url: '/icons' },
+  LANDING: { href: '/landing.vue', route: '/landing', url: '/landing' }
 }
 
 module.exports = { ...AUTH, ...DASHBOARD }
