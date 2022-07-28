@@ -51,35 +51,40 @@ const getters = {
 
 const mutations = {
   [DARK_LOAD](state: any, payload: any) {
-    state.isDark = payload.isDark || false
+    state.isDark = payload.isDark
   },
   [ASIDE_LOAD](state: any, payload: any) {
-    state.isAsideHide = payload.isAsideHide || false
+    state.isAsideHide = payload.isAsideHide
   },
   [ASIDEMIN_LOAD](state: any, payload: any) {
-    state.isAsideMin = payload.isAsideMin || false
+    state.isAsideMin = payload.isAsideMin
   },
   [MINASIDE_LOAD](state: any, payload: any) {
-    state.isMinAside = payload.isMinAside || false
+    state.isMinAside = payload.isMinAside
   },
   [TOPNAVFULL_LOAD](state: any, payload: any) {
-    state.isTopNavFull = payload.isTopNavFull || false
+    state.isTopNavFull = payload.isTopNavFull
   },
   [BOTNAVFIX_LOAD](state: any, payload: any) {
-    state.isBotNavFix = payload.isBotNavFix || false
+    state.isBotNavFix = payload.isBotNavFix
   }
 }
 
 const actions = {
-  load({ commit }: any, payload: any /* callback: any */) {
+  load({ commit }: any, payload: any) {
+    // const { app, $cookies } = this
+    // $cookies.get('isDark', payload.isDark)
+    // console.log({ app.vuetify, $cookies, commit })
+    // console.log(app.vuetify.userPreset.theme.dark)
+    // console.log(payload)
+    // $cookies.setAll(payload)
+    // console.log($cookies.getAll())
     commit('DARK_LOAD', payload)
     commit('ASIDE_LOAD', payload)
     commit('ASIDEMIN_LOAD', payload)
     commit('MINASIDE_LOAD', payload)
     commit('TOPNAVFULL_LOAD', payload)
     commit('BOTNAVFIX_LOAD', payload)
-    // console.log($cookies)
-    // $cookies.get('theme')
   }
 }
 

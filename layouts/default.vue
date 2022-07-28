@@ -1,21 +1,21 @@
 <template>
-  <v-app :dark="isDark">
+  <v-app :dark="getIsDarkMode">
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
       fixed
       app
-      :dark="isDark"
+      :dark="getIsDarkMode"
     >
-      <v-list :dark="isDark">
+      <v-list :dark="getIsDarkMode">
         <slot v-for="(item, i) in items">
           <v-list-group
             v-if="item.items && item.items.length"
             :key="`${item.title}-key-${i + 1}`"
             v-model="item.active"
             :prepend-icon="item.icon"
-            :color="isDark ? 'warning' : 'accent-1'"
+            :color="getIsDarkMode ? 'warning' : 'accent-1'"
             :value="false"
           >
             <template v-if="item.items" v-slot:activator>
@@ -49,7 +49,7 @@
         </slot>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
+    <v-app-bar :clipped-left="clipped" fixed app :dark="getIsDarkMode">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
@@ -65,33 +65,36 @@
       <v-btn icon @click.stop="setTheme">
         <v-icon>mdi-invert-colors</v-icon>
       </v-btn>
-      <v-btn icon @click.stop="rightDrawer = !rightDrawer">
+      <!-- <v-btn icon @click.stop="rightDrawer = !rightDrawer"> -->
+      <!-- <v-btn icon @click.stop="setProfileMenu">
         <v-icon>mdi-menu</v-icon>
-      </v-btn>
+      </v-btn> -->
+      <v-menu transition="slide-x-transition" bottom right>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon v-bind="attrs" v-on="on">
+            <v-icon>mdi-menu</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item v-for="(item, i) in items" :key="i" :to="item.to">
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-app-bar>
     <v-main>
       <v-container fluid>
         <nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }} {{ isDark }}</span>
+    <v-footer :absolute="!fixed" app :dark="getIsDarkMode">
+      <span>&copy; {{ new Date().getFullYear() }} {{ getIsDarkMode }}</span>
     </v-footer>
   </v-app>
 </template>
 
 <script lang="ts">
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'LayoutDefault',
@@ -184,23 +187,28 @@ export default {
       ],
       miniVariant: false,
       right: true,
-      rightDrawer: false,
       title: 'Vuetify.js'
     }
   },
   computed: {
-    ...mapState({
-      isDark: (state: any) => state.core.isDark
-    })
+    ...mapGetters({ getIsDarkMode: 'core/getIsDarkMode' })
   },
   methods: {
     setTheme() {
       const {
         $vuetify,
-        $store: { dispatch }
+        $cookies,
+        getIsDarkMode,
+        $store: { dispatch, state }
       }: any = this
-      $vuetify.theme.isDark = !$vuetify.theme.isDark
-      dispatch('core/load', { isDark: $vuetify.theme.isDark })
+
+      $vuetify.theme.isDark = !getIsDarkMode
+      $cookies.set('isDark', !getIsDarkMode)
+
+      dispatch('core/load', { ...state.core, isDark: !getIsDarkMode })
+    },
+    setProfileMenu() {
+      // return console.log('setProfileMenu')
     }
   }
 }

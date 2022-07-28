@@ -2,33 +2,44 @@
   <v-row>
     <v-col class="text-center">
       <h1 class="title-page">Cards</h1>
-      <v-row class="text-left">
-        <v-col md="12" light>
-          <v-card light>
-            <v-card-title tag="h2">Line Chart</v-card-title>
-            <v-card-subtitle>Data examples</v-card-subtitle>
-            <v-card-text>
-              <div>
-                <client-only placeholder="Loading...">
-                  <LineChart
-                    :chart-options="barChartOptions"
-                    :chart-data="barChartData"
-                    :height="100"
-                    :width="300"
-                    chart-id="lineChart"
-                  />
-                </client-only>
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col md="12" light>
-          <v-card light>
-            <v-card-title tag="h2">Bar Chart</v-card-title>
-            <v-card-subtitle>Data examples</v-card-subtitle>
-            <v-card-text>
-              <div>
-                <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
+      <v-container fluid>
+        <v-row class="text-left">
+          <v-col md="12" light>
+            <v-card light>
+              <v-card-title tag="h2">Line Chart</v-card-title>
+              <v-card-subtitle>Data examples</v-card-subtitle>
+              <v-card-text>
+                <div>
+                  <client-only placeholder="Loading...">
+                    <LineChart
+                      :chart-options="barChartOptions"
+                      :chart-data="barChartData"
+                      :height="100"
+                      :width="300"
+                      chart-id="lineChart"
+                    />
+                  </client-only>
+                  <v-row class="my-1">
+                    <v-col tag="section">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Esse, eveniet est? Mollitia labore deserunt iusto eius
+                      explicabo laborum autem vel consequatur libero animi alias
+                      suscipit provident qui excepturi quaerat possimus atque,
+                      dignissimos aut obcaecati necessitatibus iure delectus
+                      molestiae!
+                    </v-col>
+                  </v-row>
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col md="12" light>
+            <v-card light>
+              <v-card-title tag="h2">Bar Chart</v-card-title>
+              <v-card-subtitle>Data examples</v-card-subtitle>
+              <v-card-text>
+                <div>
+                  <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
                 eveniet est? Mollitia labore deserunt iusto eius explicabo
                 laborum autem vel consequatur libero animi alias suscipit
                 provident qui excepturi quaerat possimus atque, dignissimos aut
@@ -36,25 +47,25 @@
                 doloremque? Sequi, porro. Excepturi consequuntur iure corporis
                 repudiandae! Mollitia non maxime architecto explicabo nulla
                 laborum dolores? -->
-                <client-only placeholder="Loading...">
-                  <BarChart
-                    :chartData="barChartData"
-                    :options="barChartOptions"
-                    :height="90"
-                    :width="100"
-                  />
-                </client-only>
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col md="6" light>
-          <v-card light>
-            <v-card-title tag="h2">Pie Chart</v-card-title>
-            <v-card-subtitle>Data examples</v-card-subtitle>
-            <v-card-text>
-              <div>
-                <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
+                  <client-only placeholder="Loading...">
+                    <BarChart
+                      :chartData="barChartData"
+                      :options="barChartOptions"
+                      :height="90"
+                      :width="100"
+                    />
+                  </client-only>
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col md="6" light>
+            <v-card light>
+              <v-card-title tag="h2">Pie Chart</v-card-title>
+              <v-card-subtitle>Data examples</v-card-subtitle>
+              <v-card-text>
+                <div>
+                  <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
                 eveniet est? Mollitia labore deserunt iusto eius explicabo
                 laborum autem vel consequatur libero animi alias suscipit
                 provident qui excepturi quaerat possimus atque, dignissimos aut
@@ -62,25 +73,25 @@
                 doloremque? Sequi, porro. Excepturi consequuntur iure corporis
                 repudiandae! Mollitia non maxime architecto explicabo nulla
                 laborum dolores? -->
-                <client-only placeholder="Loading...">
-                  <PieChart
-                    :chartData="barChartData"
-                    :options="barChartOptions"
-                    :height="90"
-                    :width="100"
-                  />
-                </client-only>
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col md="6" light>
-          <v-card light>
-            <v-card-title tag="h2">Donut Chart</v-card-title>
-            <v-card-subtitle>Data examples</v-card-subtitle>
-            <v-card-text>
-              <div>
-                <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
+                  <client-only placeholder="Loading...">
+                    <PieChart
+                      :chartData="barChartData"
+                      :options="barChartOptions"
+                      :height="90"
+                      :width="100"
+                    />
+                  </client-only>
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col md="6" light>
+            <v-card light>
+              <v-card-title tag="h2">Donut Chart</v-card-title>
+              <v-card-subtitle>Data examples</v-card-subtitle>
+              <v-card-text>
+                <div>
+                  <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
                 eveniet est? Mollitia labore deserunt iusto eius explicabo
                 laborum autem vel consequatur libero animi alias suscipit
                 provident qui excepturi quaerat possimus atque, dignissimos aut
@@ -88,43 +99,44 @@
                 doloremque? Sequi, porro. Excepturi consequuntur iure corporis
                 repudiandae! Mollitia non maxime architecto explicabo nulla
                 laborum dolores? -->
-                <client-only placeholder="Loading...">
-                  <DoughnutChart
-                    :chartData="barChartData"
-                    :options="barChartOptions"
-                  />
-                </client-only>
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col md="12" light>
-          <v-card light>
-            <v-card-title tag="h2">Graph Chart</v-card-title>
-            <v-card-subtitle>Data examples</v-card-subtitle>
-            <v-card-text>
-              <div>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
-                eveniet est? Mollitia labore deserunt iusto eius explicabo
-                laborum autem vel consequatur libero animi alias suscipit
-                provident qui excepturi quaerat possimus atque, dignissimos aut
-                obcaecati necessitatibus iure delectus molestiae! Dolorum,
-                doloremque? Sequi, porro. Excepturi consequuntur iure corporis
-                repudiandae! Mollitia non maxime architecto explicabo nulla
-                laborum dolores?
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-      <blockquote class="blockquote">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;John Johnson</em>
-          </small>
-        </footer>
-      </blockquote>
+                  <client-only placeholder="Loading...">
+                    <DoughnutChart
+                      :chartData="barChartData"
+                      :options="barChartOptions"
+                    />
+                  </client-only>
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col md="12" light>
+            <v-card light>
+              <v-card-title tag="h2">Graph Chart</v-card-title>
+              <v-card-subtitle>Data examples</v-card-subtitle>
+              <v-card-text>
+                <div>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Esse, eveniet est? Mollitia labore deserunt iusto eius
+                  explicabo laborum autem vel consequatur libero animi alias
+                  suscipit provident qui excepturi quaerat possimus atque,
+                  dignissimos aut obcaecati necessitatibus iure delectus
+                  molestiae! Dolorum, doloremque? Sequi, porro. Excepturi
+                  consequuntur iure corporis repudiandae! Mollitia non maxime
+                  architecto explicabo nulla laborum dolores?
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+        <blockquote class="blockquote">
+          &#8220;First, solve the problem. Then, write the code.&#8221;
+          <footer>
+            <small>
+              <em>&mdash;John Johnson</em>
+            </small>
+          </footer>
+        </blockquote>
+      </v-container>
     </v-col>
   </v-row>
 </template>

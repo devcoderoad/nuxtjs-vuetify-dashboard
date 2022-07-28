@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     ...mapState({
-      theme: (state: any) => state.core.theme
+      theme: (state: any) => state.core.isDark
     })
   }
 }

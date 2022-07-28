@@ -2,7 +2,7 @@
   <v-row>
     <v-col class="text-center">
       <h1 class="title-page">Forms</h1>
-      <v-container>
+      <v-container fluid>
         <v-row>
           <v-col cols="12" md="6">
             <h2 class="title-page-sub">Register</h2>
@@ -89,7 +89,8 @@
             </form>
           </v-col>
           <v-col cols="12" md="6">
-            <v-card ref="form">
+            <h2 class="title-page-sub">Register</h2>
+            <v-card ref="form" light>
               <v-card-text>
                 <v-text-field
                   ref="name"
@@ -177,7 +178,8 @@
             </v-card>
           </v-col>
           <v-col cols="12" md="6">
-            <v-card ref="form">
+            <h2 class="title-page-sub">Register</h2>
+            <v-card ref="form" light>
               <v-card-text>
                 <v-text-field
                   ref="name"
@@ -263,6 +265,59 @@
                 <v-btn color="primary" text @click="submit"> Submit </v-btn>
               </v-card-actions>
             </v-card>
+          </v-col>
+          <v-col cols="12" md="6">
+            <h2 class="title-page-sub">Register</h2>
+            <v-form>
+              <v-container>
+                <v-row>
+                  <v-col cols="12" sm="6">
+                    <v-text-field
+                      v-model="first"
+                      label="First Name"
+                      outlined
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="6">
+                    <v-text-field
+                      v-model="last"
+                      label="Last Name"
+                      outlined
+                    ></v-text-field>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="12" sm="6">
+                    <v-text-field
+                      v-model="first"
+                      label="Email Account"
+                      outlined
+                    ></v-text-field>
+                  </v-col>
+                  <v-col cols="12" sm="6">
+                    <v-text-field
+                      v-model="last"
+                      label="Phone Number"
+                      outlined
+                    ></v-text-field>
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="12" sm="12">
+                    <v-textarea placeholder="Messages" outlined
+                      >Messages</v-textarea
+                    ></v-col
+                  >
+                </v-row>
+                <v-row>
+                  <v-col cols="12" sm="12">
+                    <v-btn x-large block type="submit" color="primary"
+                      >Register</v-btn
+                    >
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-form>
           </v-col>
         </v-row>
       </v-container>

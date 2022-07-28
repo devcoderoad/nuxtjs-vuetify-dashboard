@@ -93,8 +93,11 @@ export default {
       }
     },
     theme: {
-      options: { cspNonce: 'dQw4w9WgXcQ' },
-      dark: true,
+      options: {
+        cspNonce: 'dQw4w9WgXcQ',
+        variations: false
+      },
+      // dark: true,
       themes: {
         dark: {
           primary: colors.blue.darken2,
