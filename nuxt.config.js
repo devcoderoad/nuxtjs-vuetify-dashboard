@@ -94,8 +94,8 @@ export default {
     },
     theme: {
       options: {
-        cspNonce: 'dQw4w9WgXcQ',
-        variations: false
+        cspNonce: 'dQw4w9WgXcQ'
+        /* variations: false */
       },
       // dark: true,
       themes: {
