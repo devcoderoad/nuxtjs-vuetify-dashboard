@@ -223,7 +223,7 @@ export default {
       ],
       miniVariant: false,
       right: true,
-      fab: false,
+      fab: true,
       darkmode: false
     }
   },
@@ -256,12 +256,13 @@ export default {
     setProfileMenu() {
       // return console.log('setProfileMenu')
     },
-    onScroll(e: any) {
-      // let fab: any = this
-      if (typeof window === 'undefined') return
-      const top = window.pageYOffset || e.target.scrollTop || 0
-      this.fab = top > 20
-    },
+    onScroll() {},
+    // onScroll(e: Event) {
+    //   if (typeof window === 'undefined') return
+    //   const top =
+    //     window.pageYOffset || e.current.scrollTop || 0
+    //   this.fab = top > 20
+    // },
     toTop() {
       const { $vuetify }: any = this
       $vuetify.goTo(0)
