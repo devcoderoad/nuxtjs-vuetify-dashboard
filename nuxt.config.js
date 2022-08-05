@@ -8,7 +8,9 @@ const CURRENT_ENV = process.env.ENV || 'prod'
 const isProduction = CURRENT_ENV === 'prod'
 
 const BASEURL =
-  process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : 'https://nuxtjs-vuetify-dashboard.netlify.app'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -138,6 +140,7 @@ export default {
   },
 
   router: {
+    trailingSlash: false,
     extendRoutes(nuxtRoutes, resolve) {
       const routes = []
       const totalExistingRoutes = nuxtRoutes.length
