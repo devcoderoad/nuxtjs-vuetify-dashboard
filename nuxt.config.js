@@ -7,11 +7,12 @@ import ROUTES from './constants/routes'
 const CURRENT_ENV = process.env.ENV || 'prod'
 const isProduction = CURRENT_ENV === 'prod'
 
+const BASEURL =
+  process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  // target: 'static',
-  ssr: true,
-  target: 'server',
+  target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -55,7 +56,10 @@ export default {
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/chart.js', mode: 'client' }],
+  plugins: [
+    { src: '~/plugins/chart.js', mode: 'client' },
+    { src: '~/plugins/axios.js' }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -73,20 +77,31 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    // https://www.npmjs.com/package/cookie-universal-nuxt
-    'cookie-universal-nuxt'
+    '@nuxtjs/axios'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/'
+    baseURL: BASEURL,
+    proxy: true
+  },
+
+  // https://axios.nuxtjs.org/options/#proxy
+  proxy: {
+    '/api/v1': {
+      target: BASEURL,
+      pathRewrite: {
+        '^/api/v1': '/json' // static files in json dir
+      }
+    }
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/scss/variables.scss'],
+    customProperties: true,
+    treeShake: true,
     defaultAssets: {
       font: {
         family: 'Montserrat:wght@100;200;300;400;500;600;700;800;900'
@@ -98,6 +113,7 @@ export default {
         /* variations: false */
       },
       // dark: true,
+      // default: 'dark',
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -153,6 +169,12 @@ export default {
       }
     }
   },
+
+  // https://nuxtjs.org/docs/configuration-glossary/configuration-servermiddleware
+  // serverMiddleware: [
+  //   // Will register file from project server-middleware directory to handle /server-middleware/* requires
+  //   { path: '/api/v1', handler: '~/api/index.js' }
+  // ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

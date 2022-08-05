@@ -1,5 +1,6 @@
 :root {
   --vh: 100vh;
+  --warning--text: #ffeb3b;
 }
 
 .min-h-100vh {
@@ -21,6 +22,10 @@
 
 .text-capitalize {
   text-transform: capitalize !important;
+}
+
+.no-underline {
+  text-decoration: none;
 }
 
 .lh-1 {

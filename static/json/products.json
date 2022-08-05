@@ -1,0 +1,42 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Product One",
+      "slug": "product-one",
+      "description": "Description of product one"
+    },
+    {
+      "id": 2,
+      "name": "Product Two",
+      "slug": "product-two",
+      "description": "Description of product two"
+    },
+    {
+      "id": 3,
+      "name": "Product Three",
+      "slug": "product-three",
+      "description": "Description of product three"
+    },
+    {
+      "id": 4,
+      "name": "Product Four",
+      "slug": "product-four",
+      "description": "Description of product four"
+    },
+    {
+      "id": 5,
+      "name": "Product Five",
+      "slug": "product-five",
+      "description": "Description of product five"
+    },
+    {
+      "id": 6,
+      "name": "Product Six",
+      "slug": "product-six",
+      "description": "Description of product six"
+    }
+  ],
+  "statusCode": 200,
+  "message": "success"
+}

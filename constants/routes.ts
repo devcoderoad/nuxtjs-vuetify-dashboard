@@ -54,4 +54,39 @@ const DASHBOARD = {
   HEADING: { href: '/headings.vue', route: '/headings', url: '/headings' }
 }
 
-module.exports = { ...AUTH, ...DASHBOARD }
+// const API = {
+//   API_SALES: {
+//     url: '/data-sales'
+//     // route: ''
+//   },
+//   API_REVENUE: {
+//     url: '/data-revenue'
+//     // route: ''
+//   },
+//   API_CUSTOMER: {
+//     url: '/data-customer'
+//     // route: ''
+//   },
+//   API_PRODUCT: {
+//     url: '/data-product'
+//     // route: ''
+//   },
+//   API_CHANNEL: {
+//     url: '/data-channel'
+//     // route: ''
+//   },
+//   API_TIMELINE: {
+//     url: '/data-channel'
+//     // route: ''
+//   }
+// }
+
+const API = {
+  API: {
+    href: '/api/v1',
+    route: '/api/v1',
+    url: '/api/v1'
+  }
+}
+
+module.exports = { ...AUTH, ...DASHBOARD, ...API }

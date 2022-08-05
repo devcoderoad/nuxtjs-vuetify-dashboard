@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Side Parkdale House Balwyn Photography: Dylan on Unsplash",
+      "category": "Modern Design",
+      "color": "black",
+      "views": 1341,
+      "imageUrl": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+    },
+    {
+      "id": 2,
+      "name": "R ARCHITECTURE @rarchitecture_melbourne on Unsplash",
+      "category": "Modern Design",
+      "color": "black",
+      "views": 1341,
+      "imageUrl": "https://images.unsplash.com/photo-1604709177595-ee9c2580e9a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+    },
+    {
+      "id": 3,
+      "name": "Front Parkdale House Balwyn Photography: Dylan on Unsplash",
+      "category": "Modern Design",
+      "color": "black",
+      "views": 1341,
+      "imageUrl": "https://images.unsplash.com/photo-1604709177595-ee9c2580e9a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+    },
+    {
+      "id": 4,
+      "name": "Hinkler House Glen Waverley Photography: Tatjana Plitt on Unsplash",
+      "category": "Modern Design",
+      "color": "black",
+      "views": 1341,
+      "imageUrl": "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
+    }
+  ],
+  "statusCode": 200,
+  "message": "success"
+}

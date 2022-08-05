@@ -1,81 +1,148 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" md="12">
-      <v-card class="logo py-4 d-block" align="center">
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <div class="my-12">
-            <NuxtLogo />
-            <VuetifyLogo />
-          </div>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation </a
-            >.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3" />
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br />
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
-        </v-card-actions>
-      </v-card>
+      <h1 class="title-page">Hi, Welcome to Nuxtify</h1>
+      <v-row>
+        <v-col cols="12" md="3">
+          <v-card>
+            <v-container fluid>
+              <h3>Users Summary</h3>
+              <v-row>
+                <v-col>
+                  <h4 class="grey--text text-h1 font-weight-bold">5230</h4>
+                </v-col>
+                <v-col align-self="center" align="center">
+                  <v-icon size="60" color="green"
+                    >mdi-account-box-outline</v-icon
+                  >
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card>
+        </v-col>
+        <v-col cols="12" md="3"
+          ><v-card>
+            <v-container fluid>
+              <h3>Sales Summary</h3>
+              <v-row>
+                <v-col>
+                  <h4 class="grey--text text-h1 font-weight-bold">6424</h4>
+                </v-col>
+                <v-col align-self="center" align="center">
+                  <v-icon size="60" color="warning">mdi-cart-plus</v-icon>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card></v-col
+        >
+        <v-col cols="12" md="3"
+          ><v-card>
+            <v-container fluid>
+              <h3>Stock Summary</h3>
+              <v-row>
+                <v-col>
+                  <h4 class="grey--text text-h1 font-weight-bold">39202</h4>
+                </v-col>
+                <v-col align-self="center" align="center">
+                  <v-icon size="60" color="red">mdi-chart-areaspline</v-icon>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card></v-col
+        >
+        <v-col cols="12" md="3"
+          ><v-card>
+            <v-container fluid>
+              <h3>Views Summary</h3>
+              <v-row>
+                <v-col>
+                  <h4 class="grey--text text-h1 font-weight-bold">4124</h4>
+                </v-col>
+                <v-col align-self="center" align="center">
+                  <v-icon size="60" color="orange"
+                    >mdi-gesture-double-tap</v-icon
+                  >
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card></v-col
+        >
+      </v-row>
+      <v-row>
+        <v-col cols="12" md="8">
+          <v-card>
+            <v-container fluid>
+              <h3 class="title-page">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </h3>
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                nihil corporis rem iste! Doloribus magni doloremque inventore
+                natus consectetur corporis debitis nemo numquam explicabo esse
+                iusto maxime, perferendis tenetur accusantium. inventore natus
+                consectetur corporis debitis nemo numquam explicabo esse iusto
+                maxime, perferendis tenetur accusantium. Lipsu inventore natus
+                consectetur corporis debitis nemo numquam explicabo esse iusto
+                maxime, perferendis tenetur accusantium.
+              </div>
+              <v-calendar class="my-6"></v-calendar>
+            </v-container>
+          </v-card>
+        </v-col>
+        <v-col cols="12" md="4">
+          <v-card>
+            <v-container fluid>
+              <h3 class="title-page">Lorem ipsum dolor sit amet consectetur</h3>
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                nihil corporis rem iste! Doloribus magni doloremque inventore
+                natus consectetur corporis debitis.
+              </div>
+              <v-container fluid>
+                <v-row dense no-gutters>
+                  <v-col cols="2" align-self="center" align="center">
+                    <v-avatar color="primary">
+                      <span class="white--text font-weight-bold">AS</span>
+                    </v-avatar>
+                  </v-col>
+                  <v-col cols="10">
+                    <blockquote class="blockquote grey--text body-1">
+                      Fugit nihil corporis rem iste! Doloribus magni doloremque
+                      inventore natus consectetur corporis debitis
+                    </blockquote>
+                  </v-col>
+                </v-row>
+                <v-row dense no-gutters>
+                  <v-col cols="9">
+                    <blockquote class="blockquote grey--text body-1">
+                      Fugit nihil corporis rem iste! Doloribus magni doloremque
+                      inventore natus nemo numquam explicabo
+                    </blockquote>
+                  </v-col>
+                  <v-col cols="3" align-self="center" align="center">
+                    <v-avatar color="green">
+                      <span class="white--text font-weight-bold">CV</span>
+                    </v-avatar>
+                  </v-col>
+                </v-row>
+                <v-row dense no-gutters>
+                  <v-col cols="2" align-self="center" align="center">
+                    <v-avatar color="info">
+                      <span class="white--text font-weight-bold">NM</span>
+                    </v-avatar>
+                  </v-col>
+                  <v-col cols="10">
+                    <blockquote class="blockquote grey--text body-1">
+                      Fugit nihil corporis rem iste! Doloribus natus consectetur
+                      corporis debitis nemo numquam explicabo
+                    </blockquote>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-container>
+          </v-card>
+        </v-col>
+      </v-row>
     </v-col>
   </v-row>
 </template>

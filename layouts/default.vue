@@ -4,10 +4,24 @@
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
+      :dark="getIsDarkMode"
       fixed
       app
-      :dark="getIsDarkMode"
+      class="no-border"
     >
+      <nuxt-link to="/" class="no-underline">
+        <v-img
+          src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
+          gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
+          height="65px"
+          class="flex text-center justify-center align-center"
+          ><h4
+            class="white--text"
+            style="mix-blend-mode: soft-light"
+            v-text="title"
+          ></h4
+        ></v-img>
+      </nuxt-link>
       <v-list :dark="getIsDarkMode">
         <slot v-for="(item, i) in items">
           <v-list-group
@@ -17,6 +31,7 @@
             :prepend-icon="item.icon"
             :color="getIsDarkMode ? 'warning' : 'accent-1'"
             :value="false"
+            :ripple="false"
           >
             <template v-if="item.items" v-slot:activator>
               <v-list-item-content>
@@ -60,9 +75,10 @@
       <v-btn icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title" />
+      <!-- <v-toolbar-title v-text="title" /> -->
       <v-spacer />
       <v-btn icon @click.stop="setTheme">
+        <!-- <v-btn icon @click.stop="handledarkmode"> -->
         <v-icon>mdi-invert-colors</v-icon>
       </v-btn>
       <!-- <v-btn icon @click.stop="rightDrawer = !rightDrawer"> -->
@@ -88,18 +104,38 @@
       </v-container>
     </v-main>
     <v-footer :absolute="!fixed" app :dark="getIsDarkMode">
-      <span>&copy; {{ new Date().getFullYear() }} {{ getIsDarkMode }}</span>
+      <span
+        >&copy; {{ new Date().getFullYear() }} {{ company }}. Dark Mode:
+        <code>{{ getIsDarkMode }}</code></span
+      >
+      <v-btn
+        v-show="fab"
+        v-scroll="onScroll"
+        fab
+        light
+        fixed
+        bottom
+        right
+        small
+        color="error"
+        @click="toTop"
+      >
+        <v-icon>mdi-arrow-up</v-icon>
+      </v-btn>
     </v-footer>
   </v-app>
 </template>
 
 <script lang="ts">
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
+import global from '~/constants/global'
 
 export default {
   name: 'LayoutDefault',
   data() {
     return {
+      title: 'Nuxtify',
+      company: global.company,
       clipped: false,
       drawer: false,
       fixed: false,
@@ -187,28 +223,48 @@ export default {
       ],
       miniVariant: false,
       right: true,
-      title: 'Vuetify.js'
+      fab: false,
+      darkmode: false
     }
   },
   computed: {
-    ...mapGetters({ getIsDarkMode: 'core/getIsDarkMode' })
+    ...mapGetters({ getIsDarkMode: 'core/getIsDarkMode' }),
+    ...mapState({ isDark: (state: any) => state.core })
+  },
+  created() {
+    const {
+      $isServer,
+      $store: { commit }
+    }: any = this
+    if (!$isServer) {
+      commit('core/INITIALIZE_STORE')
+    }
   },
   methods: {
     setTheme() {
       const {
         $vuetify,
-        $cookies,
-        getIsDarkMode,
-        $store: { dispatch, state }
+        $store: { dispatch }
       }: any = this
-
-      $vuetify.theme.isDark = !getIsDarkMode
-      $cookies.set('isDark', !getIsDarkMode)
-
-      dispatch('core/load', { ...state.core, isDark: !getIsDarkMode })
+      $vuetify.theme.isDark = !$vuetify.theme.isDark
+      const nuxtify = JSON.parse(localStorage.getItem('nuxtify') || 'null')
+      dispatch('core/setDark', {
+        ...nuxtify,
+        isDark: $vuetify.theme.isDark
+      })
     },
     setProfileMenu() {
       // return console.log('setProfileMenu')
+    },
+    onScroll(e: any) {
+      // let fab: any = this
+      if (typeof window === 'undefined') return
+      const top = window.pageYOffset || e.target.scrollTop || 0
+      this.fab = top > 20
+    },
+    toTop() {
+      const { $vuetify }: any = this
+      $vuetify.goTo(0)
     }
   }
 }

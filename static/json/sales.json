@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "product_id": 1,
+      "customer": {
+        "user_id": 1,
+        "name": "User One"
+      },
+      "createdAt": "12-08-2021 03:23:23"
+    },
+    {
+      "id": 2,
+      "product_id": 2,
+      "customer": {
+        "user_id": 2,
+        "name": "User Two"
+      },
+      "createdAt": "12-08-2021 06:12:29"
+    }
+  ],
+  "statusCode": 200,
+  "message": "success"
+}

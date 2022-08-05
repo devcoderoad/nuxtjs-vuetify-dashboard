@@ -1,12 +1,21 @@
 <template>
   <div class="d-flex justify-center align-center min-h-100vh">
     <v-flex lg6>
+      <v-row no-gutters>
+        <v-container fluid class="pb-12">
+          <h1 align="center">Sign Up your account</h1>
+          <v-col cols="12" align="center">
+            to enjoy all of our cool
+            <a class="primary--text">features</a> ✌️
+          </v-col>
+        </v-container>
+      </v-row>
       <v-col>
         <v-card elevation="2" light>
           <v-card-title> Sign Up </v-card-title>
           <v-form v-model="valid" name="form-login" @submit="onSubmit()">
             <v-container>
-              <v-row>
+              <v-row align="left">
                 <v-col cols="12" md="12">
                   <v-text-field
                     v-model.trim="vemail"

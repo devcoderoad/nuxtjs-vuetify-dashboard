@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "User One",
+      "username": "user-one",
+      "birthDate": "12-12-1990",
+      "gender": "m",
+      "createdAt": "12-02-2022 12:02:02"
+    },
+    {
+      "id": 2,
+      "name": "User Two",
+      "username": "user-two",
+      "birthDate": "12-12-1992",
+      "gender": "f",
+      "createdAt": "12-02-2022 12:02:02"
+    },
+    {
+      "id": 3,
+      "name": "User Three",
+      "username": "user-three",
+      "birthDate": "12-12-1989",
+      "gender": "m",
+      "createdAt": "10-01-2022 02:01:01"
+    },
+    {
+      "id": 4,
+      "name": "User Four",
+      "username": "user-four",
+      "birthDate": "12-12-1984",
+      "gender": "m",
+      "createdAt": "10-01-2022 01:01:01"
+    },
+    {
+      "id": 5,
+      "name": "User Five",
+      "username": "user-five",
+      "birthDate": "12-12-1992",
+      "gender": "f",
+      "createdAt": "10-01-2022 01:23:01"
+    },
+    {
+      "id": 6,
+      "name": "User Six",
+      "username": "user-six",
+      "birthDate": "12-12-1996",
+      "gender": "m",
+      "createdAt": "10-01-2022 02:01:01"
+    },
+    {
+      "id": 7,
+      "name": "User Seven",
+      "username": "user-seven",
+      "birthDate": "12-12-1989",
+      "gender": "f",
+      "createdAt": "09-01-2022 02:01:01"
+    },
+    {
+      "id": 8,
+      "name": "User Eight",
+      "username": "user-eight",
+      "birthDate": "12-12-1994",
+      "gender": "f",
+      "createdAt": "08-01-2022 02:01:01"
+    }
+  ],
+  "statusCode": 200,
+  "message": "success"
+}

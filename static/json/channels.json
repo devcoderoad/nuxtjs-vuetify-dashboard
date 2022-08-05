@@ -1,0 +1,62 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Twitter",
+      "category": "Social Media",
+      "color": "green",
+      "summary": 1341
+    },
+    {
+      "id": 3,
+      "name": "Pinterest",
+      "category": "Social Media",
+      "color": "yellow",
+      "summary": 1234
+    },
+    {
+      "id": 4,
+      "name": "Facebook",
+      "category": "Social Media",
+      "color": "blue",
+      "summary": 234
+    },
+    {
+      "id": 5,
+      "name": "TikTok",
+      "category": "Social Media",
+      "color": "grey",
+      "summary": 124
+    },
+    {
+      "id": 6,
+      "name": "Instagram",
+      "category": "Social Media",
+      "color": "brown",
+      "summary": 131
+    },
+    {
+      "id": 7,
+      "name": "LinkedIn",
+      "category": "Social Media",
+      "color": "indigo",
+      "summary": 878
+    },
+    {
+      "id": 8,
+      "name": "YouTube",
+      "category": "Social Media",
+      "color": "red",
+      "summary": 412
+    },
+    {
+      "id": 9,
+      "name": "Vimeo",
+      "category": "Social Media",
+      "color": "orange",
+      "summary": 420
+    }
+  ],
+  "statusCode": 200,
+  "message": "success"
+}

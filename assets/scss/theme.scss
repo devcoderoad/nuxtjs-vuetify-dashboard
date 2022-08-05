@@ -6,11 +6,51 @@
     // To pin point specific classes of some components
     font-family: $heading-font-family, sans-serif !important;
   }
-  .v-list-group {
-    // border-top: 1px solid gray;
-    // border-bottom: 1px solid gray;
-    background-color: rgba(255, 255, 255, 5%);
+
+  // .v-list .v-list-item--active{
+  //   color: var(--warning--text) !important;
+  // }
+
+  /* Theme Light */
+  &.theme--light {
+    .v-list-group {
+      // border-top: 1px solid gray;
+      // border-bottom: 1px solid gray;
+      background-color: rgb(255, 255, 255);
+    }
   }
+  /* Theme Light */
+  &.theme--dark {
+    .v-list-group {
+      // border-top: 1px solid gray;
+      // border-bottom: 1px solid gray;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  }
+  /* .theme-link {
+    &:before, &:after {
+      content:'';
+      position: relative;
+    }
+
+    &:before {
+      transition: width .5s, height .5s, border-bottom-color 0s;
+      transition-delay: .5s, 0s, .5s;
+      width: 200px;
+      height: 64px;
+      border-left: 3px solid #00e2ff;
+      border-bottom: 3px solid #00e2ff;
+    }
+    
+    &:after {
+      transition: width .5s, height .5s, border-right-color .5s;
+      transition-delay: 0s, .5s, .5s;
+      width: 200px;
+      height: 64px;
+      border-top: 3px solid #00e2ff;
+      border-right: 3px solid #00e2ff;
+    }
+  } */
 }
 
 // .v-list-item__icon {
