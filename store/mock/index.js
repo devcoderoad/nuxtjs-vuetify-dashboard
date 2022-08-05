@@ -55,7 +55,7 @@ const actions = {
     const { commit } = context
     const { $axios } = this
     const result = await $axios
-      .$get('/api/v1/channels.json', payload)
+      .$get('json/channels.json', payload)
       .then((res) => res.data)
     commit('LOAD_CHANNELS', result)
   },
@@ -63,7 +63,7 @@ const actions = {
     const { commit } = context
     const { $axios } = this
     const result = await $axios
-      .$get('/api/v1/users.json', payload)
+      .$get('json/users.json', payload)
       .then((res) => res.data)
     commit('LOAD_USERS', result)
   },
@@ -71,7 +71,7 @@ const actions = {
     const { commit } = context
     const { $axios } = this
     const result = await $axios
-      .$get('/api/v1/summary.json', payload)
+      .$get('json/summary.json', payload)
       .then((res) => res.data)
     commit('LOAD_SUMMARY', result)
   }

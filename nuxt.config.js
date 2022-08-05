@@ -91,10 +91,10 @@ export default {
 
   // https://axios.nuxtjs.org/options/#proxy
   proxy: {
-    '/api/v1': {
+    '/json': {
       target: BASEURL,
       pathRewrite: {
-        '^/api/v1': '/json' // static files in json dir
+        '^/json': '/json' // static files in json dir
       }
     }
   },
