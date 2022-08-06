@@ -114,8 +114,6 @@ export default {
         cspNonce: 'dQw4w9WgXcQ'
         /* variations: false */
       },
-      // dark: true,
-      // default: 'dark',
       themes: {
         dark: {
           primary: colors.blue.darken2,

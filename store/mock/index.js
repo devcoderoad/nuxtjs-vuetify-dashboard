@@ -5,13 +5,15 @@ const LOAD_PRODUCTS = 'LOAD_PRODUCTS'
 const LOAD_SALES = 'LOAD_SALES'
 const LOAD_USERS = 'LOAD_USERS'
 const LOAD_SUMMARY = 'LOAD_SUMMARY'
+const LOAD_BUILDINGS = 'LOAD_BUILDINGS'
 
 const state = () => ({
   channels: [],
   products: [],
   sales: [],
   users: [],
-  summary: []
+  summary: [],
+  buildings: []
 })
 
 const getters = {
@@ -47,6 +49,9 @@ const mutations = {
   },
   [LOAD_SUMMARY](state, payload) {
     state.summary = payload
+  },
+  [LOAD_BUILDINGS](state, payload) {
+    state.buildings = payload
   }
 }
 
@@ -74,6 +79,14 @@ const actions = {
       .$get('json/summary.json', payload)
       .then((res) => res.data)
     commit('LOAD_SUMMARY', result)
+  },
+  async actionGetBuildings(context, payload) {
+    const { commit } = context
+    const { $axios } = this
+    const result = await $axios
+      .$get('json/buildings.json', payload)
+      .then((res) => res.data)
+    commit('LOAD_BUILDINGS', result)
   }
   // actionGetProducts({ commit }, payload) {},
   // actionGetSales({ commit }, payload) {},
