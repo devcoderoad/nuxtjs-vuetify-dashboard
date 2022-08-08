@@ -9,18 +9,14 @@
       app
       class="no-border"
     >
-      <nuxt-link to="/" class="no-underline">
-        <v-img
-          src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
-          gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
-          height="65px"
-          class="flex text-center justify-center align-center"
-          ><h4
-            class="white--text"
-            style="mix-blend-mode: soft-light"
-            v-text="title"
-          ></h4
-        ></v-img>
+      <nuxt-link to="/" class="no-underline success--text">
+        <v-flex
+          align-self-center
+          class="text-center justify-center align-center"
+          style="height: 33px"
+        >
+          <h4 class="my-6" v-text="title"></h4
+        ></v-flex>
       </nuxt-link>
       <v-list :dark="getIsDarkMode">
         <slot v-for="(item, i) in items">
@@ -126,7 +122,7 @@
   </v-app>
 </template>
 
-<script lang="ts">
+<script>
 import { mapGetters, mapState } from 'vuex'
 import global from '~/constants/global'
 
@@ -229,13 +225,13 @@ export default {
   },
   computed: {
     ...mapGetters({ getIsDarkMode: 'core/getIsDarkMode' }),
-    ...mapState({ isDark: (state: any) => state.core })
+    ...mapState({ isDark: (state) => state.core })
   },
   created() {
     const {
       $isServer,
       $store: { commit }
-    }: any = this
+    } = this
     if (!$isServer) {
       commit('core/INITIALIZE_STORE')
     }
@@ -245,7 +241,7 @@ export default {
       const {
         $vuetify,
         $store: { dispatch }
-      }: any = this
+      } = this
       $vuetify.theme.isDark = !$vuetify.theme.isDark
       const nuxtify = JSON.parse(localStorage.getItem('nuxtify') || 'null')
       dispatch('core/setDark', {
@@ -257,13 +253,13 @@ export default {
       // return console.log('setProfileMenu')
     },
     // onScroll() {},
-    onScroll(e: HTMLInputElement) {
+    onScroll(e) {
       if (typeof window === 'undefined') return
-      const top = window.pageYOffset || e.current.scrollTop || 0
+      const top = window.pageYOffset || e.target.scrollTop || 0
       this.fab = top > 20
     },
     toTop() {
-      const { $vuetify }: any = this
+      const { $vuetify } = this
       $vuetify.goTo(0)
     }
   }

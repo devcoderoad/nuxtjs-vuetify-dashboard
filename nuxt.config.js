@@ -110,9 +110,16 @@ export default {
       }
     },
     theme: {
+      /* dark: true, */
+      /* default: 'light', */
       options: {
-        cspNonce: 'dQw4w9WgXcQ'
         /* variations: false */
+        customProperties: true,
+        cspNonce: 'dQw4w9WgXcQ'
+        /* themeCache: {
+          get: (key) => localStorage.getItem(key),
+          set: (key, value) => localStorage.setItem(key, value)
+        } */
       },
       themes: {
         dark: {

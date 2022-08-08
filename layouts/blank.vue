@@ -8,7 +8,7 @@
   </v-app>
 </template>
 
-<script lang="ts">
+<script>
 import { mapState } from 'vuex'
 
 export default {
@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     ...mapState({
-      theme: (state: any) => state.core.isDark
+      theme: (state) => state.core.isDark
     })
   }
 }
