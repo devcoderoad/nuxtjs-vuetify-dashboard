@@ -83,6 +83,23 @@
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#000000",GradientType=1);
     }
   }
+  /* default button icon */
+  .v-btn--icon {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    &:hover {
+      opacity: 0.75;
+    }
+    &:before {
+      background: none;
+    }
+    .v-ripple__container {
+      display: none;
+      &:before {
+        background: none;
+      }
+    }
+  }
 }
 
 // .v-list-item__icon {

@@ -167,6 +167,14 @@ $headings: (
   )
 );
 
+// $ripple-animation-transition-in: transform 0.25s map-get($transition, 'fast-out-slow-in'), opacity 0.1s map-get($transition, 'fast-out-slow-in') !default;
+// $ripple-animation-transition-out: opacity 0.3s map-get($transition, 'fast-out-slow-in') !default;
+// $ripple-animation-visible-opacity: 0.25 !default;
+
+// $ripple-animation-transition-in: transform 0.25s, opacity 0.1s !default;
+// $ripple-animation-transition-out: opacity 0.3s !default;
+// $ripple-animation-visible-opacity: 0.25 !default;
+
 // Ref: https://github.com/nuxt-community/vuetify-module#customvariables
 //
 // The variables you want to modify

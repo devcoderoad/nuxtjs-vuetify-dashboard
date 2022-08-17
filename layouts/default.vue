@@ -1,5 +1,5 @@
 <template>
-  <v-app :dark="getIsDarkMode">
+  <v-app :dark="isDark">
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -7,6 +7,7 @@
       :dark="getIsDarkMode"
       fixed
       app
+      floating
       class="no-border"
     >
       <nuxt-link to="/" class="no-underline success--text">
@@ -15,10 +16,10 @@
           class="text-center justify-center align-center"
           style="height: 33px"
         >
-          <h4 class="my-6" v-text="title"></h4
-        ></v-flex>
+          <h4 class="my-6" v-text="title"
+        /></v-flex>
       </nuxt-link>
-      <v-list :dark="getIsDarkMode">
+      <v-list :dark="isDark">
         <slot v-for="(item, i) in items">
           <v-list-group
             v-if="item.items && item.items.length"
@@ -60,20 +61,28 @@
         </slot>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app :dark="getIsDarkMode">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
+    <v-app-bar
+      :clipped-left="clipped"
+      fixed
+      app
+      flat
+      :dark="getIsDarkMode"
+      dense
+      color="default"
+    >
+      <v-app-bar-nav-icon small @click.stop="drawer = !drawer" />
+      <v-btn small icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
+      <v-btn small icon @click.stop="clipped = !clipped">
         <v-icon>mdi-application</v-icon>
       </v-btn>
-      <v-btn icon @click.stop="fixed = !fixed">
+      <v-btn small icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
       </v-btn>
       <!-- <v-toolbar-title v-text="title" /> -->
       <v-spacer />
-      <v-btn icon @click.stop="setTheme">
+      <v-btn small icon @click.stop="setTheme">
         <!-- <v-btn icon @click.stop="handledarkmode"> -->
         <v-icon>mdi-invert-colors</v-icon>
       </v-btn>
@@ -83,7 +92,7 @@
       </v-btn> -->
       <v-menu transition="slide-x-transition" bottom right>
         <template v-slot:activator="{ on, attrs }">
-          <v-btn icon v-bind="attrs" v-on="on">
+          <v-btn small icon v-bind="attrs" v-on="on">
             <v-icon>mdi-menu</v-icon>
           </v-btn>
         </template>
@@ -99,10 +108,11 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-footer :absolute="!fixed" app :dark="getIsDarkMode">
+    <v-footer :absolute="!fixed" app :dark="isDark">
       <span
-        >&copy; {{ new Date().getFullYear() }} {{ company }}. Dark Mode:
-        <code>{{ getIsDarkMode }}</code></span
+        ><img src="/nuxt.png" height="12" /> {{ title }} &copy;
+        {{ new Date().getFullYear() }}
+        {{ company }}. Dark Mode: <code>{{ isDark }}</code></span
       >
       <v-btn
         v-show="fab"
@@ -225,13 +235,14 @@ export default {
   },
   computed: {
     ...mapGetters({ getIsDarkMode: 'core/getIsDarkMode' }),
-    ...mapState({ isDark: (state) => state.core })
+    ...mapState({ isDark: (state) => state.core.theme.isDark })
   },
   created() {
     const {
       $isServer,
       $store: { commit }
     } = this
+    // Execute initial stores
     if (!$isServer) {
       commit('core/INITIALIZE_STORE')
     }
@@ -242,17 +253,16 @@ export default {
         $vuetify,
         $store: { dispatch }
       } = this
-      $vuetify.theme.isDark = !$vuetify.theme.isDark
+      $vuetify.theme.dark = !$vuetify.theme.isDark
       const nuxtify = JSON.parse(localStorage.getItem('nuxtify') || 'null')
       dispatch('core/setDark', {
         ...nuxtify,
-        isDark: $vuetify.theme.isDark
+        isDark: $vuetify.theme.dark
       })
     },
-    setProfileMenu() {
-      // return console.log('setProfileMenu')
-    },
-    // onScroll() {},
+    // setProfileMenu() {
+    // return console.log('setProfileMenu')
+    // },
     onScroll(e) {
       if (typeof window === 'undefined') return
       const top = window.pageYOffset || e.target.scrollTop || 0

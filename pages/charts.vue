@@ -1,265 +1,267 @@
 <template>
-  <v-row>
-    <v-col class="text-center">
-      <h1 class="title-page">Charts</h1>
-      <v-container fluid>
-        <v-row class="text-left">
-          <v-col col="12" md="12">
-            <v-row>
-              <v-col cols="12" md="6">
-                <v-card height="100%">
-                  <v-card-title tag="h2">Views Chart</v-card-title>
-                  <v-card-subtitle>Data examples</v-card-subtitle>
-                  <v-card-text>
-                    <div>
-                      <client-only
-                        v-if="lineDataViews"
-                        placeholder="Loading..."
+  <v-container fluid>
+    <v-row>
+      <v-col>
+        <h1 class="title-page">Charts</h1>
+        <v-container fluid>
+          <v-row class="text-left">
+            <v-col col="12" md="12">
+              <v-row>
+                <v-col cols="12" md="6">
+                  <v-card height="100%">
+                    <v-card-title tag="h2">Views Chart</v-card-title>
+                    <v-card-subtitle>Data examples</v-card-subtitle>
+                    <v-card-text>
+                      <div>
+                        <client-only
+                          v-if="lineDataViews"
+                          placeholder="Loading..."
+                        >
+                          <LineChart
+                            :chart-options="barChartOptions"
+                            :chart-data="lineDataViews"
+                            :height="260"
+                            :width="300"
+                            chart-id="lineChart"
+                          />
+                        </client-only>
+                        <v-row class="my-1">
+                          <v-col tag="section">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Esse, eveniet est? Mollitia labore deserunt
+                            iusto eius explicabo laborum autem vel consequatur
+                            libero animi alias suscipit provident qui excepturi
+                            quaerat possimus atque, dignissimos aut obcaecati
+                            necessitatibus iure delectus molestiae!
+                          </v-col>
+                        </v-row>
+                      </div>
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+                <v-col cols="12" md="6">
+                  <v-card height="100%">
+                    <v-card-title tag="h2">Sales Chart</v-card-title>
+                    <v-card-subtitle>Data examples</v-card-subtitle>
+                    <v-card-text>
+                      <div>
+                        <client-only
+                          v-if="lineDataSales"
+                          placeholder="Loading..."
+                        >
+                          <LineChart
+                            :chart-options="barChartOptions"
+                            :chart-data="lineDataSales"
+                            :height="260"
+                            :width="300"
+                            chart-id="lineChart"
+                          />
+                        </client-only>
+                        <v-row class="my-1">
+                          <v-col tag="section">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Esse, eveniet est? Mollitia labore deserunt
+                            iusto eius explicabo laborum autem vel consequatur
+                            libero animi alias suscipit provident qui excepturi
+                            quaerat possimus atque, dignissimos aut obcaecati
+                            necessitatibus iure delectus molestiae!
+                          </v-col>
+                        </v-row>
+                      </div>
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col md="12">
+              <v-card height="100%">
+                <v-card-title tag="h2">Bar Chart</v-card-title>
+                <v-card-subtitle>Data examples</v-card-subtitle>
+                <v-card-text>
+                  <div>
+                    <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
+                eveniet est? Mollitia labore deserunt iusto eius explicabo
+                laborum autem vel consequatur libero animi alias suscipit
+                provident qui excepturi quaerat possimus atque, dignissimos aut
+                obcaecati necessitatibus iure delectus molestiae! Dolorum,
+                doloremque? Sequi, porro. Excepturi consequuntur iure corporis
+                repudiandae! Mollitia non maxime architecto explicabo nulla
+                laborum dolores? -->
+                    <client-only placeholder="Loading...">
+                      <BarChart
+                        :chartData="barChartData"
+                        :options="barChartOptions"
+                        :height="90"
+                        :width="100"
+                      />
+                    </client-only>
+                  </div>
+                </v-card-text>
+              </v-card>
+            </v-col>
+            <v-col md="6">
+              <v-card height="100%">
+                <v-card-title tag="h2">Pie Chart</v-card-title>
+                <v-card-subtitle>Data examples</v-card-subtitle>
+                <v-card-text>
+                  <div>
+                    <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
+                eveniet est? Mollitia labore deserunt iusto eius explicabo
+                laborum autem vel consequatur libero animi alias suscipit
+                provident qui excepturi quaerat possimus atque, dignissimos aut
+                obcaecati necessitatibus iure delectus molestiae! Dolorum,
+                doloremque? Sequi, porro. Excepturi consequuntur iure corporis
+                repudiandae! Mollitia non maxime architecto explicabo nulla
+                laborum dolores? -->
+                    <client-only placeholder="Loading...">
+                      <PieChart
+                        :chartData="barChartData"
+                        :options="barChartOptions"
+                        :height="90"
+                        :width="100"
+                      />
+                    </client-only>
+                  </div>
+                </v-card-text>
+              </v-card>
+            </v-col>
+            <v-col md="6">
+              <v-card height="100%">
+                <v-card-title tag="h2">Donut Chart</v-card-title>
+                <v-card-subtitle>Data examples</v-card-subtitle>
+                <v-card-text>
+                  <div>
+                    <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
+                eveniet est? Mollitia labore deserunt iusto eius explicabo
+                laborum autem vel consequatur libero animi alias suscipit
+                provident qui excepturi quaerat possimus atque, dignissimos aut
+                obcaecati necessitatibus iure delectus molestiae! Dolorum,
+                doloremque? Sequi, porro. Excepturi consequuntur iure corporis
+                repudiandae! Mollitia non maxime architecto explicabo nulla
+                laborum dolores? -->
+                    <client-only placeholder="Loading...">
+                      <DoughnutChart
+                        :chartData="barChartData"
+                        :options="barChartOptions"
+                      />
+                    </client-only>
+                  </div>
+                </v-card-text>
+              </v-card>
+            </v-col>
+            <v-col md="12">
+              <v-row>
+                <v-col cols="12" lg="6">
+                  <v-card height="100%">
+                    <v-card-title tag="h2">Graph Chart</v-card-title>
+                    <v-card-subtitle>Data examples</v-card-subtitle>
+                    <v-card-text>
+                      <v-row
+                        v-if="channels && channels.length"
+                        no-gutters
+                        class="mb-4"
                       >
-                        <LineChart
-                          :chart-options="barChartOptions"
-                          :chart-data="lineDataViews"
-                          :height="260"
-                          :width="300"
-                          chart-id="lineChart"
-                        />
-                      </client-only>
-                      <v-row class="my-1">
-                        <v-col tag="section">
+                        <v-col v-for="channel in channels" :key="channel.id">
+                          <h4 :class="`${channel.color}--text`">
+                            {{ channel.name }}
+                          </h4>
+                          <h5 class="grey--text">
+                            {{ channel.summary }}
+                          </h5>
+                        </v-col>
+                      </v-row>
+                      <v-col cols="12" md="12">
+                        <client-only
+                          v-if="barChannelData"
+                          placeholder="Loading..."
+                        >
+                          <BarChart
+                            :chartData="barChannelData"
+                            :options="barChannelOptions"
+                            :height="90"
+                            :width="100"
+                          />
+                        </client-only>
+                      </v-col>
+                      <v-col>
+                        <div>
                           Lorem ipsum, dolor sit amet consectetur adipisicing
                           elit. Esse, eveniet est? Mollitia labore deserunt
                           iusto eius explicabo laborum autem vel consequatur
                           libero animi alias suscipit provident qui excepturi
                           quaerat possimus atque, dignissimos aut obcaecati
-                          necessitatibus iure delectus molestiae!
+                          necessitatibus iure delectus molestiae! Dolorum,
+                          doloremque? Sequi, porro. Excepturi consequuntur iure
+                          corporis repudiandae! Mollitia non maxime architecto
+                          explicabo nulla laborum dolores?
+                        </div>
+                      </v-col>
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+                <v-col cols="12" lg="6">
+                  <v-card height="100%">
+                    <v-card-title tag="h2">Pie Chart</v-card-title>
+                    <v-card-subtitle>Data examples</v-card-subtitle>
+                    <v-card-text>
+                      <v-row
+                        v-if="channels && channels.length"
+                        no-gutters
+                        class="mb-4"
+                      >
+                        <v-col v-for="channel in channels" :key="channel.id">
+                          <h4 :class="`${channel.color}--text`">
+                            {{ channel.name }}
+                          </h4>
+                          <h5 class="grey--text">
+                            {{ channel.summary }}
+                          </h5>
                         </v-col>
                       </v-row>
-                    </div>
-                  </v-card-text>
-                </v-card>
-              </v-col>
-              <v-col cols="12" md="6">
-                <v-card height="100%">
-                  <v-card-title tag="h2">Sales Chart</v-card-title>
-                  <v-card-subtitle>Data examples</v-card-subtitle>
-                  <v-card-text>
-                    <div>
-                      <client-only
-                        v-if="lineDataSales"
-                        placeholder="Loading..."
-                      >
-                        <LineChart
-                          :chart-options="barChartOptions"
-                          :chart-data="lineDataSales"
-                          :height="260"
-                          :width="300"
-                          chart-id="lineChart"
-                        />
-                      </client-only>
-                      <v-row class="my-1">
-                        <v-col tag="section">
+                      <v-col cols="12" md="12">
+                        <client-only
+                          v-if="barChannelData"
+                          placeholder="Loading..."
+                        >
+                          <DoughnutChart
+                            :chartData="barChannelData"
+                            :options="barChannelOptions"
+                            :height="90"
+                            :width="100"
+                          />
+                        </client-only>
+                      </v-col>
+                      <v-col>
+                        <div>
                           Lorem ipsum, dolor sit amet consectetur adipisicing
                           elit. Esse, eveniet est? Mollitia labore deserunt
                           iusto eius explicabo laborum autem vel consequatur
                           libero animi alias suscipit provident qui excepturi
                           quaerat possimus atque, dignissimos aut obcaecati
-                          necessitatibus iure delectus molestiae!
-                        </v-col>
-                      </v-row>
-                    </div>
-                  </v-card-text>
-                </v-card>
-              </v-col>
-            </v-row>
-          </v-col>
-          <v-col md="12">
-            <v-card height="100%">
-              <v-card-title tag="h2">Bar Chart</v-card-title>
-              <v-card-subtitle>Data examples</v-card-subtitle>
-              <v-card-text>
-                <div>
-                  <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
-                eveniet est? Mollitia labore deserunt iusto eius explicabo
-                laborum autem vel consequatur libero animi alias suscipit
-                provident qui excepturi quaerat possimus atque, dignissimos aut
-                obcaecati necessitatibus iure delectus molestiae! Dolorum,
-                doloremque? Sequi, porro. Excepturi consequuntur iure corporis
-                repudiandae! Mollitia non maxime architecto explicabo nulla
-                laborum dolores? -->
-                  <client-only placeholder="Loading...">
-                    <BarChart
-                      :chartData="barChartData"
-                      :options="barChartOptions"
-                      :height="90"
-                      :width="100"
-                    />
-                  </client-only>
-                </div>
-              </v-card-text>
-            </v-card>
-          </v-col>
-          <v-col md="6">
-            <v-card height="100%">
-              <v-card-title tag="h2">Pie Chart</v-card-title>
-              <v-card-subtitle>Data examples</v-card-subtitle>
-              <v-card-text>
-                <div>
-                  <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
-                eveniet est? Mollitia labore deserunt iusto eius explicabo
-                laborum autem vel consequatur libero animi alias suscipit
-                provident qui excepturi quaerat possimus atque, dignissimos aut
-                obcaecati necessitatibus iure delectus molestiae! Dolorum,
-                doloremque? Sequi, porro. Excepturi consequuntur iure corporis
-                repudiandae! Mollitia non maxime architecto explicabo nulla
-                laborum dolores? -->
-                  <client-only placeholder="Loading...">
-                    <PieChart
-                      :chartData="barChartData"
-                      :options="barChartOptions"
-                      :height="90"
-                      :width="100"
-                    />
-                  </client-only>
-                </div>
-              </v-card-text>
-            </v-card>
-          </v-col>
-          <v-col md="6">
-            <v-card height="100%">
-              <v-card-title tag="h2">Donut Chart</v-card-title>
-              <v-card-subtitle>Data examples</v-card-subtitle>
-              <v-card-text>
-                <div>
-                  <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
-                eveniet est? Mollitia labore deserunt iusto eius explicabo
-                laborum autem vel consequatur libero animi alias suscipit
-                provident qui excepturi quaerat possimus atque, dignissimos aut
-                obcaecati necessitatibus iure delectus molestiae! Dolorum,
-                doloremque? Sequi, porro. Excepturi consequuntur iure corporis
-                repudiandae! Mollitia non maxime architecto explicabo nulla
-                laborum dolores? -->
-                  <client-only placeholder="Loading...">
-                    <DoughnutChart
-                      :chartData="barChartData"
-                      :options="barChartOptions"
-                    />
-                  </client-only>
-                </div>
-              </v-card-text>
-            </v-card>
-          </v-col>
-          <v-col md="12">
-            <v-row>
-              <v-col cols="12" lg="6">
-                <v-card height="100%">
-                  <v-card-title tag="h2">Graph Chart</v-card-title>
-                  <v-card-subtitle>Data examples</v-card-subtitle>
-                  <v-card-text>
-                    <v-row
-                      v-if="channels && channels.length"
-                      no-gutters
-                      class="mb-4"
-                    >
-                      <v-col v-for="channel in channels" :key="channel.id">
-                        <h4 :class="`${channel.color}--text`">
-                          {{ channel.name }}
-                        </h4>
-                        <h5 class="grey--text">
-                          {{ channel.summary }}
-                        </h5>
+                          necessitatibus iure delectus molestiae! Dolorum,
+                          doloremque? Sequi, porro. Excepturi consequuntur iure
+                          corporis repudiandae! Mollitia non maxime architecto
+                          explicabo nulla laborum dolores?
+                        </div>
                       </v-col>
-                    </v-row>
-                    <v-col cols="12" md="12">
-                      <client-only
-                        v-if="barChannelData"
-                        placeholder="Loading..."
-                      >
-                        <BarChart
-                          :chartData="barChannelData"
-                          :options="barChannelOptions"
-                          :height="90"
-                          :width="100"
-                        />
-                      </client-only>
-                    </v-col>
-                    <v-col>
-                      <div>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Esse, eveniet est? Mollitia labore deserunt iusto
-                        eius explicabo laborum autem vel consequatur libero
-                        animi alias suscipit provident qui excepturi quaerat
-                        possimus atque, dignissimos aut obcaecati necessitatibus
-                        iure delectus molestiae! Dolorum, doloremque? Sequi,
-                        porro. Excepturi consequuntur iure corporis repudiandae!
-                        Mollitia non maxime architecto explicabo nulla laborum
-                        dolores?
-                      </div>
-                    </v-col>
-                  </v-card-text>
-                </v-card>
-              </v-col>
-              <v-col cols="12" lg="6">
-                <v-card height="100%">
-                  <v-card-title tag="h2">Pie Chart</v-card-title>
-                  <v-card-subtitle>Data examples</v-card-subtitle>
-                  <v-card-text>
-                    <v-row
-                      v-if="channels && channels.length"
-                      no-gutters
-                      class="mb-4"
-                    >
-                      <v-col v-for="channel in channels" :key="channel.id">
-                        <h4 :class="`${channel.color}--text`">
-                          {{ channel.name }}
-                        </h4>
-                        <h5 class="grey--text">
-                          {{ channel.summary }}
-                        </h5>
-                      </v-col>
-                    </v-row>
-                    <v-col cols="12" md="12">
-                      <client-only
-                        v-if="barChannelData"
-                        placeholder="Loading..."
-                      >
-                        <DoughnutChart
-                          :chartData="barChannelData"
-                          :options="barChannelOptions"
-                          :height="90"
-                          :width="100"
-                        />
-                      </client-only>
-                    </v-col>
-                    <v-col>
-                      <div>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Esse, eveniet est? Mollitia labore deserunt iusto
-                        eius explicabo laborum autem vel consequatur libero
-                        animi alias suscipit provident qui excepturi quaerat
-                        possimus atque, dignissimos aut obcaecati necessitatibus
-                        iure delectus molestiae! Dolorum, doloremque? Sequi,
-                        porro. Excepturi consequuntur iure corporis repudiandae!
-                        Mollitia non maxime architecto explicabo nulla laborum
-                        dolores?
-                      </div>
-                    </v-col>
-                  </v-card-text>
-                </v-card>
-              </v-col>
-            </v-row>
-          </v-col>
-        </v-row>
-        <blockquote class="blockquote">
-          &#8220;First, solve the problem. Then, write the code.&#8221;
-          <footer>
-            <small>
-              <em>&mdash;John Johnson</em>
-            </small>
-          </footer>
-        </blockquote>
-      </v-container>
-    </v-col>
-  </v-row>
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+          <blockquote class="blockquote">
+            &#8220;First, solve the problem. Then, write the code.&#8221;
+            <footer>
+              <small>
+                <em>&mdash;John Johnson</em>
+              </small>
+            </footer>
+          </blockquote>
+        </v-container>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

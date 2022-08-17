@@ -2,13 +2,16 @@
   <div>
     <FormSignUp :email="email" :password="password" />
     <span
-      >&copy; {{ new Date().getFullYear() }} {{ company }}. Dark Mode:
-      <code>{{ getIsDarkMode }}</code></span
+      ><img src="/nuxt.png" height="12" /> Nuxtify &copy;
+      {{ new Date().getFullYear() }} {{ company }}. Dark Mode:
+      <code>{{ isDark }}</code></span
     >
   </div>
 </template>
 
-<script lang="ts">
+<script>
+import { mapState } from 'vuex'
+
 export default {
   layout: 'blank',
   data() {
@@ -16,6 +19,11 @@ export default {
       email: '',
       password: ''
     }
+  },
+  computed: {
+    ...mapState({
+      isDark: (state) => state.core.theme.isDark
+    })
   }
 }
 </script>

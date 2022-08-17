@@ -36,10 +36,12 @@ const mutations = {
     const { app } = this
     const themeStore = JSON.parse(localStorage.getItem('nuxtify') || 'null')
     if (themeStore) {
-      app.vuetify.framework.theme.isDark = themeStore.isDark
+      state.theme.isDark = themeStore.isDark
+      app.vuetify.framework.theme.dark = themeStore.isDark
     } else {
       localStorage.setItem('nuxtify', JSON.stringify(state.theme))
-      app.vuetify.framework.theme.isDark = state.theme.isDark
+      state.theme.isDark = !state.theme.isDark
+      app.vuetify.framework.theme.dark = state.theme.isDark
     }
   },
   [DARK_LOAD](state, payload) {

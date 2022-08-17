@@ -110,8 +110,8 @@ export default {
   },
   head() {
     return {
-      title: 'Cards Page - Nuxtify',
-      description: ' A Collection of Cards in Nuxtify Admin Template Dashboard'
+      title: 'Cards - Nuxtify Admin Dashboard Template by dykraf.com',
+      description: 'A Collection of Cards in Nuxtify Admin Template Dashboard'
     }
   },
   computed: {

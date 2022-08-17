@@ -3,7 +3,7 @@
     <v-flex lg6>
       <v-row no-gutters>
         <v-container fluid class="pb-12">
-          <h1 align="center">Sign in to your account</h1>
+          <h1 align="center">Sign in to your Nuxtify account</h1>
           <v-col cols="12" align="center">
             to enjoy all of our cool
             <a class="primary--text">features</a> ✌️

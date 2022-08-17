@@ -15,12 +15,12 @@ export default {
   name: 'LayoutBlank',
   data() {
     return {
-      title: 'Vuetify.js'
+      title: 'Nuxtify'
     }
   },
   computed: {
     ...mapState({
-      theme: (state) => state.core.isDark
+      theme: (state) => state.core.theme.isDark
     })
   }
 }
