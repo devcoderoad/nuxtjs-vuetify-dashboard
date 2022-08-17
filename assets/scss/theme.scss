@@ -1,7 +1,15 @@
 @import './variables';
 
+// .light--theme {
+//   background-color: rgba(0, 0, 0, 0.25);
+// }
+// .dark--theme {
+//   background-color: rgba(255, 255, 0, 0.25)
+// }
+
 .v-application {
   font-family: $body-font-family, sans-serif !important;
+
   .title {
     // To pin point specific classes of some components
     font-family: $heading-font-family, sans-serif !important;
@@ -13,6 +21,10 @@
 
   /* Theme Light */
   &.theme--light {
+    background-color: rgba(155, 155, 155, 0.05);
+    // .v-navigation-drawer--floating.theme--light {
+    //   background-image: linear-gradient(195deg,#cacaca,#ffffff)!important;
+    // }
     .v-list-group {
       // border-top: 1px solid gray;
       // border-bottom: 1px solid gray;
@@ -21,6 +33,10 @@
   }
   /* Theme Light */
   &.theme--dark {
+    background-color: rgba(0, 0, 0, 0.75);
+    .v-navigation-drawer--floating.theme--dark {
+      background-image: linear-gradient(195deg, #42424a, #191919) !important;
+    }
     .v-list-group {
       // border-top: 1px solid gray;
       // border-bottom: 1px solid gray;

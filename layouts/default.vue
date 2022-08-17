@@ -8,8 +8,8 @@
       fixed
       app
       floating
-      class="no-border"
     >
+      <!-- class="no-border elevation-2 rounded ml-3 mt-4" -->
       <nuxt-link to="/" class="no-underline success--text">
         <v-flex
           align-self-center
@@ -63,12 +63,12 @@
     </v-navigation-drawer>
     <v-app-bar
       :clipped-left="clipped"
-      fixed
+      :color="getIsDarkMode ? 'default' : 'white'"
+      :dark="getIsDarkMode"
+      absolute
       app
       flat
-      :dark="getIsDarkMode"
-      dense
-      :color="getIsDarkMode ? 'default' : 'white'"
+      class="px-4"
     >
       <v-app-bar-nav-icon small @click.stop="drawer = !drawer" />
       <v-btn small icon @click.stop="miniVariant = !miniVariant">
@@ -82,6 +82,23 @@
       </v-btn>
       <!-- <v-toolbar-title v-text="title" /> -->
       <v-spacer />
+      <v-col
+        cols="6"
+        sm="3"
+        :lg="searchLength ? '2' : '1'"
+        align-self="stretch"
+      >
+        <v-text-field
+          dense
+          solo
+          name="search"
+          :placeholder="searchLength ? 'Search' : ''"
+          prepend-inner-icon="mdi-magnify"
+          @focus="searchFocus"
+          @focusout="searchFocus"
+        >
+        </v-text-field>
+      </v-col>
       <v-btn small icon @click.stop="setTheme">
         <!-- <v-btn icon @click.stop="handledarkmode"> -->
         <v-icon>mdi-invert-colors</v-icon>
@@ -90,15 +107,39 @@
       <!-- <v-btn icon @click.stop="setProfileMenu">
         <v-icon>mdi-menu</v-icon>
       </v-btn> -->
-      <v-menu transition="slide-x-transition" bottom right>
+      <v-menu transition="slide-y-transition" bottom top>
         <template v-slot:activator="{ on, attrs }">
           <v-btn small icon v-bind="attrs" v-on="on">
             <v-icon>mdi-menu</v-icon>
           </v-btn>
         </template>
-        <v-list>
-          <v-list-item v-for="(item, i) in items" :key="i" :to="item.to">
+        <v-list class="pl-2 pr-4">
+          <!-- <v-list-item v-for="(item, i) in items" :key="i" :to="item.to">
             <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item> -->
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-logout-variant</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title> Logout </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-account-circle-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title> Profile </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-flag-outline</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title> {{ title }} </v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -108,7 +149,7 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-footer :absolute="!fixed" app :dark="isDark">
+    <v-footer :absolute="!fixed" app :dark="isDark" class="mx-auto">
       <span
         ><img src="/nuxt.png" height="12" /> {{ title }} &copy;
         {{ new Date().getFullYear() }}
@@ -129,6 +170,28 @@
         <v-icon>mdi-arrow-up</v-icon>
       </v-btn>
     </v-footer>
+    <v-overlay v-if="$nuxt.isOffline" :value="overlay" z-index="1000">
+      <v-banner color="warning" single-line @click:icon="alert">
+        <v-icon slot="icon" color="light" size="36">
+          mdi-wifi-strength-alert-outline
+        </v-icon>
+        <span class="white--text"
+          >Unable to verify your Internet connection</span
+        >
+        <template v-slot:actions>
+          <v-btn
+            class="white--text"
+            color="warning"
+            text
+            flat
+            fab
+            @click="overlay = !overlay"
+          >
+            <v-icon> mdi-window-close </v-icon>
+          </v-btn>
+        </template>
+      </v-banner></v-overlay
+    >
   </v-app>
 </template>
 
@@ -145,6 +208,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
+      overlay: true,
       items: [
         {
           icon: 'mdi-apps',
@@ -230,7 +294,15 @@ export default {
       miniVariant: false,
       right: true,
       fab: true,
-      darkmode: false
+      darkmode: false,
+      searchLength: false
+    }
+  },
+  head() {
+    return {
+      bodyAttrs: {
+        class: this.$vuetify.isDark ? 'dark--theme' : 'light--theme'
+      }
     }
   },
   computed: {
@@ -259,6 +331,9 @@ export default {
         ...nuxtify,
         isDark: $vuetify.theme.dark
       })
+    },
+    searchFocus() {
+      this.searchLength = !this.searchLength
     },
     // setProfileMenu() {
     // return console.log('setProfileMenu')

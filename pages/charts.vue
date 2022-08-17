@@ -79,14 +79,6 @@
                 <v-card-subtitle>Data examples</v-card-subtitle>
                 <v-card-text>
                   <div>
-                    <!-- Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
-                eveniet est? Mollitia labore deserunt iusto eius explicabo
-                laborum autem vel consequatur libero animi alias suscipit
-                provident qui excepturi quaerat possimus atque, dignissimos aut
-                obcaecati necessitatibus iure delectus molestiae! Dolorum,
-                doloremque? Sequi, porro. Excepturi consequuntur iure corporis
-                repudiandae! Mollitia non maxime architecto explicabo nulla
-                laborum dolores? -->
                     <client-only placeholder="Loading...">
                       <BarChart
                         :chartData="barChartData"
@@ -270,6 +262,7 @@ import { mapState } from 'vuex'
 export default {
   name: 'ChartsPage',
   data() {
+    console.log(this.$store.state)
     return {
       barChartData: {
         labels: [

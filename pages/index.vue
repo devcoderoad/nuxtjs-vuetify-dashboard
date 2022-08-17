@@ -102,7 +102,7 @@
                   natus consectetur corporis debitis.
                 </div>
                 <v-container fluid>
-                  <v-row dense no-gutters>
+                  <v-row no-gutters>
                     <v-col cols="2" align-self="center" align="center">
                       <v-avatar color="primary">
                         <span class="white--text font-weight-bold">AS</span>
@@ -115,7 +115,7 @@
                       </blockquote>
                     </v-col>
                   </v-row>
-                  <v-row dense no-gutters>
+                  <v-row no-gutters>
                     <v-col cols="9">
                       <blockquote class="blockquote grey--text body-1">
                         Fugit nihil corporis rem iste! Doloribus magni
@@ -128,7 +128,7 @@
                       </v-avatar>
                     </v-col>
                   </v-row>
-                  <v-row dense no-gutters>
+                  <v-row no-gutters>
                     <v-col cols="2" align-self="center" align="center">
                       <v-avatar color="info">
                         <span class="white--text font-weight-bold">NM</span>
@@ -165,7 +165,7 @@
                         velit nostrum voluptate facere error labore?</v-col
                       >
                       <v-col cols="3">
-                        <v-btn type="submit" color="primary" small
+                        <v-btn type="submit" color="primary" small tile
                           >See all</v-btn
                         ></v-col
                       ></v-row
@@ -175,7 +175,7 @@
               </v-col>
               <v-col cols="12" lg="8">
                 <v-card light>
-                  <v-card-title>Sales person by month</v-card-title>
+                  <v-card-title>Person sales by month</v-card-title>
                   <v-card-text>
                     <p>
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -190,7 +190,11 @@
                         :chart-id="`chartId`"
                         :width="300"
                         :height="384"
-                        styles="margin: 1rem auto; background-color: rgba(255,255,255, .85); padding: .75rem"
+                        :styles="{
+                          margin: '1rem auto',
+                          backgroundColor: 'rgba(255,255,255, .85)',
+                          padding: '.75rem'
+                        }"
                       />
                     </client-only>
                     <p>
@@ -222,12 +226,12 @@ export default {
             label: 'Visualization',
             data: [72, 131, 12, 3, 4, 55],
             backgroundColor: [
-              'rgba(20, 255, 0, 0.75)',
-              'rgba(200, 5, 0, 0.75)',
-              'rgba(10, 220, 0, 0.75)',
-              'rgba(2, 100, 0, 0.75)',
-              'rgba(20, 55, 0, 0.75)',
-              'rgba(120, 155, 0, 0.75)'
+              'rgba(20, 255, 0, 0.85)',
+              'rgba(200, 5, 0, 0.85)',
+              'rgba(10, 220, 0, 0.85)',
+              'rgba(2, 100, 0, 0.85)',
+              'rgba(20, 55, 0, 0.85)',
+              'rgba(120, 155, 0, 0.85)'
             ],
             borderColor: 'rgba(100, 155, 0, 1)',
             borderWidth: 0
@@ -264,6 +268,11 @@ export default {
             label: 'Jane Doe',
             backgroundColor: '#ff9900',
             data: [20, 9, 19, 90, 29, 100, 80]
+          },
+          {
+            label: 'Jack Doe',
+            backgroundColor: '#999999',
+            data: [10, 24, 12, 90, 69, 10, 30]
           }
         ]
       },
