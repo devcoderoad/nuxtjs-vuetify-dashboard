@@ -4,8 +4,6 @@
       <img src="/v.png" alt="Vuetify.js" class="mb-5" />
       <h1 class="title-page">Icons</h1>
       <v-container>
-        <!-- <v-row>
-          <v-col cols="12"> -->
         <v-row justify="space-between">
           <div
             v-for="icon in icons.filter((item) => item.author === 'Google')"
@@ -17,8 +15,6 @@
             >
           </div>
         </v-row>
-        <!-- </v-col>
-        </v-row> -->
       </v-container>
       <blockquote class="blockquote">
         &#8220;First, solve the problem. Then, write the code.&#8221;

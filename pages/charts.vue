@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col>
+      <v-col class="text-center">
         <h1 class="title-page">Charts</h1>
         <v-container fluid>
           <v-row class="text-left">
@@ -262,7 +262,6 @@ import { mapState } from 'vuex'
 export default {
   name: 'ChartsPage',
   data() {
-    console.log(this.$store.state)
     return {
       barChartData: {
         labels: [

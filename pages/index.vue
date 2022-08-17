@@ -4,13 +4,15 @@
       <v-col cols="12" md="12">
         <h1 class="title-page">Hi, Welcome to Nuxtify</h1>
         <v-row>
-          <v-col cols="12" md="3">
-            <v-card>
+          <v-col cols="6" sm="3">
+            <v-card height="100%">
               <v-container fluid>
                 <h3>Users Summary</h3>
-                <v-row>
+                <v-row height="100%">
                   <v-col>
-                    <h4 class="grey--text text-h1 font-weight-bold">5230</h4>
+                    <h4 class="grey--text text-h4 text-lg-h2 font-weight-bold">
+                      5230
+                    </h4>
                   </v-col>
                   <v-col align-self="center" align="center">
                     <v-icon size="60" color="green"
@@ -21,13 +23,15 @@
               </v-container>
             </v-card>
           </v-col>
-          <v-col cols="12" md="3"
-            ><v-card>
+          <v-col cols="6" sm="3"
+            ><v-card height="100%">
               <v-container fluid>
                 <h3>Sales Summary</h3>
-                <v-row>
+                <v-row height="100%">
                   <v-col>
-                    <h4 class="grey--text text-h1 font-weight-bold">6424</h4>
+                    <h4 class="grey--text text-h4 text-lg-h2 font-weight-bold">
+                      6424
+                    </h4>
                   </v-col>
                   <v-col align-self="center" align="center">
                     <v-icon size="60" color="warning">mdi-cart-plus</v-icon>
@@ -36,13 +40,15 @@
               </v-container>
             </v-card></v-col
           >
-          <v-col cols="12" md="3"
-            ><v-card>
+          <v-col cols="6" sm="3"
+            ><v-card height="100%">
               <v-container fluid>
                 <h3>Stock Summary</h3>
-                <v-row>
+                <v-row height="100%">
                   <v-col>
-                    <h4 class="grey--text text-h1 font-weight-bold">39202</h4>
+                    <h4 class="grey--text text-h4 text-lg-h2 font-weight-bold">
+                      39202
+                    </h4>
                   </v-col>
                   <v-col align-self="center" align="center">
                     <v-icon size="60" color="red">mdi-chart-areaspline</v-icon>
@@ -51,13 +57,15 @@
               </v-container>
             </v-card></v-col
           >
-          <v-col cols="12" md="3"
-            ><v-card>
+          <v-col cols="6" sm="3"
+            ><v-card height="100%">
               <v-container fluid>
                 <h3>Views Summary</h3>
-                <v-row>
+                <v-row height="100%">
                   <v-col>
-                    <h4 class="grey--text text-h1 font-weight-bold">4124</h4>
+                    <h4 class="grey--text text-h4 text-lg-h2 font-weight-bold">
+                      4124
+                    </h4>
                   </v-col>
                   <v-col align-self="center" align="center">
                     <v-icon size="60" color="orange"
@@ -71,7 +79,7 @@
         </v-row>
         <v-row>
           <v-col cols="12" md="8">
-            <v-card>
+            <v-card height="100%">
               <v-container fluid>
                 <h3 class="title-page">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -91,7 +99,7 @@
             </v-card>
           </v-col>
           <v-col cols="12" md="4">
-            <v-card>
+            <v-card height="100%">
               <v-container fluid>
                 <h3 class="title-page">
                   Lorem ipsum dolor sit amet consectetur
@@ -148,7 +156,7 @@
           <v-col cols="12">
             <v-row>
               <v-col cols="12" lg="4">
-                <v-card>
+                <v-card height="100%">
                   <v-card-title>Sales by brand</v-card-title>
                   <v-card-text>
                     <client-only placeholder="Loading...">
@@ -174,7 +182,7 @@
                 </v-card>
               </v-col>
               <v-col cols="12" lg="8">
-                <v-card light>
+                <v-card height="100%" light>
                   <v-card-title>Person sales by month</v-card-title>
                   <v-card-text>
                     <p>
@@ -272,7 +280,7 @@ export default {
           {
             label: 'Jack Doe',
             backgroundColor: '#999999',
-            data: [10, 24, 12, 90, 69, 10, 30]
+            data: [10, 24, 12, 50, 69, 10, 20]
           }
         ]
       },

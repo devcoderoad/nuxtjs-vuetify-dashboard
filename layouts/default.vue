@@ -22,7 +22,7 @@
       <v-list :dark="isDark">
         <slot v-for="(item, i) in items">
           <v-list-group
-            v-if="item.items && item.items.length"
+            v-if="item.items && item.items.length && item.to === null"
             :key="`${item.title}-key-${i + 1}`"
             v-model="item.active"
             :prepend-icon="item.icon"
@@ -50,7 +50,13 @@
               </v-list-item-content>
             </v-list-item>
           </v-list-group>
-          <v-list-item v-else :key="item.title" :to="item.to" exact>
+          <v-list-item
+            v-else
+            :key="item.title"
+            :to="item.to"
+            exact
+            :ripple="false"
+          >
             <v-list-item-action>
               <v-icon center>{{ item.icon }}</v-icon>
             </v-list-item-action>
@@ -238,7 +244,7 @@ export default {
         {
           icon: 'mdi-account-card',
           title: 'Authentication',
-          // to: '/typography',
+          to: null,
           items: [
             {
               icon: 'mdi-login-variant',
