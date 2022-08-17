@@ -174,7 +174,7 @@
                 </v-card>
               </v-col>
               <v-col cols="12" lg="8">
-                <v-card>
+                <v-card light>
                   <v-card-title>Sales person by month</v-card-title>
                   <v-card-text>
                     <p>
@@ -222,12 +222,12 @@ export default {
             label: 'Visualization',
             data: [72, 131, 12, 3, 4, 55],
             backgroundColor: [
-              'rgba(20, 255, 0, 0.5)',
-              'rgba(200, 5, 0, 0.5)',
-              'rgba(10, 220, 0, 0.5)',
-              'rgba(2, 100, 0, 0.5)',
-              'rgba(20, 55, 0, 0.5)',
-              'rgba(120, 155, 0, 0.5)'
+              'rgba(20, 255, 0, 0.75)',
+              'rgba(200, 5, 0, 0.75)',
+              'rgba(10, 220, 0, 0.75)',
+              'rgba(2, 100, 0, 0.75)',
+              'rgba(20, 55, 0, 0.75)',
+              'rgba(120, 155, 0, 0.75)'
             ],
             borderColor: 'rgba(100, 155, 0, 1)',
             borderWidth: 0
@@ -240,10 +240,9 @@ export default {
         offset: 8,
         radius: 160,
         spacing: 4,
-        hoverOffset: 22,
+        hoverOffset: 32,
         hoverBorderWidth: 1,
-        weight: 0,
-        borderJoinStyle: 'bevel'
+        weight: 0
       },
       lineChartData: {
         labels: [

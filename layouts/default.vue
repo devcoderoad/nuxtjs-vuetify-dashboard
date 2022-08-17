@@ -68,7 +68,7 @@
       flat
       :dark="getIsDarkMode"
       dense
-      color="default"
+      :color="getIsDarkMode ? 'default' : 'white'"
     >
       <v-app-bar-nav-icon small @click.stop="drawer = !drawer" />
       <v-btn small icon @click.stop="miniVariant = !miniVariant">
