@@ -4,37 +4,61 @@
       "id": 1,
       "name": "Product One",
       "slug": "product-one",
-      "description": "Description of product one"
+      "color": "#f1f1f1",
+      "description": "Description of product one",
+      "price": "21.22",
+      "stock": 3,
+      "review": 3
     },
     {
       "id": 2,
       "name": "Product Two",
       "slug": "product-two",
-      "description": "Description of product two"
+      "color": "#99ff00",
+      "description": "Description of product two",
+      "price": "121.45",
+      "stock": 12,
+      "review": 4
     },
     {
       "id": 3,
       "name": "Product Three",
       "slug": "product-three",
-      "description": "Description of product three"
+      "color": "#ff0099",
+      "description": "Description of product three",
+      "price": "42.13",
+      "stock": 12,
+      "review": 4
     },
     {
       "id": 4,
       "name": "Product Four",
       "slug": "product-four",
-      "description": "Description of product four"
+      "color": "#ff9999",
+      "description": "Description of product four",
+      "price": "220",
+      "stock": 2,
+      "review": 2
     },
     {
       "id": 5,
       "name": "Product Five",
       "slug": "product-five",
-      "description": "Description of product five"
+      "color": "#ff0000",
+      "description": "Description of product five",
+      "price": "73",
+      "stock": 9,
+      "review": 5
     },
     {
       "id": 6,
       "name": "Product Six",
       "slug": "product-six",
-      "description": "Description of product six"
+      "color": "#f9f9f9",
+      "description": "Description of product six",
+      "price": "39",
+      "stock": 3,
+      "review": 4
     }
   ],
   "statusCode": 200,

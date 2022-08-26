@@ -349,6 +349,7 @@
                     <v-textarea
                       prepend-icon="mdi-message-outline"
                       placeholder="Biograpy"
+                      rows="2"
                       dense
                       >Biograpy</v-textarea
                     ></v-col

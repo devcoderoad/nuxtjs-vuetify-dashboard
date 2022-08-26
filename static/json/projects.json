@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Apps",
+      "color": "#999999",
+      "status": "completed",
+      "summary": 102
+    },
+    {
+      "id": 2,
+      "name": "Web",
+      "color": "#ff9900",
+      "status": "completed",
+      "summary": 43
+    },
+    {
+      "id": 3,
+      "name": "iOS",
+      "status": "completed",
+      "color": "#339900",
+      "summary": 32
+    },
+    {
+      "id": 4,
+      "name": "Android",
+      "status": "completed",
+      "color": "#009944",
+      "summary": 24
+    },
+    {
+      "id": 5,
+      "name": "OS",
+      "status": "completed",
+      "color": "#887700",
+      "summary": 90
+    },
+    {
+      "id": 6,
+      "name": "Evt",
+      "color": "#999900",
+      "status": "completed",
+      "summary": 20
+    }
+  ],
+  "statusCode": 200,
+  "message": "success"
+}

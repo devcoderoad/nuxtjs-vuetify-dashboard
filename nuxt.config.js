@@ -110,8 +110,8 @@ export default {
       }
     },
     theme: {
-      /* dark: true, */
-      /* default: 'light', */
+      // dark: true,
+      // default: 'light',
       options: {
         /* variations: false */
         customProperties: true,
@@ -125,7 +125,7 @@ export default {
         dark: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+          secondary: colors.grey.darken1,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
@@ -134,7 +134,7 @@ export default {
         light: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+          secondary: colors.grey.darken1,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
@@ -193,5 +193,8 @@ export default {
 				config.devtool = 'source-map';
 			}
 		}, */
-  }
+  },
+
+  // The watch property lets you watch custom files for restarting the server.
+  watch: ['~/static/json/*.js*']
 }

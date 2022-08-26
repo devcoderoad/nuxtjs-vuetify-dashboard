@@ -13,6 +13,7 @@
                     <h4 class="grey--text text-h4 text-lg-h2 font-weight-bold">
                       5230
                     </h4>
+                    <h5 class="font-weight-normal grey--text">+23% Up</h5>
                   </v-col>
                   <v-col align-self="center" align="center">
                     <v-icon size="60" color="green"
@@ -32,6 +33,7 @@
                     <h4 class="grey--text text-h4 text-lg-h2 font-weight-bold">
                       6424
                     </h4>
+                    <h5 class="font-weight-normal grey--text">-3% Down</h5>
                   </v-col>
                   <v-col align-self="center" align="center">
                     <v-icon size="60" color="warning">mdi-cart-plus</v-icon>
@@ -49,6 +51,7 @@
                     <h4 class="grey--text text-h4 text-lg-h2 font-weight-bold">
                       39202
                     </h4>
+                    <h5 class="font-weight-normal grey--text">-10% Down</h5>
                   </v-col>
                   <v-col align-self="center" align="center">
                     <v-icon size="60" color="red">mdi-chart-areaspline</v-icon>
@@ -66,6 +69,8 @@
                     <h4 class="grey--text text-h4 text-lg-h2 font-weight-bold">
                       4124
                     </h4>
+
+                    <h5 class="font-weight-normal grey--text">+50% Up</h5>
                   </v-col>
                   <v-col align-self="center" align="center">
                     <v-icon size="60" color="orange"
@@ -191,6 +196,19 @@
                       dolores, assumenda voluptatum possimus nam fuga ducimus
                       temporibus.
                     </p>
+                    <v-col cols="3">
+                      <v-select
+                        :items="[
+                          'Division 1',
+                          'Division 2',
+                          'Division 3',
+                          'Division 4'
+                        ]"
+                        label="Division"
+                        dense
+                        outlined
+                      ></v-select>
+                    </v-col>
                     <client-only placeholder="Loading...">
                       <LineChart
                         :chart-options="lineChartOptions"
@@ -258,29 +276,37 @@ export default {
       },
       lineChartData: {
         labels: [
-          'January',
-          'February',
-          'March',
-          'April',
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
           'May',
-          'June',
-          'July'
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec'
         ],
         datasets: [
           {
             label: 'John Doe',
             backgroundColor: '#ff0099',
-            data: [40, 39, 10, 40, 39, 80, 40]
+            borderColor: 'red',
+            data: [40, 39, 10, 40, 39, 80, 40, 30, 10, 20, 30, 40]
           },
           {
             label: 'Jane Doe',
             backgroundColor: '#ff9900',
-            data: [20, 9, 19, 90, 29, 100, 80]
+            borderColor: 'green',
+            data: [20, 9, 80, 90, 29, 100, 80, 20, 30, 40, 55, 75]
           },
           {
             label: 'Jack Doe',
             backgroundColor: '#999999',
-            data: [10, 24, 12, 50, 69, 10, 20]
+            borderColor: 'blue',
+            data: [10, 24, 42, 50, 69, 10, 20, 70, 89, 45, 35, 42]
           }
         ]
       },

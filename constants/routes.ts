@@ -47,6 +47,16 @@ const DASHBOARD = {
     route: '/charts',
     url: '/charts'
   },
+  PROFILE: {
+    href: '/profile.vue',
+    route: '/user-profile',
+    url: '/profile'
+  },
+  SETTING: {
+    href: '/settings.vue',
+    route: '/user-settings',
+    url: '/setting'
+  },
   CARD: { href: '/cards.vue', route: '/cards', url: '/cards' },
   ICON: { href: '/icons.vue', route: '/icons', url: '/icons' },
   LANDING: { href: '/landing.vue', route: '/landing', url: '/landing' },

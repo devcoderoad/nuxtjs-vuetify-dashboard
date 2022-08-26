@@ -41,15 +41,22 @@
   }
   /* Theme Light */
   &.theme--dark {
-    background-color: rgba(0, 0, 0, 0.75);
+    // background-color: rgba(0, 0, 0, 0.75);
     .v-navigation-drawer--floating.theme--dark {
       background-image: linear-gradient(195deg, #42424a, #191919) !important;
+      // background-image: linear-gradient(60deg,#3cd18a,#3c6fd1 .01%,#7ca9ff);
     }
     .v-list-group {
       // border-top: 1px solid gray;
       // border-bottom: 1px solid gray;
       background-color: rgba(0, 0, 0, 0.25);
     }
+    // .v-list-item--active {
+    //   font-weight: bold;
+    //   &:before {
+    //     opacity: 0;
+    //   }
+    // }
   }
   /* .theme-link {
     &:before, &:after {

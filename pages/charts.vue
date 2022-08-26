@@ -73,23 +73,45 @@
                 </v-col>
               </v-row>
             </v-col>
-            <v-col md="12">
-              <v-card height="100%">
-                <v-card-title tag="h2">Bar Chart</v-card-title>
-                <v-card-subtitle>Data examples</v-card-subtitle>
-                <v-card-text>
-                  <div>
-                    <client-only placeholder="Loading...">
-                      <BarChart
-                        :chartData="barChartData"
-                        :options="barChartOptions"
-                        :height="90"
-                        :width="100"
-                      />
-                    </client-only>
-                  </div>
-                </v-card-text>
-              </v-card>
+            <v-col cols="12" md="12">
+              <v-row>
+                <v-col cols="12" md="6">
+                  <v-card height="100%">
+                    <v-card-title tag="h2">Bar Chart</v-card-title>
+                    <v-card-subtitle>Data Projects</v-card-subtitle>
+                    <v-card-text>
+                      <div>
+                        <client-only placeholder="Loading...">
+                          <BarChart
+                            :chartData="barDataProjects"
+                            :options="barChartOptions"
+                            :height="90"
+                            :width="100"
+                          />
+                        </client-only>
+                      </div>
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+                <v-col cols="12" md="6">
+                  <v-card height="100%">
+                    <v-card-title tag="h2">Bar Chart</v-card-title>
+                    <v-card-subtitle>Data examples</v-card-subtitle>
+                    <v-card-text>
+                      <div>
+                        <client-only placeholder="Loading...">
+                          <BarChart
+                            :chartData="barChartData"
+                            :options="barChartOptions"
+                            :height="90"
+                            :width="100"
+                          />
+                        </client-only>
+                      </div>
+                    </v-card-text>
+                  </v-card>
+                </v-col>
+              </v-row>
             </v-col>
             <v-col md="6">
               <v-card height="100%">
@@ -146,7 +168,7 @@
                 <v-col cols="12" lg="6">
                   <v-card height="100%">
                     <v-card-title tag="h2">Graph Chart</v-card-title>
-                    <v-card-subtitle>Data examples</v-card-subtitle>
+                    <v-card-subtitle>Data Channels</v-card-subtitle>
                     <v-card-text>
                       <v-row
                         v-if="channels && channels.length"
@@ -194,7 +216,7 @@
                 <v-col cols="12" lg="6">
                   <v-card height="100%">
                     <v-card-title tag="h2">Pie Chart</v-card-title>
-                    <v-card-subtitle>Data examples</v-card-subtitle>
+                    <v-card-subtitle>Data Channels</v-card-subtitle>
                     <v-card-text>
                       <v-row
                         v-if="channels && channels.length"
@@ -280,7 +302,7 @@ export default {
           {
             label: 'Visualization',
             data: [72, 131, 12, 3, 4, 55, 0, 0, 4, 10, 2],
-            backgroundColor: 'rgba(20, 255, 0, 0.3)',
+            backgroundColor: 'rgba(20, 255, 0, 0.88)',
             borderColor: 'rgba(100, 155, 0, 1)',
             borderWidth: 1
           }
@@ -289,6 +311,8 @@ export default {
       barChartOptions: {
         responsive: true,
         maintainAspectRatio: false,
+        pointStyle: 'star',
+        barThickness: 3,
         legend: {
           display: false
         },
@@ -327,7 +351,8 @@ export default {
       barChannelData: null,
       barChannelOptions: null,
       lineDataViews: null,
-      lineDataSales: null
+      lineDataSales: null,
+      barDataProjects: null
     }
   },
   async fetch() {
@@ -337,6 +362,7 @@ export default {
     await dispatch('mock/actionGetChannels')
     await dispatch('mock/actionGetUsers')
     await dispatch('mock/actionGetSummary')
+    await dispatch('mock/actionGetProjects')
 
     this.barChannelData = {
       labels: [...(this.channels && this.channels.map((item) => item.name))],
@@ -346,13 +372,16 @@ export default {
           data: [
             ...(this.channels && this.channels.map((item) => item.summary))
           ],
-          // backgroundColor: [
-          //   ...(this.channels && this.channels.map((item) => item.color))
-          // ],
-          // borderColor: 'rgba(100, 155, 0, 0.5)',
-          backgroundColor: 'rgba(20, 255, 0, 0.3)',
+          backgroundColor: [
+            ...(this.channels && this.channels.map((item) => item.color))
+          ],
           borderColor: 'rgba(100, 155, 0, 1)',
-          borderWidth: 1
+          borderWidth: 0,
+          hoverOffset: 35,
+          hoverBackgroundColor: 'rgba(100, 0, 0, 0.5)',
+          weight: 1,
+          offset: 8,
+          radius: 180
         }
       ]
     }
@@ -363,7 +392,7 @@ export default {
         {
           label: 'Visualization',
           data: [...(this.sales && this.sales.map((item) => item.summary))],
-          backgroundColor: 'rgba(101, 110, 10, 0.55)',
+          backgroundColor: 'rgba(101, 110, 10, 0.75)',
           borderColor: 'rgba(140, 155, 0, 1)',
           borderWidth: 1
         }
@@ -376,9 +405,31 @@ export default {
         {
           label: 'Visualization',
           data: [...(this.views && this.views.map((item) => item.summary))],
-          backgroundColor: 'rgba(30, 212, 0, 0.55)',
-          borderColor: 'rgba(150, 155, 0, 1)',
+          backgroundColor: 'rgba(30, 12, 211, 0.75)',
+          borderColor: 'rgba(10, 155, 0, 1)',
           borderWidth: 1
+        }
+      ]
+    }
+
+    this.barDataProjects = {
+      labels: [...(this.projects && this.projects.map((item) => item.name))],
+      datasets: [
+        {
+          label: 'Projects',
+          data: [
+            ...(this.projects && this.projects.map((item) => item.summary))
+          ],
+          backgroundColor: [
+            ...(this.projects && this.projects.map((item) => item.color))
+          ],
+          borderColor: 'rgba(100, 155, 0, 1)',
+          borderWidth: 0,
+          hoverOffset: 35,
+          hoverBackgroundColor: 'rgba(100, 0, 0, 0.5)',
+          weight: 1,
+          offset: 8,
+          radius: 180
         }
       ]
     }
@@ -391,6 +442,7 @@ export default {
   },
   computed: {
     ...mapState({ channels: (state) => state.mock.channels }),
+    ...mapState({ projects: (state) => state.mock.projects }),
     ...mapState({ users: (state) => state.mock.users }),
     ...mapState({ views: (state) => state.mock.summary.views }),
     ...mapState({ sales: (state) => state.mock.summary.sales })

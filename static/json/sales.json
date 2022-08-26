@@ -2,20 +2,34 @@
   "data": [
     {
       "id": 1,
-      "product_id": 1,
-      "customer": {
-        "user_id": 1,
-        "name": "User One"
-      },
+      "label": "John Doe",
+      "backgroundColor": "#ff0099",
+      "borderColor": "red",
+      "data": [40, 39, 10, 40, 39, 80, 40, 30, 10, 20, 30, 40],
       "createdAt": "12-08-2021 03:23:23"
     },
     {
       "id": 2,
-      "product_id": 2,
-      "customer": {
-        "user_id": 2,
-        "name": "User Two"
-      },
+      "label": "Jane Doe",
+      "backgroundColor": "#ff9900",
+      "borderColor": "green",
+      "data": [20, 9, 80, 90, 29, 100, 80, 20, 30, 40, 55, 75],
+      "createdAt": "12-08-2021 06:12:29"
+    },
+    {
+      "id": 3,
+      "label": "Jack Doe",
+      "backgroundColor": "#999999",
+      "borderColor": "blue",
+      "data": [10, 24, 42, 50, 69, 10, 20, 70, 89, 45, 35, 42],
+      "createdAt": "12-08-2021 06:12:29"
+    },
+    {
+      "id": 4,
+      "label": "Miles Markson",
+      "backgroundColor": "#88ff22",
+      "borderColor": "blue",
+      "data": [10, 24, 42, 50, 69, 10, 20, 70, 89, 45, 35, 42],
       "createdAt": "12-08-2021 06:12:29"
     }
   ],

@@ -4,7 +4,7 @@
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
-      :dark="getIsDarkMode"
+      :dark="isDark"
       fixed
       app
       floating
@@ -19,6 +19,21 @@
           <h4 class="my-6" v-text="title"
         /></v-flex>
       </nuxt-link>
+      <!-- <v-container fluid class="accent darken-2">
+        <v-row>
+          <v-col cols="3">
+            <v-avatar
+              color="primary"
+              size="35"
+              v-html="title.substring(0, 1)"
+            ></v-avatar>
+          </v-col>
+          <v-col cols="9">
+            <h5>John Doe</h5>
+            <h6>Web Administrator</h6>
+          </v-col>
+        </v-row>
+      </v-container> -->
       <v-list :dark="isDark">
         <slot v-for="(item, i) in items">
           <v-list-group
@@ -26,7 +41,7 @@
             :key="`${item.title}-key-${i + 1}`"
             v-model="item.active"
             :prepend-icon="item.icon"
-            :color="getIsDarkMode ? 'warning' : 'accent-1'"
+            :color="isDark ? 'warning' : 'accent-1'"
             :value="false"
             :ripple="false"
           >
@@ -69,11 +84,10 @@
     </v-navigation-drawer>
     <v-app-bar
       :clipped-left="clipped"
-      :color="getIsDarkMode ? 'default' : 'white'"
-      :dark="getIsDarkMode"
-      absolute
+      :color="isDark ? 'default' : 'white'"
+      :dark="isDark"
+      elevate-on-scroll
       app
-      flat
       class="px-4"
     >
       <v-app-bar-nav-icon small @click.stop="drawer = !drawer" />
@@ -89,17 +103,20 @@
       <!-- <v-toolbar-title v-text="title" /> -->
       <v-spacer />
       <v-col
-        cols="6"
+        cols="3"
         sm="3"
         :lg="searchLength ? '2' : '1'"
         align-self="stretch"
       >
         <v-text-field
+          v-model="search"
           dense
+          flat
           solo
           name="search"
           :placeholder="searchLength ? 'Search' : ''"
           prepend-inner-icon="mdi-magnify"
+          maxlength="20"
           @focus="searchFocus"
           @focusout="searchFocus"
         >
@@ -123,7 +140,7 @@
           <!-- <v-list-item v-for="(item, i) in items" :key="i" :to="item.to">
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item> -->
-          <v-list-item>
+          <v-list-item :to="`/`">
             <v-list-item-icon>
               <v-icon>mdi-logout-variant</v-icon>
             </v-list-item-icon>
@@ -131,7 +148,7 @@
               <v-list-item-title> Logout </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
+          <v-list-item :to="`/`">
             <v-list-item-icon>
               <v-icon>mdi-account-circle-outline</v-icon>
             </v-list-item-icon>
@@ -139,12 +156,12 @@
               <v-list-item-title> Profile </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item>
+          <v-list-item :to="`/`">
             <v-list-item-icon>
-              <v-icon>mdi-flag-outline</v-icon>
+              <v-icon>mdi-cog-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title> {{ title }} </v-list-item-title>
+              <v-list-item-title> {{ title }} Setting </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -202,7 +219,8 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
+// import { mapGetters, mapState } from 'vuex'
+import { mapState } from 'vuex'
 import global from '~/constants/global'
 
 export default {
@@ -301,7 +319,8 @@ export default {
       right: true,
       fab: true,
       darkmode: false,
-      searchLength: false
+      searchLength: false,
+      search: ''
     }
   },
   head() {
@@ -312,7 +331,6 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ getIsDarkMode: 'core/getIsDarkMode' }),
     ...mapState({ isDark: (state) => state.core.theme.isDark })
   },
   created() {
@@ -340,6 +358,7 @@ export default {
     },
     searchFocus() {
       this.searchLength = !this.searchLength
+      this.search = ''
     },
     // setProfileMenu() {
     // return console.log('setProfileMenu')
