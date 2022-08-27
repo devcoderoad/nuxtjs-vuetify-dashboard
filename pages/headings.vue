@@ -151,7 +151,7 @@
       <v-container fluid>
         <v-row>
           <v-col cols="12" lg="3">
-            <v-card class="mx-auto" max-width="450">
+            <v-card class="mx-auto" max-width="450" :dark="light">
               <v-img
                 src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
                 :aspect-ratio="16 / 9"
@@ -174,15 +174,15 @@
               </v-row>
               <v-divider class="mt-6 mx-4"></v-divider>
               <v-card-text>
-                <v-chip small class="mr-2" @click="lights">
+                <v-chip small :dark="light" class="mr-2" @click="lights">
                   <v-icon left small> mdi-brightness-5 </v-icon>
                   Lights
                 </v-chip>
-                <v-chip small class="mr-2" @click="alarm">
+                <v-chip small :dark="light" class="mr-2" @click="alarm">
                   <v-icon left small> mdi-alarm-check </v-icon>
                   Alarm
                 </v-chip>
-                <v-chip small @click="blinds">
+                <v-chip small :dark="light" @click="blinds">
                   <v-icon left small> mdi-blinds </v-icon>
                   Blinds
                 </v-chip>
@@ -190,7 +190,7 @@
             </v-card>
           </v-col>
           <v-col cols="12" lg="3">
-            <v-card class="mx-auto" max-width="450">
+            <v-card class="mx-auto" max-width="450" :dark="light">
               <v-img
                 src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
                 :aspect-ratio="16 / 9"
@@ -213,15 +213,15 @@
               </v-row>
               <v-divider class="mt-6 mx-4"></v-divider>
               <v-card-text>
-                <v-chip small class="mr-2" @click="lights">
+                <v-chip small :dark="light" class="mr-2" @click="lights">
                   <v-icon left small> mdi-brightness-5 </v-icon>
                   Lights
                 </v-chip>
-                <v-chip small class="mr-2" @click="alarm">
+                <v-chip small :dark="light" class="mr-2" @click="alarm">
                   <v-icon left small> mdi-alarm-check </v-icon>
                   Alarm
                 </v-chip>
-                <v-chip small @click="blinds">
+                <v-chip small :dark="light" @click="blinds">
                   <v-icon left small> mdi-blinds </v-icon>
                   Blinds
                 </v-chip>
@@ -229,7 +229,7 @@
             </v-card>
           </v-col>
           <v-col cols="12" lg="3">
-            <v-card class="mx-auto" max-width="450">
+            <v-card class="mx-auto" max-width="450" :dark="light">
               <v-img
                 src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
                 :aspect-ratio="16 / 9"
@@ -252,15 +252,15 @@
               </v-row>
               <v-divider class="mt-6 mx-4"></v-divider>
               <v-card-text>
-                <v-chip small class="mr-2" @click="lights">
+                <v-chip small :dark="light" class="mr-2" @click="lights">
                   <v-icon left small> mdi-brightness-5 </v-icon>
                   Lights
                 </v-chip>
-                <v-chip small class="mr-2" @click="alarm">
+                <v-chip small :dark="light" class="mr-2" @click="alarm">
                   <v-icon left small> mdi-alarm-check </v-icon>
                   Alarm
                 </v-chip>
-                <v-chip small @click="blinds">
+                <v-chip small :dark="light" @click="blinds">
                   <v-icon left small> mdi-blinds </v-icon>
                   Blinds
                 </v-chip>
@@ -268,7 +268,7 @@
             </v-card>
           </v-col>
           <v-col cols="12" lg="3">
-            <v-card class="mx-auto" max-width="450" :light="light">
+            <v-card class="mx-auto" max-width="450" :dark="light">
               <v-img
                 src="https://cdn.vuetifyjs.com/images/cards/house.jpg"
                 :aspect-ratio="16 / 9"
@@ -291,15 +291,15 @@
               </v-row>
               <v-divider class="mt-6 mx-4"></v-divider>
               <v-card-text>
-                <v-chip small class="mr-2" @click="lights">
+                <v-chip small :dark="light" class="mr-2" @click="lights">
                   <v-icon left small> mdi-brightness-5 </v-icon>
                   Lights
                 </v-chip>
-                <v-chip small class="mr-2" @click="alarm">
+                <v-chip small :dark="light" class="mr-2" @click="alarm">
                   <v-icon left small> mdi-alarm-check </v-icon>
                   Alarm
                 </v-chip>
-                <v-chip small @click="blinds">
+                <v-chip small :dark="light" @click="blinds">
                   <v-icon left small> mdi-blinds </v-icon>
                   Blinds
                 </v-chip>
