@@ -29,59 +29,25 @@
           </v-card>
         </v-col>
       </v-row>
-      <v-row class="text-left">
-        <v-col md="6" light>
+      <v-row v-if="foodCards && foodCards.length" class="text-left">
+        <v-col v-for="card in foodCards" :key="card.id" md="6" light>
           <v-card light>
-            <v-card-title tag="h2">Card Half</v-card-title>
-            <v-card-subtitle>Data examples</v-card-subtitle>
+            <v-card-title tag="h2">{{ card.name }}</v-card-title>
+            <v-card-subtitle>{{ card.category }}</v-card-subtitle>
             <v-card-text>
-              <div>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
-                eveniet est? Mollitia labore deserunt iusto eius explicabo
-                laborum autem vel consequatur libero animi alias suscipit
-                provident qui excepturi quaerat possimus atque, dignissimos aut
-                obcaecati necessitatibus iure delectus molestiae! Dolorum,
-                doloremque? Sequi, porro. Excepturi consequuntur iure corporis
-                repudiandae! Mollitia non maxime architecto explicabo nulla
-                laborum dolores?
-              </div>
+              <v-img
+                class="white--text align-end"
+                height="300px"
+                :src="card.imageUrl"
+              >
+                <v-card-title tag="h2" class="gradient-b-bottom">{{
+                  card.name
+                }}</v-card-title>
+              </v-img>
             </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col md="6" light>
-          <v-card light>
-            <v-card-title tag="h2">Card Half</v-card-title>
-            <v-card-subtitle>Data examples</v-card-subtitle>
-            <v-card-text>
-              <div>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
-                eveniet est? Mollitia labore deserunt iusto eius explicabo
-                laborum autem vel consequatur libero animi alias suscipit
-                provident qui excepturi quaerat possimus atque, dignissimos aut
-                obcaecati necessitatibus iure delectus molestiae! Dolorum,
-                doloremque? Sequi, porro. Excepturi consequuntur iure corporis
-                repudiandae! Mollitia non maxime architecto explicabo nulla
-                laborum dolores?
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col md="12" light>
-          <v-card light>
-            <v-card-title tag="h2">Card Full</v-card-title>
-            <v-card-subtitle>Data examples</v-card-subtitle>
-            <v-card-text>
-              <div>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse,
-                eveniet est? Mollitia labore deserunt iusto eius explicabo
-                laborum autem vel consequatur libero animi alias suscipit
-                provident qui excepturi quaerat possimus atque, dignissimos aut
-                obcaecati necessitatibus iure delectus molestiae! Dolorum,
-                doloremque? Sequi, porro. Excepturi consequuntur iure corporis
-                repudiandae! Mollitia non maxime architecto explicabo nulla
-                laborum dolores?
-              </div>
-            </v-card-text>
+            <v-card-subtitle class="pt-0" align="right"
+              >Views: {{ card.views }}</v-card-subtitle
+            >
           </v-card>
         </v-col>
       </v-row>
@@ -107,6 +73,7 @@ export default {
       $store: { dispatch }
     } = this
     await dispatch('mock/actionGetBuildings')
+    await dispatch('mock/actionGetFoods')
   },
   head() {
     return {
@@ -115,7 +82,8 @@ export default {
     }
   },
   computed: {
-    ...mapState({ buildingCards: (state) => state.mock.buildings })
+    ...mapState({ buildingCards: (state) => state.mock.buildings }),
+    ...mapState({ foodCards: (state) => state.mock.foods })
   }
 }
 </script>

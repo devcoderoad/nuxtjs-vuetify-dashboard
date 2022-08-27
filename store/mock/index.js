@@ -3,6 +3,7 @@
 const LOAD_CHANNELS = 'LOAD_CHANNELS'
 const LOAD_PRODUCTS = 'LOAD_PRODUCTS'
 const LOAD_PROJECTS = 'LOAD_PROJECTS'
+const LOAD_FOODS = 'LOAD_FOODS'
 const LOAD_SALES = 'LOAD_SALES'
 const LOAD_USERS = 'LOAD_USERS'
 const LOAD_SUMMARY = 'LOAD_SUMMARY'
@@ -12,6 +13,7 @@ const state = () => ({
   channels: [],
   products: [],
   projects: [],
+  foods: [],
   sales: [],
   users: [],
   summary: [],
@@ -26,7 +28,10 @@ const getters = {
   //   return state.products
   // },
   // getProjects(state) {
-  //   return state.Projects
+  //   return state.projects
+  // },
+  // getFoods(state) {
+  //   return state.foods
   // },
   // getSales(state) {
   //   return state.sales
@@ -48,6 +53,9 @@ const mutations = {
   },
   [LOAD_PROJECTS](state, payload) {
     state.projects = payload
+  },
+  [LOAD_FOODS](state, payload) {
+    state.foods = payload
   },
   [LOAD_SALES](state, payload) {
     state.sales = payload
@@ -111,6 +119,14 @@ const actions = {
       .$get('json/projects.json', payload)
       .then((res) => res.data)
     commit('LOAD_PROJECTS', result)
+  },
+  async actionGetFoods(context, payload) {
+    const { commit } = context
+    const { $axios } = this
+    const result = await $axios
+      .$get('json/foods.json', payload)
+      .then((res) => res.data)
+    commit('LOAD_FOODS', result)
   }
   // actionGetSales({ commit }, payload) {},
 }

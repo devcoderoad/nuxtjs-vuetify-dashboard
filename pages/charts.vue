@@ -81,7 +81,10 @@
                     <v-card-subtitle>Data Projects</v-card-subtitle>
                     <v-card-text>
                       <div>
-                        <client-only placeholder="Loading...">
+                        <client-only
+                          v-if="barDataProjects"
+                          placeholder="Loading..."
+                        >
                           <BarChart
                             :chartData="barDataProjects"
                             :options="barChartOptions"
@@ -99,7 +102,10 @@
                     <v-card-subtitle>Data examples</v-card-subtitle>
                     <v-card-text>
                       <div>
-                        <client-only placeholder="Loading...">
+                        <client-only
+                          v-if="barChartData"
+                          placeholder="Loading..."
+                        >
                           <BarChart
                             :chartData="barChartData"
                             :options="barChartOptions"
@@ -127,7 +133,7 @@
                 doloremque? Sequi, porro. Excepturi consequuntur iure corporis
                 repudiandae! Mollitia non maxime architecto explicabo nulla
                 laborum dolores? -->
-                    <client-only placeholder="Loading...">
+                    <client-only v-if="barChartData" placeholder="Loading...">
                       <PieChart
                         :chartData="barChartData"
                         :options="barChartOptions"
@@ -153,7 +159,7 @@
                 doloremque? Sequi, porro. Excepturi consequuntur iure corporis
                 repudiandae! Mollitia non maxime architecto explicabo nulla
                 laborum dolores? -->
-                    <client-only placeholder="Loading...">
+                    <client-only v-if="barChartData" placeholder="Loading...">
                       <DoughnutChart
                         :chartData="barChartData"
                         :options="barChartOptions"
@@ -324,29 +330,29 @@ export default {
         },
         tooltips: {
           backgroundColor: '#17BF62'
-        },
-        scales: {
-          xAxes: [
-            {
-              gridLines: {
-                display: true
-              }
-            }
-          ],
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true,
-                max: 7,
-                min: 0,
-                stepSize: 1
-              },
-              gridLines: {
-                display: true
-              }
-            }
-          ]
         }
+        // scales: {
+        //   xAxes: [
+        //     {
+        //       gridLines: {
+        //         display: true
+        //       }
+        //     }
+        //   ],
+        //   yAxes: [
+        //     {
+        //       ticks: {
+        //         beginAtZero: true,
+        //         max: 7,
+        //         min: 0,
+        //         stepSize: 1
+        //       },
+        //       gridLines: {
+        //         display: true
+        //       }
+        //     }
+        //   ]
+        // }
       },
       barChannelData: null,
       barChannelOptions: null,
