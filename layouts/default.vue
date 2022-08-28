@@ -309,6 +309,11 @@ export default {
               icon: 'mdi-pencil',
               title: 'Headings',
               to: '/headings'
+            },
+            {
+              icon: 'mdi-grease-pencil',
+              title: 'Typographies',
+              to: '/typography'
             }
           ]
         },
