@@ -2,6 +2,32 @@
   <v-row>
     <v-col class="text-center">
       <h1 class="title-page">Cards</h1>
+      <v-row v-if="foodCards && foodCards.length" class="text-left">
+        <v-col v-for="card in foodCards" :key="card.id" md="3" light>
+          <v-card light>
+            <v-card-title tag="h2">{{ card.name }}</v-card-title>
+            <v-card-subtitle>
+              <v-icon small>mdi-tag-outline</v-icon>
+              {{ card.category }}
+            </v-card-subtitle>
+            <v-card-text>
+              <v-img
+                class="white--text align-end"
+                height="300px"
+                :src="card.imageUrl"
+              >
+                <v-card-title tag="h2" class="gradient-b-bottom">{{
+                  card.name
+                }}</v-card-title>
+              </v-img>
+            </v-card-text>
+            <v-card-subtitle class="pt-0" align="right"
+              >Price: ${{ card.price }} - Views:
+              {{ card.views }}</v-card-subtitle
+            >
+          </v-card>
+        </v-col>
+      </v-row>
       <v-row v-if="buildingCards && buildingCards.length" class="text-left">
         <v-col v-for="card in buildingCards" :key="card.id" md="6">
           <v-card height="100%">
@@ -26,28 +52,6 @@
                 >
               </v-col>
             </v-row>
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-row v-if="foodCards && foodCards.length" class="text-left">
-        <v-col v-for="card in foodCards" :key="card.id" md="6" light>
-          <v-card light>
-            <v-card-title tag="h2">{{ card.name }}</v-card-title>
-            <v-card-subtitle>{{ card.category }}</v-card-subtitle>
-            <v-card-text>
-              <v-img
-                class="white--text align-end"
-                height="300px"
-                :src="card.imageUrl"
-              >
-                <v-card-title tag="h2" class="gradient-b-bottom">{{
-                  card.name
-                }}</v-card-title>
-              </v-img>
-            </v-card-text>
-            <v-card-subtitle class="pt-0" align="right"
-              >Views: {{ card.views }}</v-card-subtitle
-            >
           </v-card>
         </v-col>
       </v-row>

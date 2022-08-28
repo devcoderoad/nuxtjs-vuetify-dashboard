@@ -1,5 +1,5 @@
 <template>
-  <v-app :dark="isDark">
+  <v-app id="default" :dark="isDark">
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -8,7 +8,10 @@
       fixed
       app
       floating
+      styles="height: calc(100% - 2rem); top: 0px; max-height: calc(100% - 0px)"
     >
+      <!-- src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=987&q=80" -->
+      <!-- class="rounded ml-3 mt-4" -->
       <!-- class="no-border elevation-2 rounded ml-3 mt-4" -->
       <nuxt-link to="/" class="no-underline success--text">
         <v-flex

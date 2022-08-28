@@ -11,13 +11,15 @@
 
 <script>
 import { mapState } from 'vuex'
+import global from '~/constants/global'
 
 export default {
   layout: 'blank',
   data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      company: global.company
     }
   },
   computed: {
