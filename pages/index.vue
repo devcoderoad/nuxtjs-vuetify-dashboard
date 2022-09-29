@@ -93,11 +93,7 @@
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
                   nihil corporis rem iste! Doloribus magni doloremque inventore
                   natus consectetur corporis debitis nemo numquam explicabo esse
-                  iusto maxime, perferendis tenetur accusantium. inventore natus
-                  consectetur corporis debitis nemo numquam explicabo esse iusto
-                  maxime, perferendis tenetur accusantium. Lipsu inventore natus
-                  consectetur corporis debitis nemo numquam explicabo esse iusto
-                  maxime, perferendis tenetur accusantium.
+                  iusto maxime.
                 </div>
                 <v-calendar class="my-6"></v-calendar>
               </v-container>
@@ -111,8 +107,7 @@
                 </h3>
                 <div>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                  nihil corporis rem iste! Doloribus magni doloremque inventore
-                  natus consectetur corporis debitis.
+                  nihil corporis rem iste!
                 </div>
                 <v-container fluid>
                   <v-row no-gutters>
@@ -124,7 +119,7 @@
                     <v-col cols="10">
                       <blockquote class="blockquote grey--text body-1">
                         Fugit nihil corporis rem iste! Doloribus magni
-                        doloremque inventore natus consectetur corporis debitis
+                        doloremque
                       </blockquote>
                     </v-col>
                   </v-row>
@@ -132,7 +127,7 @@
                     <v-col cols="9">
                       <blockquote class="blockquote grey--text body-1">
                         Fugit nihil corporis rem iste! Doloribus magni
-                        doloremque inventore natus nemo numquam explicabo
+                        doloremque inventore natus nemo
                       </blockquote>
                     </v-col>
                     <v-col cols="3" align-self="center" align="center">
@@ -150,7 +145,7 @@
                     <v-col cols="10">
                       <blockquote class="blockquote grey--text body-1">
                         Fugit nihil corporis rem iste! Doloribus natus
-                        consectetur corporis debitis nemo numquam explicabo
+                        consectetur
                       </blockquote>
                     </v-col>
                   </v-row>
@@ -164,6 +159,10 @@
                 <v-card height="100%">
                   <v-card-title>Sales by brand</v-card-title>
                   <v-card-text>
+                    <p>
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                      Libero neque ad incidunt!
+                    </p>
                     <client-only placeholder="Loading...">
                       <DoughnutChart
                         :chart-data="doughChartData"
@@ -196,7 +195,7 @@
                       dolores, assumenda voluptatum possimus nam fuga ducimus
                       temporibus.
                     </p>
-                    <v-col cols="3">
+                    <!-- <v-col cols="3">
                       <v-select
                         :items="[
                           'Division 1',
@@ -208,16 +207,16 @@
                         dense
                         outlined
                       ></v-select>
-                    </v-col>
+                    </v-col> -->
                     <client-only placeholder="Loading...">
                       <LineChart
                         :chart-options="lineChartOptions"
                         :chart-data="lineChartData"
                         :chart-id="`chartId`"
                         :width="300"
-                        :height="384"
+                        :height="424"
                         :styles="{
-                          margin: '1rem auto',
+                          margin: '2rem auto',
                           backgroundColor: 'rgba(255,255,255, .85)',
                           padding: '.75rem'
                         }"
@@ -293,19 +292,25 @@ export default {
           {
             label: 'John Doe',
             backgroundColor: '#ff0099',
-            borderColor: 'red',
+            borderColor: '#ff0099',
+            borderWidth: '0',
+            borderJoinStyle: 'round',
             data: [40, 39, 10, 40, 39, 80, 40, 30, 10, 20, 30, 40]
           },
           {
             label: 'Jane Doe',
             backgroundColor: '#ff9900',
-            borderColor: 'green',
-            data: [20, 9, 80, 90, 29, 100, 80, 20, 30, 40, 55, 75]
+            borderColor: '#ff9900',
+            borderWidth: '0',
+            borderJoinStyle: 'round',
+            data: [20, 9, 80, 90, 29, 58, 80, 20, 30, 40, 55, 75]
           },
           {
             label: 'Jack Doe',
             backgroundColor: '#999999',
-            borderColor: 'blue',
+            borderColor: '#999999',
+            borderWidth: '0',
+            borderJoinStyle: 'round',
             data: [10, 24, 42, 50, 69, 10, 20, 70, 89, 45, 35, 42]
           }
         ]

@@ -1,8 +1,8 @@
-/* ::selection {
+::selection {
   color: $color-white;
   background: $color-primary;
 }
-
+/*
 * {
   outline: none;
   box-sizing: border-box;
@@ -105,3 +105,12 @@ figure {
   vertical-align: middle;
 }
  */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.7rem;
+}

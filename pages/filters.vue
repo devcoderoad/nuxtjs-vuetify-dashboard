@@ -1,114 +1,117 @@
 <template>
-  <v-row>
-    <v-col class="text-center">
-      <h1 class="title-page">Filters</h1>
-      <v-row class="text-left">
-        <v-col md="12" light>
-          <v-card light>
-            <v-card-title tag="h2">Filter Full</v-card-title>
-            <v-card-subtitle>Data examples</v-card-subtitle>
-            <v-card-text>
-              <div>
-                <v-data-table
-                  :headers="headers"
-                  :items="desserts"
-                  :items-per-page="5"
-                  class="elevation-1"
-                  light
-                ></v-data-table>
-                <v-col>
-                  Sequi, porro. Excepturi consequuntur iure corporis
-                  repudiandae! Mollitia non maxime architecto explicabo nulla
-                  laborum dolores?
-                </v-col>
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col md="6" light>
-          <v-card light>
-            <v-card-title tag="h2">Filter Half</v-card-title>
-            <v-card-subtitle>Data examples</v-card-subtitle>
-            <v-card-text>
-              <div>
-                <v-data-table
-                  :headers="headers"
-                  :items="desserts"
-                  :items-per-page="5"
-                  class="elevation-1"
-                  light
-                ></v-data-table
-                ><v-col
-                  >Excepturi consequuntur iure corporis repudiandae! Mollitia
-                  non maxime architecto explicabo nulla laborum dolores?</v-col
-                >
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col md="6" light>
-          <v-card light>
-            <v-card-title tag="h2">Filter Half</v-card-title>
-            <v-card-subtitle>Data examples</v-card-subtitle>
-            <v-card-text>
-              <div>
-                <v-data-table
-                  :headers="headers"
-                  :items="desserts"
-                  :items-per-page="5"
-                  class="elevation-1"
-                  light
-                ></v-data-table>
-                <v-col
-                  >Sequi, porro. Excepturi consequuntur iure corporis
-                  repudiandae! Mollitia non maxime architecto explicabo nulla
-                  laborum dolores?
-                </v-col>
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-        <v-col md="12" light>
-          <v-card light>
-            <v-card-title tag="h2">Filter Full</v-card-title>
-            <v-card-subtitle>Data examples</v-card-subtitle>
-            <v-card-text>
-              <div>
-                <v-data-table
-                  :headers="headers"
-                  :items="desserts"
-                  :items-per-page="5"
-                  class="elevation-1"
-                  light
-                ></v-data-table>
-                <div class="my-4">
-                  <v-row
-                    ><v-col
-                      >Sequi, porro. Excepturi consequuntur iure corporis
-                      repudiandae! Mollitia non maxime architecto explicabo
-                      nulla laborum dolores?</v-col
-                    ><v-col
-                      >Sequi, porro. Excepturi consequuntur iure corporis
-                      repudiandae! Mollitia non maxime architecto explicabo
-                      nulla laborum dolores?</v-col
-                    ></v-row
+  <v-container fluid>
+    <v-row>
+      <v-col class="text-center">
+        <h1 class="title-page">Filters</h1>
+        <v-row class="text-left">
+          <v-col md="12" light>
+            <v-card light>
+              <v-card-title tag="h2">Filter Full</v-card-title>
+              <v-card-subtitle>Data examples</v-card-subtitle>
+              <v-card-text>
+                <div>
+                  <v-data-table
+                    :headers="headers"
+                    :items="desserts"
+                    :items-per-page="5"
+                    class="elevation-1"
+                    light
+                  ></v-data-table>
+                  <v-col>
+                    Sequi, porro. Excepturi consequuntur iure corporis
+                    repudiandae! Mollitia non maxime architecto explicabo nulla
+                    laborum dolores?
+                  </v-col>
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col md="6" light>
+            <v-card light>
+              <v-card-title tag="h2">Filter Half</v-card-title>
+              <v-card-subtitle>Data examples</v-card-subtitle>
+              <v-card-text>
+                <div>
+                  <v-data-table
+                    :headers="headers"
+                    :items="desserts"
+                    :items-per-page="5"
+                    class="elevation-1"
+                    light
+                  ></v-data-table
+                  ><v-col
+                    >Excepturi consequuntur iure corporis repudiandae! Mollitia
+                    non maxime architecto explicabo nulla laborum
+                    dolores?</v-col
                   >
                 </div>
-              </div>
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-      <blockquote class="blockquote">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;John Johnson</em>
-          </small>
-        </footer>
-      </blockquote>
-    </v-col>
-  </v-row>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col md="6" light>
+            <v-card light>
+              <v-card-title tag="h2">Filter Half</v-card-title>
+              <v-card-subtitle>Data examples</v-card-subtitle>
+              <v-card-text>
+                <div>
+                  <v-data-table
+                    :headers="headers"
+                    :items="desserts"
+                    :items-per-page="5"
+                    class="elevation-1"
+                    light
+                  ></v-data-table>
+                  <v-col
+                    >Sequi, porro. Excepturi consequuntur iure corporis
+                    repudiandae! Mollitia non maxime architecto explicabo nulla
+                    laborum dolores?
+                  </v-col>
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col md="12" light>
+            <v-card light>
+              <v-card-title tag="h2">Filter Full</v-card-title>
+              <v-card-subtitle>Data examples</v-card-subtitle>
+              <v-card-text>
+                <div>
+                  <v-data-table
+                    :headers="headers"
+                    :items="desserts"
+                    :items-per-page="5"
+                    class="elevation-1"
+                    light
+                  ></v-data-table>
+                  <div class="my-4">
+                    <v-row
+                      ><v-col
+                        >Sequi, porro. Excepturi consequuntur iure corporis
+                        repudiandae! Mollitia non maxime architecto explicabo
+                        nulla laborum dolores?</v-col
+                      ><v-col
+                        >Sequi, porro. Excepturi consequuntur iure corporis
+                        repudiandae! Mollitia non maxime architecto explicabo
+                        nulla laborum dolores?</v-col
+                      ></v-row
+                    >
+                  </div>
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+        <blockquote class="blockquote">
+          &#8220;First, solve the problem. Then, write the code.&#8221;
+          <footer>
+            <small>
+              <em>&mdash;John Johnson</em>
+            </small>
+          </footer>
+        </blockquote>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

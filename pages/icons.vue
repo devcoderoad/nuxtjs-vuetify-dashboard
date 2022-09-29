@@ -1,31 +1,33 @@
 <template>
-  <v-row>
-    <v-col class="text-center">
-      <img src="/v.png" alt="Vuetify.js" class="mb-5" />
-      <h1 class="title-page">Icons</h1>
-      <v-container>
-        <v-row justify="space-between">
-          <div
-            v-for="icon in icons.filter((item) => item.author === 'Google')"
-            :key="icon.name"
-          >
-            <v-btn color="primary" class="mb-3 mr-3"
-              ><v-icon left> {{ `mdi-${icon.name}` }} </v-icon>
-              {{ `mdi-${icon.name}` }}</v-btn
+  <v-container fluid>
+    <v-row>
+      <v-col>
+        <h1 class="title-page text-center">Icons</h1>
+        <v-container>
+          <v-row justify="space-between">
+            <div
+              v-for="icon in icons.filter((item) => item.author === 'Google')"
+              :key="icon.name"
             >
-          </div>
-        </v-row>
-      </v-container>
-      <blockquote class="blockquote">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;John Johnson</em>
-          </small>
-        </footer>
-      </blockquote>
-    </v-col>
-  </v-row>
+              <v-btn color="primary" class="mb-3 mr-3"
+                ><v-icon left> {{ `mdi-${icon.name}` }} </v-icon>
+                {{ `mdi-${icon.name}` }}</v-btn
+              >
+            </div>
+          </v-row>
+        </v-container>
+        <blockquote class="blockquote text-center">
+          <div><img src="/v.png" alt="Vuetify.js" class="mb-5 mx-auto" /></div>
+          &#8220;First, solve the problem. Then, write the code.&#8221;
+          <footer>
+            <small>
+              <em>&mdash;John Johnson</em>
+            </small>
+          </footer>
+        </blockquote>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
