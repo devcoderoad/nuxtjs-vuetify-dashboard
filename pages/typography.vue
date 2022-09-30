@@ -26,7 +26,7 @@
               quasi similique!
             </h3>
             <footer>
-              <cite>&dash; asds</cite>
+              <cite>&dash; Lorem Ipsum</cite>
             </footer>
           </blockquote>
         </v-col>

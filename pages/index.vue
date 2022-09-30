@@ -10,7 +10,9 @@
                 <h3>Users Summary</h3>
                 <v-row height="100%">
                   <v-col>
-                    <h4 class="grey--text text-h4 text-lg-h2 font-weight-bold">
+                    <h4
+                      class="grey--text text-h4 text-lg-h2 font-weight-bold lh-normal"
+                    >
                       5230
                     </h4>
                     <h5 class="font-weight-normal grey--text">+23% Up</h5>
@@ -30,7 +32,9 @@
                 <h3>Sales Summary</h3>
                 <v-row height="100%">
                   <v-col>
-                    <h4 class="grey--text text-h4 text-lg-h2 font-weight-bold">
+                    <h4
+                      class="grey--text text-h4 text-lg-h2 font-weight-bold lh-normal"
+                    >
                       6424
                     </h4>
                     <h5 class="font-weight-normal grey--text">-3% Down</h5>
@@ -48,7 +52,9 @@
                 <h3>Stock Summary</h3>
                 <v-row height="100%">
                   <v-col>
-                    <h4 class="grey--text text-h4 text-lg-h2 font-weight-bold">
+                    <h4
+                      class="grey--text text-h4 text-lg-h2 font-weight-bold lh-normal"
+                    >
                       39202
                     </h4>
                     <h5 class="font-weight-normal grey--text">-10% Down</h5>
@@ -66,7 +72,9 @@
                 <h3>Views Summary</h3>
                 <v-row height="100%">
                   <v-col>
-                    <h4 class="grey--text text-h4 text-lg-h2 font-weight-bold">
+                    <h4
+                      class="grey--text text-h4 text-lg-h2 font-weight-bold lh-normal"
+                    >
                       4124
                     </h4>
 
@@ -83,11 +91,88 @@
           >
         </v-row>
         <v-row>
+          <v-col cols="12" lg="4">
+            <v-card height="100%">
+              <v-card-title>Sales by brand</v-card-title>
+              <v-card-text>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Libero neque ad incidunt!
+                </p>
+                <client-only placeholder="Loading...">
+                  <DoughnutChart
+                    :chart-data="doughChartData"
+                    :chart-options="doughChartOptions"
+                    :height="430"
+                  />
+                </client-only>
+                <v-row>
+                  <v-col cols="9">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
+                    animi magni modi fuga. Voluptatum suscipit totam reiciendis
+                    molestiae</v-col
+                  >
+                  <v-col cols="3">
+                    <v-btn type="submit" color="primary" small tile
+                      >See all</v-btn
+                    ></v-col
+                  ></v-row
+                >
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="12" lg="8">
+            <v-card height="100%" light>
+              <v-card-title>Person sales by month</v-card-title>
+              <v-card-text>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Repellendus, nisi inventore, aperiam sapiente quod dolores,
+                  assumenda voluptatum possimus nam fuga ducimus temporibus.
+                </p>
+                <!-- <v-col cols="3">
+                      <v-select
+                        :items="[
+                          'Division 1',
+                          'Division 2',
+                          'Division 3',
+                          'Division 4'
+                        ]"
+                        label="Division"
+                        dense
+                        outlined
+                      ></v-select>
+                    </v-col> -->
+                <client-only placeholder="Loading...">
+                  <LineChart
+                    :chart-options="lineChartOptions"
+                    :chart-data="lineChartData"
+                    :chart-id="`chartId`"
+                    :width="300"
+                    :height="400"
+                    :styles="{
+                      margin: '1rem auto',
+                      backgroundColor: 'rgba(255,255,255, .85)',
+                      padding: '.75rem'
+                    }"
+                  />
+                </client-only>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Voluptatum suscipit totam reiciendis molestiae dolorem facere
+                  eaque, esse adipisci. Aperiam sapiente quod dolores, assumenda
+                  voluptatum possimus nam fuga ducimus temporibus.
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+        <v-row>
           <v-col cols="12" md="8">
             <v-card height="100%">
               <v-container fluid>
                 <h3 class="title-page">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Company official yearly calendar release
                 </h3>
                 <div>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
@@ -101,141 +186,138 @@
           </v-col>
           <v-col cols="12" md="4">
             <v-card height="100%">
-              <v-container fluid>
-                <h3 class="title-page">
-                  Lorem ipsum dolor sit amet consectetur
-                </h3>
+              <v-container>
+                <h3 class="title-page">Company News Announcement</h3>
                 <div>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                  nihil corporis rem iste!
+                  Here are the latest announcement notifications across our
+                  company! So you do not have to fear missing out on the latest
+                  news
                 </div>
                 <v-container fluid>
-                  <v-row no-gutters>
-                    <v-col cols="2" align-self="center" align="center">
-                      <v-avatar color="primary">
-                        <span class="white--text font-weight-bold">AS</span>
-                      </v-avatar>
-                    </v-col>
-                    <v-col cols="10">
-                      <blockquote class="blockquote grey--text body-1">
-                        Fugit nihil corporis rem iste! Doloribus magni
-                        doloremque
-                      </blockquote>
-                    </v-col>
-                  </v-row>
-                  <v-row no-gutters>
-                    <v-col cols="9">
-                      <blockquote class="blockquote grey--text body-1">
-                        Fugit nihil corporis rem iste! Doloribus magni
-                        doloremque inventore natus nemo
-                      </blockquote>
-                    </v-col>
-                    <v-col cols="3" align-self="center" align="center">
-                      <v-avatar color="green">
-                        <span class="white--text font-weight-bold">CV</span>
-                      </v-avatar>
-                    </v-col>
-                  </v-row>
-                  <v-row no-gutters>
-                    <v-col cols="2" align-self="center" align="center">
-                      <v-avatar color="info">
-                        <span class="white--text font-weight-bold">NM</span>
-                      </v-avatar>
-                    </v-col>
-                    <v-col cols="10">
-                      <blockquote class="blockquote grey--text body-1">
-                        Fugit nihil corporis rem iste! Doloribus natus
-                        consectetur
-                      </blockquote>
-                    </v-col>
-                  </v-row>
+                  <v-virtual-scroll width="256" height="321" item-height="120">
+                    <v-row no-gutters>
+                      <v-col cols="2" align-self="center" align="center">
+                        <v-avatar color="primary">
+                          <span class="white--text font-weight-bold">AS</span>
+                        </v-avatar>
+                      </v-col>
+                      <v-col cols="10">
+                        <blockquote class="blockquote grey--text body-1 px-3">
+                          <div class="mb-1">
+                            Fugit nihil corporis rem iste! Doloribus magni
+                            doloremque
+                          </div>
+                          <cite class="font-weight-thin"
+                            >- Any Sanders. Sr Marketing Director</cite
+                          >
+                        </blockquote>
+                      </v-col>
+                    </v-row>
+                    <v-row no-gutters>
+                      <v-col cols="9">
+                        <blockquote
+                          class="blockquote grey--text body-1 px-3 text-right"
+                        >
+                          <div class="mb-1">
+                            Fugit nihil corporis rem iste! Doloremque inventore
+                            natus nemo
+                          </div>
+                          <cite class="font-weight-thin"
+                            >- Carol Violas. Sales Representative</cite
+                          >
+                        </blockquote>
+                      </v-col>
+                      <v-col cols="3" align-self="center" align="center">
+                        <v-avatar color="green">
+                          <span class="white--text font-weight-bold">CV</span>
+                        </v-avatar>
+                      </v-col>
+                    </v-row>
+                    <v-row no-gutters>
+                      <v-col cols="2" align-self="center" align="center">
+                        <v-avatar color="info">
+                          <span class="white--text font-weight-bold">NM</span>
+                        </v-avatar>
+                      </v-col>
+                      <v-col cols="10">
+                        <blockquote class="blockquote grey--text body-1 px-3">
+                          <div class="mb-1">
+                            Fugit nihil corporis rem iste! Doloribus natus
+                            consectetur
+                          </div>
+                          <cite class="font-weight-thin"
+                            >- Naomi Malone. Country Director</cite
+                          >
+                        </blockquote>
+                      </v-col>
+                    </v-row>
+                    <v-row no-gutters>
+                      <v-col cols="9">
+                        <blockquote
+                          class="blockquote grey--text body-1 px-3 text-right"
+                        >
+                          <div class="mb-1">
+                            Fugit nihil corporis rem iste! Doloremque inventore
+                            natus nemo
+                          </div>
+                          <cite class="font-weight-thin"
+                            >- Carol Violas. Sales Representative</cite
+                          >
+                        </blockquote>
+                      </v-col>
+                      <v-col cols="3" align-self="center" align="center">
+                        <v-avatar color="green">
+                          <span class="white--text font-weight-bold">CV</span>
+                        </v-avatar>
+                      </v-col>
+                    </v-row>
+                    <v-row no-gutters>
+                      <v-col cols="2" align-self="center" align="center">
+                        <v-avatar color="primary">
+                          <span class="white--text font-weight-bold">AS</span>
+                        </v-avatar>
+                      </v-col>
+                      <v-col cols="10">
+                        <blockquote class="blockquote grey--text body-1 px-3">
+                          <div class="mb-1">
+                            Fugit nihil corporis rem iste! Doloribus magni
+                            doloremque
+                          </div>
+                          <cite class="font-weight-thin"
+                            >- Any Sanders. Sr Marketing Director</cite
+                          >
+                        </blockquote>
+                      </v-col>
+                    </v-row>
+                    <v-row no-gutters>
+                      <v-col cols="9">
+                        <blockquote
+                          class="blockquote grey--text body-1 px-3 text-right"
+                        >
+                          <div class="mb-1">
+                            Fugit nihil corporis rem iste! Doloremque inventore
+                            natus nemo
+                          </div>
+                          <cite class="font-weight-thin"
+                            >- Carol Violas. Sales Representative</cite
+                          >
+                        </blockquote>
+                      </v-col>
+                      <v-col cols="3" align-self="center" align="center">
+                        <v-avatar color="green">
+                          <span class="white--text font-weight-bold">CV</span>
+                        </v-avatar>
+                      </v-col>
+                    </v-row>
+                  </v-virtual-scroll>
                 </v-container>
               </v-container>
             </v-card>
           </v-col>
-          <v-col cols="12">
-            <v-row>
-              <v-col cols="12" lg="4">
-                <v-card height="100%">
-                  <v-card-title>Sales by brand</v-card-title>
-                  <v-card-text>
-                    <p>
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Libero neque ad incidunt!
-                    </p>
-                    <client-only placeholder="Loading...">
-                      <DoughnutChart
-                        :chart-data="doughChartData"
-                        :chart-options="doughChartOptions"
-                        :height="430"
-                      />
-                    </client-only>
-                    <v-row>
-                      <v-col cols="9">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. At animi magni modi fuga. Laborum quos dignissimos
-                        velit nostrum voluptate facere error labore?</v-col
-                      >
-                      <v-col cols="3">
-                        <v-btn type="submit" color="primary" small tile
-                          >See all</v-btn
-                        ></v-col
-                      ></v-row
-                    >
-                  </v-card-text>
-                </v-card>
-              </v-col>
-              <v-col cols="12" lg="8">
-                <v-card height="100%" light>
-                  <v-card-title>Person sales by month</v-card-title>
-                  <v-card-text>
-                    <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Repellendus, nisi inventore, aperiam sapiente quod
-                      dolores, assumenda voluptatum possimus nam fuga ducimus
-                      temporibus.
-                    </p>
-                    <!-- <v-col cols="3">
-                      <v-select
-                        :items="[
-                          'Division 1',
-                          'Division 2',
-                          'Division 3',
-                          'Division 4'
-                        ]"
-                        label="Division"
-                        dense
-                        outlined
-                      ></v-select>
-                    </v-col> -->
-                    <client-only placeholder="Loading...">
-                      <LineChart
-                        :chart-options="lineChartOptions"
-                        :chart-data="lineChartData"
-                        :chart-id="`chartId`"
-                        :width="300"
-                        :height="424"
-                        :styles="{
-                          margin: '2rem auto',
-                          backgroundColor: 'rgba(255,255,255, .85)',
-                          padding: '.75rem'
-                        }"
-                      />
-                    </client-only>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Voluptatum suscipit totam reiciendis molestiae dolorem
-                      facere eaque, esse adipisci, vero, doloribus deleniti
-                      omnis.
-                    </p>
-                  </v-card-text>
-                </v-card>
-              </v-col>
-            </v-row>
-          </v-col>
         </v-row>
       </v-col>
     </v-row>
+    <Footer />
   </v-container>
 </template>
 

@@ -212,10 +212,7 @@
                         eius explicabo laborum autem vel consequatur libero
                         animi alias suscipit provident qui excepturi quaerat
                         possimus atque, dignissimos aut obcaecati necessitatibus
-                        iure delectus molestiae! Dolorum, doloremque? Sequi,
-                        porro. Excepturi consequuntur iure corporis repudiandae!
-                        Mollitia non maxime architecto explicabo nulla laborum
-                        dolores?
+                        iure delectus
                       </div>
                     </v-col>
                   </v-card-text>
@@ -224,16 +221,9 @@
             </v-row>
           </v-col>
         </v-row>
-        <blockquote class="blockquote">
-          &#8220;First, solve the problem. Then, write the code.&#8221;
-          <footer>
-            <small>
-              <em>&mdash;John Johnson</em>
-            </small>
-          </footer>
-        </blockquote>
       </v-col>
     </v-row>
+    <Footer />
   </v-container>
 </template>
 
@@ -348,7 +338,7 @@ export default {
           hoverBackgroundColor: 'rgba(100, 0, 0, 0.5)',
           weight: 1,
           offset: 8,
-          radius: 180
+          radius: 190
         }
       ]
     }

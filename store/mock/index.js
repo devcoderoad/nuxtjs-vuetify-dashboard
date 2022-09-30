@@ -1,5 +1,3 @@
-// import axios from 'axios'
-
 const LOAD_CHANNELS = 'LOAD_CHANNELS'
 const LOAD_PRODUCTS = 'LOAD_PRODUCTS'
 const LOAD_PROJECTS = 'LOAD_PROJECTS'
@@ -9,6 +7,7 @@ const LOAD_USERS = 'LOAD_USERS'
 const LOAD_SUMMARY = 'LOAD_SUMMARY'
 const LOAD_BUILDINGS = 'LOAD_BUILDINGS'
 
+/* States */
 const state = () => ({
   channels: [],
   products: [],
@@ -20,6 +19,7 @@ const state = () => ({
   buildings: []
 })
 
+/* Getters */
 const getters = {
   // getChannels(state) {
   //   return state.channels
@@ -44,6 +44,7 @@ const getters = {
   // }
 }
 
+/* Mutations */
 const mutations = {
   [LOAD_CHANNELS](state, payload) {
     state.channels = payload

@@ -15,6 +15,9 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+
+# if you got one of these errors // ✖ eslint --cache failed without output (KILLED). ✖ prettier --check --ignore-unknown: ✖ prettier --check --ignore-unknown
+$ yarn lintfix
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).

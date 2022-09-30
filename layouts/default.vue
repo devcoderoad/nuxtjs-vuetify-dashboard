@@ -100,9 +100,9 @@
       <v-btn small icon @click.stop="clipped = !clipped">
         <v-icon>mdi-application</v-icon>
       </v-btn>
-      <v-btn small icon @click.stop="fixed = !fixed">
+      <!-- <v-btn small icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
-      </v-btn>
+      </v-btn> -->
       <!-- <v-toolbar-title v-text="title" /> -->
       <v-spacer />
       <v-col
@@ -175,27 +175,20 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-footer :absolute="!fixed" app :dark="isDark" class="mx-auto">
-      <span
-        ><img src="/nuxt.png" height="12" /> {{ title }} &copy;
-        {{ new Date().getFullYear() }}
-        {{ company }}. Dark Mode: <code>{{ isDark }}</code></span
-      >
-      <v-btn
-        v-show="fab"
-        v-scroll="onScroll"
-        fab
-        light
-        fixed
-        bottom
-        right
-        small
-        color="error"
-        @click="toTop"
-      >
-        <v-icon>mdi-arrow-up</v-icon>
-      </v-btn>
-    </v-footer>
+    <v-btn
+      v-show="fab"
+      v-scroll="onScroll"
+      fab
+      light
+      fixed
+      bottom
+      right
+      small
+      color="error"
+      @click="toTop"
+    >
+      <v-icon>mdi-arrow-up</v-icon>
+    </v-btn>
     <v-overlay v-if="$nuxt.isOffline" :value="overlay" z-index="1000">
       <v-banner color="warning" single-line @click:icon="alert">
         <v-icon slot="icon" color="light" size="36">
