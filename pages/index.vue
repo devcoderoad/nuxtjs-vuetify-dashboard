@@ -194,7 +194,83 @@
                   news
                 </div>
                 <v-container fluid>
-                  <v-virtual-scroll width="256" height="321" item-height="120">
+                  <!-- <v-virtual-scroll width="256" height="321" item-height="120"> -->
+                  <v-row no-gutters>
+                    <v-col cols="2" align-self="center" align="center">
+                      <v-avatar color="primary">
+                        <span class="white--text font-weight-bold">AS</span>
+                      </v-avatar>
+                    </v-col>
+                    <v-col cols="10">
+                      <blockquote class="blockquote grey--text body-1 px-3">
+                        <div class="mb-1">
+                          Fugit nihil corporis rem iste! Doloribus magni
+                          doloremque
+                        </div>
+                        <cite class="font-weight-thin"
+                          >- Any Sanders. Sr Marketing Director</cite
+                        >
+                      </blockquote>
+                    </v-col>
+                  </v-row>
+                  <v-row no-gutters>
+                    <v-col cols="9">
+                      <blockquote
+                        class="blockquote grey--text body-1 px-3 text-right"
+                      >
+                        <div class="mb-1">
+                          Fugit nihil corporis rem iste! Doloremque inventore
+                          natus nemo
+                        </div>
+                        <cite class="font-weight-thin"
+                          >- Carol Violas. Sales Representative</cite
+                        >
+                      </blockquote>
+                    </v-col>
+                    <v-col cols="3" align-self="center" align="center">
+                      <v-avatar color="green">
+                        <span class="white--text font-weight-bold">CV</span>
+                      </v-avatar>
+                    </v-col>
+                  </v-row>
+                  <v-row no-gutters>
+                    <v-col cols="2" align-self="center" align="center">
+                      <v-avatar color="info">
+                        <span class="white--text font-weight-bold">NM</span>
+                      </v-avatar>
+                    </v-col>
+                    <v-col cols="10">
+                      <blockquote class="blockquote grey--text body-1 px-3">
+                        <div class="mb-1">
+                          Fugit nihil corporis rem iste! Doloribus natus
+                          consectetur
+                        </div>
+                        <cite class="font-weight-thin"
+                          >- Naomi Malone. Country Director</cite
+                        >
+                      </blockquote>
+                    </v-col>
+                  </v-row>
+                  <!-- <v-row no-gutters>
+                      <v-col cols="9">
+                        <blockquote
+                          class="blockquote grey--text body-1 px-3 text-right"
+                        >
+                          <div class="mb-1">
+                            Fugit nihil corporis rem iste! Doloremque inventore
+                            natus nemo
+                          </div>
+                          <cite class="font-weight-thin"
+                            >- Carol Violas. Sales Representative</cite
+                          >
+                        </blockquote>
+                      </v-col>
+                      <v-col cols="3" align-self="center" align="center">
+                        <v-avatar color="green">
+                          <span class="white--text font-weight-bold">CV</span>
+                        </v-avatar>
+                      </v-col>
+                    </v-row>
                     <v-row no-gutters>
                       <v-col cols="2" align-self="center" align="center">
                         <v-avatar color="primary">
@@ -232,84 +308,8 @@
                           <span class="white--text font-weight-bold">CV</span>
                         </v-avatar>
                       </v-col>
-                    </v-row>
-                    <v-row no-gutters>
-                      <v-col cols="2" align-self="center" align="center">
-                        <v-avatar color="info">
-                          <span class="white--text font-weight-bold">NM</span>
-                        </v-avatar>
-                      </v-col>
-                      <v-col cols="10">
-                        <blockquote class="blockquote grey--text body-1 px-3">
-                          <div class="mb-1">
-                            Fugit nihil corporis rem iste! Doloribus natus
-                            consectetur
-                          </div>
-                          <cite class="font-weight-thin"
-                            >- Naomi Malone. Country Director</cite
-                          >
-                        </blockquote>
-                      </v-col>
-                    </v-row>
-                    <v-row no-gutters>
-                      <v-col cols="9">
-                        <blockquote
-                          class="blockquote grey--text body-1 px-3 text-right"
-                        >
-                          <div class="mb-1">
-                            Fugit nihil corporis rem iste! Doloremque inventore
-                            natus nemo
-                          </div>
-                          <cite class="font-weight-thin"
-                            >- Carol Violas. Sales Representative</cite
-                          >
-                        </blockquote>
-                      </v-col>
-                      <v-col cols="3" align-self="center" align="center">
-                        <v-avatar color="green">
-                          <span class="white--text font-weight-bold">CV</span>
-                        </v-avatar>
-                      </v-col>
-                    </v-row>
-                    <v-row no-gutters>
-                      <v-col cols="2" align-self="center" align="center">
-                        <v-avatar color="primary">
-                          <span class="white--text font-weight-bold">AS</span>
-                        </v-avatar>
-                      </v-col>
-                      <v-col cols="10">
-                        <blockquote class="blockquote grey--text body-1 px-3">
-                          <div class="mb-1">
-                            Fugit nihil corporis rem iste! Doloribus magni
-                            doloremque
-                          </div>
-                          <cite class="font-weight-thin"
-                            >- Any Sanders. Sr Marketing Director</cite
-                          >
-                        </blockquote>
-                      </v-col>
-                    </v-row>
-                    <v-row no-gutters>
-                      <v-col cols="9">
-                        <blockquote
-                          class="blockquote grey--text body-1 px-3 text-right"
-                        >
-                          <div class="mb-1">
-                            Fugit nihil corporis rem iste! Doloremque inventore
-                            natus nemo
-                          </div>
-                          <cite class="font-weight-thin"
-                            >- Carol Violas. Sales Representative</cite
-                          >
-                        </blockquote>
-                      </v-col>
-                      <v-col cols="3" align-self="center" align="center">
-                        <v-avatar color="green">
-                          <span class="white--text font-weight-bold">CV</span>
-                        </v-avatar>
-                      </v-col>
-                    </v-row>
-                  </v-virtual-scroll>
+                    </v-row> -->
+                  <!-- </v-virtual-scroll> -->
                 </v-container>
               </v-container>
             </v-card>
