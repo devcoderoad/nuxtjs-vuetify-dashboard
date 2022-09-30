@@ -1,5 +1,9 @@
 <template>
   <v-app id="default" :dark="isDark">
+    <!-- <v-navigation-drawer
+      v-model="drawer"
+      :mini-variant="miniVariant"
+      :clipped="clipped" -->
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -85,11 +89,13 @@
         </slot>
       </v-list>
     </v-navigation-drawer>
+    <!-- <v-app-bar
+      :clipped-left="clipped" 
+      elevate-on-scroll -->
     <v-app-bar
-      :clipped-left="clipped"
       :color="isDark ? 'default' : 'white'"
       :dark="isDark"
-      elevate-on-scroll
+      elevation="0"
       app
       class="px-4"
     >
@@ -97,9 +103,9 @@
       <v-btn small icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
-      <v-btn small icon @click.stop="clipped = !clipped">
+      <!-- <v-btn small icon @click.stop="clipped = !clipped">
         <v-icon>mdi-application</v-icon>
-      </v-btn>
+      </v-btn> -->
       <!-- <v-btn small icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
       </v-btn> -->
@@ -225,9 +231,9 @@ export default {
     return {
       title: 'Nuxtify',
       company: global.company,
-      clipped: false,
+      // clipped: false,
+      // fixed: false,
       drawer: false,
-      fixed: false,
       overlay: true,
       items: [
         {
