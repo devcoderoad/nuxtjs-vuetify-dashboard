@@ -11,7 +11,7 @@
         </v-container>
       </v-row>
       <v-col>
-        <v-card elevation="2" light>
+        <v-card elevation="2" light class="bg-wave">
           <v-card-title> Login to Your Account </v-card-title>
           <v-form v-model="valid" name="form-login" @submit="onSubmit()">
             <v-container>
@@ -56,7 +56,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 export default Vue.extend({
   name: 'FormSignIn',

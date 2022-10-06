@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex justify-center align-center min-h-100vh">
     <v-flex lg6>
-      <v-card elevation="2" light>
+      <v-card elevation="2" light class="bg-wave">
         <v-card-title> Forgot Password </v-card-title>
         <v-form v-model="valid" name="form-login" @submit="onSubmit()">
           <v-container>
@@ -30,7 +30,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 export default Vue.extend({
   name: 'FormForgotPassword',

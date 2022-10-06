@@ -11,8 +11,8 @@
         </v-container>
       </v-row>
       <v-col>
-        <v-card elevation="2" light>
-          <v-card-title> Sign Up </v-card-title>
+        <v-card elevation="2" light class="bg-wave rounded-0 px-4 py-4">
+          <v-card-title class="px-3"> Sign Up </v-card-title>
           <v-form v-model="valid" name="form-login" @submit="onSubmit()">
             <v-container>
               <v-row align="left">
@@ -21,7 +21,7 @@
                     v-model.trim="vemail"
                     type="text"
                     label="Email"
-                    outlined
+                    flat
                     dense
                   ></v-text-field>
                 </v-col>
@@ -31,7 +31,7 @@
                     type="password"
                     name="password"
                     label="Password"
-                    outlined
+                    flat
                     dense
                   ></v-text-field>
                 </v-col>
@@ -52,7 +52,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from 'vue'
 export default Vue.extend({
   name: 'FormSignUp',
