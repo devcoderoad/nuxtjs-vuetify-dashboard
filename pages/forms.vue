@@ -396,6 +396,39 @@
               </v-container>
             </v-form>
           </v-col>
+          <v-col cols="12" md="6">
+            <h2 class="title-page-sub">Buttons</h2>
+            <v-row class="my-6">
+              <v-container>
+                <v-btn rounded color="primary">Button</v-btn>
+                <v-btn rounded color="secondary">Button</v-btn>
+                <v-btn rounded color="warning">Button</v-btn>
+                <v-btn rounded color="success">Button</v-btn>
+                <v-btn rounded color="info">Button</v-btn>
+                <v-btn rounded>Button</v-btn>
+                <v-divider />
+                <v-btn rounded tile color="primary">Button</v-btn>
+                <v-btn rounded tile color="secondary">Button</v-btn>
+                <v-btn rounded tile color="warning">Button</v-btn>
+                <v-btn rounded tile color="success">Button</v-btn>
+                <v-btn rounded tile color="info">Button</v-btn>
+                <v-btn rounded tile>Button</v-btn>
+                <v-divider />
+                <v-btn rounded small outlined color="primary">Button</v-btn>
+                <v-btn rounded small outlined color="secondary">Button</v-btn>
+                <v-btn rounded small outlined color="warning">Button</v-btn>
+                <v-btn rounded small outlined color="success">Button</v-btn>
+                <v-btn rounded small outlined color="info">Button</v-btn>
+                <v-divider />
+                <v-btn rounded tile block large color="primary">Button</v-btn>
+                <v-btn rounded tile block large color="secondary">Button</v-btn>
+                <v-btn rounded tile block large color="warning">Button</v-btn>
+                <v-btn rounded tile block large color="success">Button</v-btn>
+                <v-btn rounded tile block large color="info">Button</v-btn>
+                <v-btn rounded tile block large>Button</v-btn>
+              </v-container>
+            </v-row>
+          </v-col>
         </v-row>
       </v-container>
       <img src="/v.png" alt="Vuetify.js" class="mt-8" />
