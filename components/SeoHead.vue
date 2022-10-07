@@ -27,7 +27,7 @@ export default {
       type: String,
       default: () => description
     },
-    image: { type: String, default: () => image },
+    image: { type: String, default: () => `${BASEURL}${image}` },
     url: { type: String, default: () => url || BASEURL }
   },
   head() {
