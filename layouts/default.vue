@@ -95,12 +95,21 @@
     <v-app-bar
       :color="isDark ? 'default' : 'white'"
       :dark="isDark"
-      elevation="0"
+      elevation="8"
       app
       class="px-4"
+      elevate-on-scroll
     >
-      <v-app-bar-nav-icon small @click.stop="drawer = !drawer" />
-      <v-btn small icon @click.stop="miniVariant = !miniVariant">
+      <v-app-bar-nav-icon
+        :class="drawer ? '' : 'menu-toggle'"
+        @click.stop="drawer = !drawer"
+      />
+      <v-btn
+        small
+        icon
+        :class="drawer ? '' : 'd-none'"
+        @click.stop="miniVariant = !miniVariant"
+      >
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
       <!-- <v-btn small icon @click.stop="clipped = !clipped">
@@ -176,7 +185,7 @@
         </v-list>
       </v-menu>
     </v-app-bar>
-    <v-main>
+    <v-main app>
       <v-container fluid>
         <nuxt />
       </v-container>
@@ -334,7 +343,7 @@ export default {
   head() {
     return {
       bodyAttrs: {
-        class: this.$vuetify.isDark ? 'dark--theme' : 'light--theme'
+        class: this.$vuetify.theme.isDark ? 'theme--dark' : 'theme--light'
       }
     }
   },

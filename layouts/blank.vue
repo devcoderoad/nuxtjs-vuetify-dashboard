@@ -9,7 +9,7 @@
       background-size: cover;
       background-attachment: scroll;
     "
-  >
+    ><SeoHead />
     <v-main>
       <v-container>
         <Nuxt />
@@ -20,9 +20,11 @@
 
 <script>
 import { mapState } from 'vuex'
+import SeoHead from '~/components/SeoHead'
 
 export default {
   name: 'LayoutBlank',
+  components: { SeoHead },
   data() {
     return {
       title: 'Nuxtify'

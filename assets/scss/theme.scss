@@ -17,6 +17,14 @@
   opacity: 0;
 }
 
+/* Color Mode */
+body[class='theme--light'] {
+  background-color: $color-white;
+}
+body[class='theme--dark'] {
+  background-color: $color-black;
+}
+
 .v-application {
   font-family: $body-font-family, sans-serif !important;
 

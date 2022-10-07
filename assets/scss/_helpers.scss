@@ -158,3 +158,11 @@ $z-indexs: 0, 1, 2, 3, 9, 99, 999;
 .lh-4em {
   line-height: 4em !important;
 }
+
+.menu-toggle {
+  transition: all ease 0.5s;
+  i.mdi-menu:before {
+    content: '\F0BAB';
+    transform: rotate(180deg);
+  }
+}

@@ -1,9 +1,10 @@
-<script lang="ts">
+<script>
 export default {
   layout: 'blank',
   data() {
     return {
-      email: ''
+      email: '',
+      password: ''
     }
   }
 }
@@ -11,6 +12,6 @@ export default {
 
 <template>
   <div>
-    <FormForgotPassword />
+    <FormForgotPassword :email="email" :password="password" />
   </div>
 </template>

@@ -17,7 +17,7 @@
               <v-col cols="12" md="6">
                 <v-btn type="submit" color="primary">Login</v-btn>
               </v-col>
-              <v-col cols="12" md="6" align="right">
+              <v-col cols="12" md="6" class="text-right">
                 <nuxt-link to="/sign-up">Sign Up</nuxt-link>
                 or
                 <nuxt-link to="/sign-in">Sign In</nuxt-link>
