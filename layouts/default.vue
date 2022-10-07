@@ -1,5 +1,6 @@
 <template>
   <v-app id="default" :dark="isDark">
+    <SeoHead />
     <!-- <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -222,9 +223,11 @@
 <script>
 import { mapState } from 'vuex'
 import global from '~/constants/global'
+import SeoHead from '~/components/SeoHead'
 
 export default {
   name: 'LayoutDefault',
+  components: { SeoHead },
   data() {
     return {
       title: 'Nuxtify',

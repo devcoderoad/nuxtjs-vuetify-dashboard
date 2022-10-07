@@ -2,10 +2,14 @@ import colors from 'vuetify/es5/util/colors'
 
 /** constants */
 import ROUTES from './constants/routes'
+import GLOBAL from './constants/global'
 
 /** current environment */
 const CURRENT_ENV = process.env.ENV || 'prod'
 const isProduction = CURRENT_ENV === 'prod'
+
+/** global constants **/
+const { title, description, lang } = GLOBAL
 
 const BASEURL =
   process.env.NODE_ENV === 'development'
@@ -21,9 +25,10 @@ export default {
     titleTemplate: `%s - nuxtjs-vuetify-dashboard${
       (!isProduction && ' - Dev') || ''
     }`,
-    title: 'nuxtjs-vuetify-dashboard',
+    title,
+    description,
     htmlAttrs: {
-      lang: 'en'
+      lang
     },
     meta: [
       { charset: 'utf-8' },

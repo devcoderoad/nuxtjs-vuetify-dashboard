@@ -1,10 +1,10 @@
 <template>
   <v-footer :dark="isDark" class="mx-auto text-center mt-6">
-    <div class="text-center">
-      <img src="/nuxt.png" height="12" /> {{ title }} &copy;
+    <div class="d-flex align-center text--secondary">
+      <v-img :alt="title" src="/logo.png" width="58" contain class="mr-1" />
+      &copy;
       {{ new Date().getFullYear() }}
       All rights reserved - {{ company }}.
-      <!-- Dark Mode: <code>{{ isDark }}</code> -->
     </div>
   </v-footer>
 </template>
