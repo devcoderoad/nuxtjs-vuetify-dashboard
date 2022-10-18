@@ -51,7 +51,7 @@ export default {
       {
         rel: 'stylesheet',
         hid: 'font-stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@100;200;300;400;700;900&Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'
+        href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@100;200;300;400;700;900&Montserrat:wght@100;200;300;400;500;600;700;800;900&Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'
       }
     ]
   },

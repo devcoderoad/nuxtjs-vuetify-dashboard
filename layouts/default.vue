@@ -23,6 +23,7 @@
           class="text-center justify-center align-center"
           style="height: 33px"
         >
+          <!-- <h4 :class="`${miniVariant ? 'subtitle-2' : ''} my-6`" v-text="title" -->
           <h4 class="my-6" v-text="title"
         /></v-flex>
       </nuxt-link>
@@ -121,18 +122,21 @@
       <!-- <v-toolbar-title v-text="title" /> -->
       <v-spacer />
       <v-col
-        cols="3"
-        sm="3"
+        align-self="center"
+        :cols="searchLength ? '7' : '3'"
+        :sm="searchLength ? '3' : '2'"
         :lg="searchLength ? '2' : '1'"
-        align-self="stretch"
       >
         <v-text-field
           v-model="search"
+          :full-width="true"
+          :hide-details="true"
+          :height="10"
+          :placeholder="searchLength ? 'Search' : ''"
           dense
           flat
           solo
           name="search"
-          :placeholder="searchLength ? 'Search' : ''"
           prepend-inner-icon="mdi-magnify"
           maxlength="20"
           @focus="searchFocus"
@@ -185,7 +189,7 @@
         </v-list>
       </v-menu>
     </v-app-bar>
-    <v-main app>
+    <v-main>
       <v-container fluid>
         <nuxt />
       </v-container>

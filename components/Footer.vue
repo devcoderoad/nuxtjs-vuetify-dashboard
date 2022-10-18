@@ -1,5 +1,13 @@
 <template>
-  <v-footer :dark="isDark" class="mx-auto text-center mt-6">
+  <v-footer
+    app
+    absolute
+    :dark="isDark"
+    class="mx-auto text-center mt-6"
+    :style="{
+      bottom: '-20px'
+    }"
+  >
     <div class="d-flex align-center text--secondary">
       <v-img :alt="title" src="/logo.png" width="58" contain class="mr-1" />
       &copy;
