@@ -4,21 +4,51 @@
       <v-col class="text-center">
         <h1 class="title-page">Landing Page</h1>
         <v-row class="text-left">
-          <v-col md="6" light>
-            <v-card light>
+          <v-col md="6">
+            <v-card>
               <v-card-title tag="h2">Card Half</v-card-title>
               <v-card-subtitle>Data examples</v-card-subtitle>
-              <v-card-text>
-                <div>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Esse, eveniet est? Mollitia labore deserunt iusto eius
-                  explicabo laborum autem vel consequatur libero animi alias
-                  suscipit provident qui excepturi quaerat possimus atque,
-                  dignissimos aut obcaecati necessitatibus iure delectus
-                  molestiae! Dolorum, doloremque? Sequi, porro. Excepturi
-                  consequuntur iure corporis repudiandae! Mollitia non maxime
-                  architecto explicabo nulla laborum dolores?
-                </div>
+              <v-card-text class="pl-0">
+                <v-row no-gutters>
+                  <v-col>
+                    <ApexCharts
+                      :options="{
+                        chart: {
+                          toolbar: { show: false },
+                          id: 'vuechart-example',
+                          type: 'bar'
+                        },
+                        xaxis: {
+                          categories: [
+                            1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998
+                          ]
+                        },
+                        tooltip: {
+                          theme: 'light',
+                          fillSeriesColor: false
+                        }
+                      }"
+                      :series="[
+                        {
+                          name: 'series-1',
+                          data: [30, 40, 45, 50, 49, 60, 70, 81]
+                        }
+                      ]"
+                      :height="260"
+                      :width="300"
+                      chart-id="lineChart"
+                    />
+                  </v-col>
+                  <v-col>
+                    <h3>Apex Charts</h3>
+                    Esse, eveniet est? Mollitia labore deserunt iusto eius
+                    explicabo laborum autem vel consequatur libero animi alias
+                    suscipit provident qui excepturi quaerat possimus atque,
+                    Sequi, porro. Excepturi consequuntur iure corporis
+                    repudiandae! Mollitia non maxime architecto explicabo nulla
+                    laborum dolores?
+                  </v-col>
+                </v-row>
               </v-card-text>
             </v-card>
           </v-col>

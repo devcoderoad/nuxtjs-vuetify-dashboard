@@ -131,14 +131,14 @@
           v-model="search"
           :full-width="true"
           :hide-details="true"
-          :height="10"
+          :height="`100%`"
           :placeholder="searchLength ? 'Search' : ''"
-          dense
-          flat
-          solo
           name="search"
           prepend-inner-icon="mdi-magnify"
           maxlength="20"
+          dense
+          solo
+          flat
           @focus="searchFocus"
           @focusout="searchFocus"
         >

@@ -3,93 +3,7 @@
     <v-row>
       <v-col cols="12" md="12">
         <h1 class="title-page">Hi, Welcome to Nuxtify</h1>
-        <v-row>
-          <v-col cols="6" sm="3">
-            <v-card height="100%">
-              <v-container fluid>
-                <h3>Users Summary</h3>
-                <v-row height="100%">
-                  <v-col>
-                    <h4
-                      class="grey--text text-h4 text-lg-h2 font-weight-bold lh-normal"
-                    >
-                      5230
-                    </h4>
-                    <h5 class="font-weight-normal grey--text">+23% Up</h5>
-                  </v-col>
-                  <v-col align-self="center" align="center">
-                    <v-icon size="60" color="green"
-                      >mdi-account-box-outline</v-icon
-                    >
-                  </v-col>
-                </v-row>
-              </v-container>
-            </v-card>
-          </v-col>
-          <v-col cols="6" sm="3"
-            ><v-card height="100%">
-              <v-container fluid>
-                <h3>Sales Summary</h3>
-                <v-row height="100%">
-                  <v-col>
-                    <h4
-                      class="grey--text text-h4 text-lg-h2 font-weight-bold lh-normal"
-                    >
-                      6424
-                    </h4>
-                    <h5 class="font-weight-normal grey--text">-3% Down</h5>
-                  </v-col>
-                  <v-col align-self="center" align="center">
-                    <v-icon size="60" color="warning">mdi-cart-plus</v-icon>
-                  </v-col>
-                </v-row>
-              </v-container>
-            </v-card></v-col
-          >
-          <v-col cols="6" sm="3"
-            ><v-card height="100%">
-              <v-container fluid>
-                <h3>Stock Summary</h3>
-                <v-row height="100%">
-                  <v-col>
-                    <h4
-                      class="grey--text text-h4 text-lg-h2 font-weight-bold lh-normal"
-                    >
-                      39202
-                    </h4>
-                    <h5 class="font-weight-normal grey--text">-10% Down</h5>
-                  </v-col>
-                  <v-col align-self="center" align="center">
-                    <v-icon size="60" color="red">mdi-chart-areaspline</v-icon>
-                  </v-col>
-                </v-row>
-              </v-container>
-            </v-card></v-col
-          >
-          <v-col cols="6" sm="3"
-            ><v-card height="100%">
-              <v-container fluid>
-                <h3>Views Summary</h3>
-                <v-row height="100%">
-                  <v-col>
-                    <h4
-                      class="grey--text text-h4 text-lg-h2 font-weight-bold lh-normal"
-                    >
-                      4124
-                    </h4>
-
-                    <h5 class="font-weight-normal grey--text">+50% Up</h5>
-                  </v-col>
-                  <v-col align-self="center" align="center">
-                    <v-icon size="60" color="orange"
-                      >mdi-gesture-double-tap</v-icon
-                    >
-                  </v-col>
-                </v-row>
-              </v-container>
-            </v-card></v-col
-          >
-        </v-row>
+        <CardSummary />
         <v-row>
           <v-col cols="12" lg="4">
             <v-card height="100%">
@@ -169,7 +83,7 @@
         </v-row>
         <v-row>
           <v-col cols="12" md="8">
-            <v-card height="100%">
+            <v-card height="100%" class="card">
               <v-container fluid>
                 <h3 class="title-page">
                   Company official yearly calendar release
@@ -185,7 +99,7 @@
             </v-card>
           </v-col>
           <v-col cols="12" md="4">
-            <v-card height="100%">
+            <v-card height="100%" class="card">
               <v-container>
                 <h3 class="title-page">Company News Announcement</h3>
                 <div>
@@ -322,8 +236,12 @@
 </template>
 
 <script>
+import CardSummary from '@/components/Card/Summary.vue'
 export default {
   name: 'IndexPage',
+  components: {
+    CardSummary
+  },
   data() {
     return {
       doughChartData: {

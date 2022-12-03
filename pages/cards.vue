@@ -22,10 +22,23 @@
                   }}</v-card-title>
                 </v-img>
               </v-card-text>
-              <v-card-subtitle class="pt-0" align="right"
-                >Price: ${{ card.price }} - Views:
-                {{ card.views }}</v-card-subtitle
-              >
+              <v-card-text class="pt-0">
+                <v-row no-gutters align-content="center" align="center">
+                  <v-col sm="3"
+                    ><v-btn
+                      class="text-right"
+                      color="grey"
+                      outlined
+                      small
+                      rounded
+                      >Buy</v-btn
+                    ></v-col
+                  >
+                  <v-col sm="9" align="right">
+                    Price: ${{ card.price }} - Views: {{ card.views }}</v-col
+                  >
+                </v-row>
+              </v-card-text>
             </v-card>
           </v-col>
         </v-row>
@@ -44,13 +57,14 @@
               <v-row no-gutters>
                 <v-col>
                   <v-card-subtitle
-                    >{{ card.category }} @theme:
+                    ><v-icon small>mdi-tag-outline</v-icon> {{ card.category }}
+                    {{ ' ' }}<v-icon small>mdi-cards-outline</v-icon> Theme:
                     {{ card.color }}</v-card-subtitle
                   >
                 </v-col>
                 <v-col>
-                  <v-card-subtitle align="right"
-                    >Views: {{ card.views }}</v-card-subtitle
+                  <v-card-subtitle align="right">
+                    Views: {{ card.views }}</v-card-subtitle
                   >
                 </v-col>
               </v-row>

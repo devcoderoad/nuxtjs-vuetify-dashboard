@@ -7,8 +7,8 @@
           <v-col col="12" md="12">
             <v-row>
               <v-col cols="12" md="6">
-                <v-card height="100%">
-                  <v-card-title tag="h2">Views Chart</v-card-title>
+                <v-card height="100%" class="card">
+                  <v-card-title tag="h2">Views Chart </v-card-title>
                   <v-card-subtitle>Data examples</v-card-subtitle>
                   <v-card-text>
                     <div>
@@ -39,7 +39,7 @@
                 </v-card>
               </v-col>
               <v-col cols="12" md="6">
-                <v-card height="100%">
+                <v-card height="100%" class="card">
                   <v-card-title tag="h2">Sales Chart</v-card-title>
                   <v-card-subtitle>Data examples</v-card-subtitle>
                   <v-card-text>
@@ -75,7 +75,7 @@
           <v-col cols="12" md="12">
             <v-row>
               <v-col cols="12" md="6">
-                <v-card height="100%">
+                <v-card height="100%" class="card">
                   <v-card-title tag="h2">Bar Chart</v-card-title>
                   <v-card-subtitle>Data Projects</v-card-subtitle>
                   <v-card-text>
@@ -96,7 +96,7 @@
                 </v-card>
               </v-col>
               <v-col cols="12" md="6">
-                <v-card height="100%">
+                <v-card height="100%" class="card">
                   <v-card-title tag="h2">Pie Chart</v-card-title>
                   <v-card-subtitle>Data examples</v-card-subtitle>
                   <v-card-text>
@@ -126,7 +126,7 @@
           <v-col md="12">
             <v-row>
               <v-col cols="12" lg="6">
-                <v-card height="100%">
+                <v-card height="100%" class="card">
                   <v-card-title tag="h2">Graph Chart</v-card-title>
                   <v-card-subtitle>Data Channels</v-card-subtitle>
                   <v-card-text>
@@ -174,7 +174,7 @@
                 </v-card>
               </v-col>
               <v-col cols="12" lg="6">
-                <v-card height="100%">
+                <v-card height="100%" class="card">
                   <v-card-title tag="h2">Pie Chart</v-card-title>
                   <v-card-subtitle>Data Channels</v-card-subtitle>
                   <v-card-text>
