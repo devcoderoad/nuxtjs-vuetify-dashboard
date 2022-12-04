@@ -10,8 +10,8 @@
               <v-card-title>Sales by brand</v-card-title>
               <v-card-text>
                 <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Libero neque ad incidunt!
+                  Our daily corporate brand sales summaries in wholesale. This
+                  summary is active from 00.00 to 24.00 monthly.
                 </p>
                 <client-only placeholder="Loading...">
                   <DoughnutChart
@@ -22,9 +22,11 @@
                 </client-only>
                 <v-row>
                   <v-col cols="9">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
-                    animi magni modi fuga. Voluptatum suscipit totam reiciendis
-                    molestiae</v-col
+                    <p>
+                      The sales summary is done by our company on salesperson
+                      activities based on the brand they sell daily on a monthly
+                      basis.
+                    </p></v-col
                   >
                   <v-col cols="3">
                     <v-btn type="submit" color="primary" small tile
@@ -40,9 +42,10 @@
               <v-card-title>Person sales by month</v-card-title>
               <v-card-text>
                 <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Repellendus, nisi inventore, aperiam sapiente quod dolores,
-                  assumenda voluptatum possimus nam fuga ducimus temporibus.
+                  The sales summary is done by our company on salesperson
+                  activities based on the brand they sell daily on a monthly
+                  basis. These are the top three sales by a person on average
+                  above 5 sales monthly.
                 </p>
                 <!-- <v-col cols="3">
                       <v-select
@@ -72,10 +75,9 @@
                   />
                 </client-only>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptatum suscipit totam reiciendis molestiae dolorem facere
-                  eaque, esse adipisci. Aperiam sapiente quod dolores, assumenda
-                  voluptatum possimus nam fuga ducimus temporibus.
+                  The performance of the sales summary will start from the start
+                  of the year to the end year and will impact the person's
+                  yearly performance review, and bonus rewards.
                 </p>
               </v-card-text>
             </v-card>
