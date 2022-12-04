@@ -11,33 +11,15 @@
               <v-card-text class="pl-0">
                 <v-row no-gutters>
                   <v-col>
-                    <ApexCharts
-                      :options="{
-                        chart: {
-                          toolbar: { show: false },
-                          id: 'vuechart-example',
-                          type: 'bar'
-                        },
-                        xaxis: {
-                          categories: [
-                            1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998
-                          ]
-                        },
-                        tooltip: {
-                          theme: 'light',
-                          fillSeriesColor: false
-                        }
-                      }"
-                      :series="[
-                        {
-                          name: 'series-1',
-                          data: [30, 40, 45, 50, 49, 60, 70, 81]
-                        }
-                      ]"
-                      :height="260"
-                      :width="300"
-                      chart-id="lineChart"
-                    />
+                    <client-only>
+                      <ApexCharts
+                        :options="options"
+                        :series="series"
+                        :height="260"
+                        :width="300"
+                        chart-id="lineChart"
+                      />
+                    </client-only>
                   </v-col>
                   <v-col>
                     <h3>Apex Charts</h3>
@@ -173,11 +155,33 @@
     >
   </v-container>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
 
-export default defineComponent({
+<script>
+export default {
   name: 'LandingPage',
-  setup() {}
-})
+  data() {
+    return {
+      options: {
+        chart: {
+          toolbar: { show: false },
+          id: 'vuechart-example',
+          type: 'bar'
+        },
+        xaxis: {
+          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998]
+        },
+        tooltip: {
+          theme: 'light',
+          fillSeriesColor: false
+        }
+      },
+      series: [
+        {
+          name: 'series-1',
+          data: [30, 40, 45, 50, 49, 60, 70, 81]
+        }
+      ]
+    }
+  }
+}
 </script>
