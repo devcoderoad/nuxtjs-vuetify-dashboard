@@ -6,8 +6,8 @@
         <v-row class="text-left">
           <v-col md="6">
             <v-card>
-              <v-card-title tag="h2">Card Half</v-card-title>
-              <v-card-subtitle>Data examples</v-card-subtitle>
+              <v-card-title tag="h2">Yearly Sales Summary</v-card-title>
+              <v-card-subtitle>Data samples</v-card-subtitle>
               <v-card-text class="pl-0">
                 <v-row no-gutters>
                   <v-col>
@@ -23,12 +23,22 @@
                   </v-col>
                   <v-col>
                     <h3>Apex Charts</h3>
-                    Esse, eveniet est? Mollitia labore deserunt iusto eius
-                    explicabo laborum autem vel consequatur libero animi alias
-                    suscipit provident qui excepturi quaerat possimus atque,
-                    Sequi, porro. Excepturi consequuntur iure corporis
-                    repudiandae! Mollitia non maxime architecto explicabo nulla
-                    laborum dolores?
+                    <p>
+                      Yearly summary, organically grow the holistic world view
+                      of disruptive innovation via workplace diversity and
+                      empowerment.
+                    </p>
+                    <p>
+                      Bring to the table win-win survival strategies to ensure
+                      proactive domination. At the end of the day, going
+                      forward, a new normal that has evolved from generation X
+                      is on the runway heading towards a streamlined cloud
+                      solution.
+                    </p>
+                    <p>
+                      User generated content in real-time will have multiple
+                      touchpoints for offshoring
+                    </p>
                   </v-col>
                 </v-row>
               </v-card-text>
@@ -39,16 +49,22 @@
               <v-card-title tag="h2">Card Half</v-card-title>
               <v-card-subtitle>Data examples</v-card-subtitle>
               <v-card-text>
-                <div>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Esse, eveniet est? Mollitia labore deserunt iusto eius
-                  explicabo laborum autem vel consequatur libero animi alias
-                  suscipit provident qui excepturi quaerat possimus atque,
-                  dignissimos aut obcaecati necessitatibus iure delectus
-                  molestiae! Dolorum, doloremque? Sequi, porro. Excepturi
-                  consequuntur iure corporis repudiandae! Mollitia non maxime
-                  architecto explicabo nulla laborum dolores?
-                </div>
+                <p>
+                  Podcasting operational change management inside of workflows
+                  to establish a framework. Taking seamless key performance
+                  indicators offline to maximise the long tail.
+                </p>
+                <p>
+                  Keeping your eye on the ball while performing a deep dive on
+                  the start-up mentality to derive convergence on cross-platform
+                  integration. Collaboratively administrate empowered markets
+                  via plug-and-play networks.
+                </p>
+                <p>
+                  Dynamically procrastinate B2C users after installed base
+                  benefits. Dramatically visualize customer directed convergence
+                  without revolutionary ROI.
+                </p>
               </v-card-text>
             </v-card>
           </v-col>
