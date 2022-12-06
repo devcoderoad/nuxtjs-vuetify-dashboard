@@ -4,7 +4,7 @@
       <v-col class="text-center">
         <h1 class="title-page">Landing Page</h1>
         <v-row class="text-left">
-          <v-col md="6">
+          <v-col cols="12" md="6">
             <v-card>
               <v-card-title tag="h2">Yearly Sales Summary</v-card-title>
               <v-card-subtitle>Data samples</v-card-subtitle>
@@ -44,7 +44,7 @@
               </v-card-text>
             </v-card>
           </v-col>
-          <v-col md="6" light>
+          <v-col cols="12" md="6" light>
             <v-card light>
               <v-card-title tag="h2">Card Half</v-card-title>
               <v-card-subtitle>Data examples</v-card-subtitle>
@@ -71,8 +71,9 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-row
-      ><v-col>
+
+    <v-row>
+      <v-col>
         <h1>What are cookies?</h1>
         <p>
           This Cookie Policy explains what cookies are and how we use them, the
