@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row>
       <v-col>
-        <h1 class="title-page text-center">Icons</h1>
+        <PageHeader title="Icons" />
         <v-container>
           <v-row justify="space-between">
             <div
@@ -31,8 +31,13 @@
 </template>
 
 <script>
+import PageHeader from '@/components/Header/PageHeader.vue'
+
 export default {
   name: 'IconsPage',
+  components: {
+    PageHeader
+  },
   data() {
     return { icons: [] }
   },

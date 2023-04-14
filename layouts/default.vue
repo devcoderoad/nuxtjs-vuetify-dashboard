@@ -162,7 +162,7 @@
           <!-- <v-list-item v-for="(item, i) in items" :key="i" :to="item.to">
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item> -->
-          <v-list-item :to="`/`">
+          <v-list-item :to="`/sign-in`">
             <v-list-item-icon>
               <v-icon>mdi-logout-variant</v-icon>
             </v-list-item-icon>
@@ -170,7 +170,7 @@
               <v-list-item-title> Logout </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item :to="`/`">
+          <v-list-item :to="`/profile`">
             <v-list-item-icon>
               <v-icon>mdi-account-circle-outline</v-icon>
             </v-list-item-icon>
@@ -178,7 +178,7 @@
               <v-list-item-title> Profile </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item :to="`/`">
+          <v-list-item to="/settings">
             <v-list-item-icon>
               <v-icon>mdi-cog-outline</v-icon>
             </v-list-item-icon>
@@ -266,6 +266,11 @@ export default {
           to: '/tables'
         },
         {
+          icon: 'mdi-format-list-bulleted',
+          title: 'Tabs',
+          to: '/tabs'
+        },
+        {
           icon: 'mdi-message-bulleted',
           title: 'Forms',
           to: '/forms'
@@ -284,6 +289,11 @@ export default {
               icon: 'mdi-login-variant',
               title: 'Sign In',
               to: '/sign-in'
+            },
+            {
+              icon: 'mdi-account',
+              title: 'Profile',
+              to: '/profile'
             },
             {
               icon: 'mdi-account-plus',

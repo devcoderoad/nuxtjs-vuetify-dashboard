@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col>
-      <h1 class="title-page text-center">Headings Page</h1>
+      <PageHeader title="Headings Page" />
       <v-container fluid>
         <v-row justify="center" class="py-6">
           <v-expansion-panels popout>
@@ -17,13 +17,13 @@
                       <img
                         v-if="message.avatar"
                         alt="Avatar"
-                        src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460"
+                        src="https://avatars0.githubusercontent.com/u/9064066?v=4&amp;s=460"
                       />
                       <v-icon
                         v-else
                         :color="message.color"
                         v-text="message.icon"
-                      ></v-icon>
+                      />
                     </v-avatar>
                   </v-col>
 
@@ -59,7 +59,7 @@
 
               <v-expansion-panel-content>
                 <v-divider></v-divider>
-                <v-card-text v-text="lorem"></v-card-text>
+                <v-card-text><span v-text="lorem" /></v-card-text>
               </v-expansion-panel-content>
             </v-expansion-panel>
           </v-expansion-panels>
@@ -324,8 +324,11 @@
 </template>
 
 <script>
+import PageHeader from '@/components/Header/PageHeader.vue'
+
 export default {
   name: 'HeadingPage',
+  components: { PageHeader },
   data: () => ({
     messages: [
       {

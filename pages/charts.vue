@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row>
       <v-col cols="12" md="12">
-        <h1 class="title-page text-center">Charts</h1>
+        <PageHeader title="Charts" />
         <v-row class="text-left">
           <v-col col="12" md="12">
             <v-row>
@@ -230,8 +230,13 @@
 <script>
 import { mapState } from 'vuex'
 
+import PageHeader from '@/components/Header/PageHeader.vue'
+
 export default {
   name: 'ChartsPage',
+  components: {
+    PageHeader
+  },
   data() {
     return {
       barChartData: {

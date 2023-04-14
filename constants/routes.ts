@@ -37,6 +37,11 @@ const DASHBOARD = {
     route: '/tables',
     url: '/tables'
   },
+  TABS: {
+    href: '/tabs.vue',
+    route: '/tabs',
+    url: '/tabs'
+  },
   FILTERS: {
     href: '/filters.vue',
     route: '/filters',
@@ -49,7 +54,7 @@ const DASHBOARD = {
   },
   PROFILE: {
     href: '/profile.vue',
-    route: '/user-profile',
+    route: '/profile',
     url: '/profile'
   },
   SETTING: {

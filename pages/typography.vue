@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-col class="text-center">
-      <h1 class="title-page">Typography</h1>
+      <PageHeader title="Typography" />
       <v-row class="text-left">
         <v-col>
           <h3>Paragraph</h3>
@@ -54,7 +54,10 @@
 </template>
 
 <script>
+import PageHeader from '@/components/Header/PageHeader.vue'
+
 export default {
-  name: 'TypographyPage'
+  name: 'TypographyPage',
+  components: { PageHeader }
 }
 </script>

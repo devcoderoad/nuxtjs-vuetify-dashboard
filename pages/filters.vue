@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row>
       <v-col class="text-center">
-        <h1 class="title-page">Filters</h1>
+        <PageHeader title="Filters" />
         <v-row class="text-left">
           <v-col md="12" light>
             <v-card light>
@@ -115,8 +115,13 @@
 </template>
 
 <script>
+import PageHeader from '@/components/Header/PageHeader.vue'
+
 export default {
   name: 'FiltersPage',
+  components: {
+    PageHeader
+  },
   data() {
     return {
       headers: [

@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row>
       <v-col class="text-center">
-        <h1 class="title-page">Landing Page</h1>
+        <PageHeader title="Landing" />
         <v-row class="text-left">
           <v-col cols="12" md="6">
             <v-card>
@@ -174,8 +174,13 @@
 </template>
 
 <script>
+import PageHeader from '@/components/Header/PageHeader.vue'
+
 export default {
   name: 'LandingPage',
+  components: {
+    PageHeader
+  },
   data() {
     return {
       options: {

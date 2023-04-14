@@ -51,11 +51,10 @@
     </v-col>
   </v-row>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="js">
 
-export default defineComponent({
+export default {
   name: 'SettingsPage',
-  setup() {}
-})
+  data() {}
+}
 </script>

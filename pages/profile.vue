@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <h1 class="title-page">Profile Page</h1>
+      <PageHeader title="Profile Page" />
       <v-row class="text-left">
         <v-col md="6" light>
           <v-card light>
@@ -51,11 +51,12 @@
     </v-col>
   </v-row>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
 
-export default defineComponent({
+<script>
+import PageHeader from '@/components/Header/PageHeader.vue'
+
+export default {
   name: 'ProfilePage',
-  setup() {}
-})
+  components: { PageHeader }
+}
 </script>

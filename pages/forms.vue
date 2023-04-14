@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <h1 class="title-page">Forms</h1>
+      <PageHeader title="Forms" />
       <v-container fluid>
         <v-row>
           <v-col cols="12" md="6">
@@ -445,11 +445,18 @@
 </template>
 
 <script>
+import PageHeader from '@/components/Header/PageHeader.vue'
+
 import { validationMixin } from 'vuelidate'
 import { required, maxLength, email } from 'vuelidate/lib/validators'
 
 export default {
   name: 'FormsPage',
+
+  components: {
+    PageHeader
+  },
+
   mixins: [validationMixin],
 
   validations: {

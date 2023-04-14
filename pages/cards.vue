@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row>
       <v-col>
-        <h1 class="title-page text-center">Cards</h1>
+        <PageHeader title="Cards" />
         <v-row v-if="foodCards && foodCards.length" class="text-left">
           <v-col v-for="card in foodCards" :key="card.id" md="3" light>
             <v-card light>
@@ -117,7 +117,7 @@
                   <v-card-subtitle tag="h3" class="text-subtitle-1"
                     >{{ card.subtitle }}
                   </v-card-subtitle>
-                  <v-card-text v-html="card.content" />
+                  <v-card-text><div v-html="card.content" /></v-card-text>
                   <v-card-text>
                     <v-chip small outlined>
                       <v-icon small dark class="mr-1"
@@ -147,8 +147,13 @@
 <script>
 import { mapState } from 'vuex'
 
+import PageHeader from '~/components/Header/PageHeader.vue'
+
 export default {
   name: 'CardsPage',
+  components: {
+    PageHeader
+  },
   data() {
     return {
       cards: [

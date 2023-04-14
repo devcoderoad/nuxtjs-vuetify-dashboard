@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-col class="text-center">
-      <h1 class="title-page">Tables</h1>
+      <PageHeader title="Tables" />
       <v-col class="text-left">
         <h2 class="title-page-sub">Data Table</h2>
         <v-data-table
@@ -89,8 +89,13 @@
 </template>
 
 <script>
+import PageHeader from '@/components/Header/PageHeader.vue'
+
 export default {
   name: 'TablesPage',
+  components: {
+    PageHeader
+  },
   data() {
     return {
       search: '',

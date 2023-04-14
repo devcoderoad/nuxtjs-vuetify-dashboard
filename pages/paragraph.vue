@@ -2,7 +2,7 @@
   <v-row>
     <v-col class="text-left">
       <v-container fluid>
-        <h1 class="title-page">Paragraph Page</h1>
+        <PageHeader title="Paragraph Page" />
         <v-row>
           <v-col>
             <div id="sub-header" class="row">
@@ -98,8 +98,11 @@
 <script>
 import { mapGetters } from 'vuex'
 
+import PageHeader from '@/components/Header/PageHeader.vue'
+
 export default {
   name: 'ParagraphPage',
+  components: { PageHeader },
   computed: {
     ...mapGetters({ getIsDarkMode: 'core/getIsDarkMode' })
   }
